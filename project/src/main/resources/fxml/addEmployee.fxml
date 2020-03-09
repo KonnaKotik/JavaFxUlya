@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:controller="com.example.project.controller.AddEmpController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" >
+   <children>
+      <Button fx:id="exitButton" layoutX="534.0" layoutY="14.0" mnemonicParsing="false" text="Назад" textFill="#dd0d0d" />
+      <TextField fx:id="tabNumButton" layoutX="70.0" layoutY="50.0" prefHeight="17.0" prefWidth="105.0" />
+      <Button fx:id="addChildrenButton" layoutX="241.0" layoutY="351.0" mnemonicParsing="false" onAction="#addNewEmployee" text="Добавить сотрудника" />
+      <TextField fx:id="passButton" layoutX="70.0" layoutY="175.0" prefHeight="17.0" prefWidth="105.0" />
+      <TextField fx:id="fioButton" layoutX="70.0" layoutY="110.0" prefHeight="17.0" prefWidth="105.0" />
+      <TextField fx:id="birthButton" layoutX="70.0" layoutY="232.0" prefHeight="17.0" prefWidth="105.0" />
+      <TextField fx:id="ccButton" layoutX="70.0" layoutY="288.0" prefHeight="17.0" prefWidth="105.0" />
+      <TextField fx:id="innButton" layoutX="70.0" layoutY="351.0" prefHeight="17.0" prefWidth="105.0" />
+      <TextField fx:id="numButton" layoutX="372.0" layoutY="50.0" prefHeight="17.0" prefWidth="105.0" />
+      <TextField fx:id="addmiButton" layoutX="372.0" layoutY="314.0" prefHeight="17.0" prefWidth="105.0" />
+      <TextField fx:id="dateButton" layoutX="372.0" layoutY="245.0" prefHeight="17.0" prefWidth="105.0" />
+      <TextField fx:id="addressButton" layoutX="372.0" layoutY="175.0" prefHeight="17.0" prefWidth="105.0" />
+      <TextField fx:id="educButton" layoutX="372.0" layoutY="110.0" prefHeight="17.0" prefWidth="105.0" />
+      <Label layoutX="396.0" layoutY="85.0" prefHeight="25.0" prefWidth="57.0" text="Образование" />
+      <Label layoutX="396.0" layoutY="24.0" prefHeight="25.0" prefWidth="57.0" text="Телефон" />
+      <Label layoutX="94.0" layoutY="326.0" prefHeight="25.0" prefWidth="57.0" text="ИНН" />
+      <Label layoutX="94.0" layoutY="207.0" prefHeight="25.0" prefWidth="57.0" text="Дата рождения" />
+      <Label layoutX="94.0" layoutY="257.0" prefHeight="25.0" prefWidth="57.0" text="№С/С" />
+      <Label layoutX="94.0" layoutY="150.0" prefHeight="25.0" prefWidth="57.0" text="Паспортные данные " />
+      <Label layoutX="94.0" layoutY="85.0" prefHeight="25.0" prefWidth="57.0" text="    ФИО" />
+      <Label layoutX="376.0" layoutY="150.0" prefHeight="25.0" prefWidth="114.0" text="Домашний адрес" />
+      <Label layoutX="350.0" layoutY="207.0" prefHeight="25.0" prefWidth="149.0" text="Дата поступления на работу" />
+      <Label layoutX="379.0" layoutY="282.0" prefHeight="25.0" prefWidth="149.0" text="Должность" />
+      <Label  layoutX="94.0" layoutY="14.0" prefHeight="25.0" prefWidth="57.0" text="Табельный номер" />
+   </children>
+</Pane>
