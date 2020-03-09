@@ -20,4 +20,5 @@ public class EmployeeDto {
     private String address;
     private String addmission;
     private String post;
+    private String status;
 }

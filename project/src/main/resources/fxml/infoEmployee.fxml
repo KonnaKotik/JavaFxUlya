@@ -11,18 +11,18 @@
        <Button fx:id="exitButton" layoutX="837.0" layoutY="2.0" mnemonicParsing="false" onAction="#clickExitButton" prefHeight="25.0" prefWidth="62.0" style="-fx-background-color: red;" text="Назад" textFill="#111111" />
       <TableView fx:id="table" layoutY="27.0" prefHeight="430.0" prefWidth="901.0">
         <columns>
-            <TableColumn prefWidth="75.0" text="Табельный номер" />
-          <TableColumn prefWidth="75.0" text="Фио" />
-          <TableColumn prefWidth="75.0" text="Паспортные данные" />
-            <TableColumn prefWidth="75.0" text="Дата рождения" />
-            <TableColumn prefWidth="75.0" text="№С/С" />
-            <TableColumn prefWidth="75.0" text="ИНН" />
-            <TableColumn prefWidth="75.0" text="Телефон" />
-            <TableColumn prefWidth="75.0" text="Образование" />
-            <TableColumn prefWidth="75.0" text="Домашний адрес" />
-            <TableColumn prefWidth="75.0" text="Дата поступления на работу" />
-            <TableColumn prefWidth="75.0" text="Должность" />
-            <TableColumn prefWidth="75.0" text="Статус" />
+            <TableColumn fx:id="tabNum" prefWidth="75.0" text="Табельный номер" />
+          <TableColumn fx:id="fio" prefWidth="75.0" text="Фио" />
+          <TableColumn fx:id="passport" prefWidth="75.0" text="Паспортные данные" />
+            <TableColumn fx:id="birthday" prefWidth="75.0" text="Дата рождения" />
+            <TableColumn fx:id="cc" prefWidth="75.0" text="№С/С" />
+            <TableColumn fx:id="inn" prefWidth="75.0" text="ИНН" />
+            <TableColumn fx:id="phone" prefWidth="75.0" text="Телефон" />
+            <TableColumn fx:id="education" prefWidth="75.0" text="Образование" />
+            <TableColumn fx:id="address" prefWidth="75.0" text="Домашний адрес" />
+            <TableColumn fx:id="addmission" prefWidth="75.0" text="Дата поступления на работу" />
+            <TableColumn fx:id="post" prefWidth="75.0" text="Должность" />
+            <TableColumn fx:id="status" prefWidth="75.0" text="Статус" />
         </columns>
       </TableView>
    </children>

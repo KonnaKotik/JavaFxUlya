@@ -12,6 +12,7 @@ import java.util.stream.Stream;
 public class EmployeeMapper {
 
     public EmployeeDto convertModelToDto(Employee employee) {
+
         return EmployeeDto.builder()
                 .addmission(employee.getAddmission())
                 .address(employee.getAddress())
@@ -24,6 +25,7 @@ public class EmployeeMapper {
                 .phone(employee.getPhone())
                 .post(employee.getPost())
                 .tabNum(employee.getTabNum())
+                .status(employee.getStatus())
                 .build();
     }
 
