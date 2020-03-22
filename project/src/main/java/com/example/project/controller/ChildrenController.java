@@ -3,11 +3,7 @@ package com.example.project.controller;
 import com.example.project.ControllersConfig;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -44,11 +40,11 @@ public class ChildrenController extends AbstractController {
     }
     @FXML
     private void clickInfoChildrenButton (ActionEvent event) throws  Exception {
-        getNextStage(infoChildrenButton,infoChildrenView);
+        getNextNewStage(infoChildrenButton,infoChildrenView);
     }
     @FXML
     private void clickAddChildrenButton (ActionEvent event) throws Exception{
-       getNextStage(addChildrenButton, addChildrenView);
+       getNextNewStage(addChildrenButton, addChildrenView);
     }
 
 }

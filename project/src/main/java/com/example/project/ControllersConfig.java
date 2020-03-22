@@ -56,6 +56,10 @@ public class ControllersConfig {
     public ViewHolder getLoginView() throws IOException {
         return loadView("fxml/login.fxml");//загружаем
     }
+    @Bean(name="noLoginView")
+    public ViewHolder getNoLoginView() throws IOException{
+        return  loadView("fxml/menu.fxml");
+    }
 
 
     @Bean(name = "MainMenuView")
@@ -117,6 +121,12 @@ public class ControllersConfig {
     @Bean
     public MainMenuController getMainMenuController() throws  IOException {
         return (MainMenuController) getMainMenuView().getController();
+    }
+
+    @Bean
+    public MenuController getNoLoginController() throws  IOException{
+        return  (MenuController) getNoLoginView().getController();
+
     }
 
 

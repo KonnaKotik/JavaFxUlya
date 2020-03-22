@@ -7,6 +7,6 @@
 <Pane fx:controller="com.example.project.controller.MainMenuController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Button fx:id="loginButton" onAction="#clickLogin" layoutX="233.0" layoutY="122.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="134.0" text="Авторизация" />
-      <Button fx:id="noLoginButton" layoutX="233.0" layoutY="218.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="134.0" text="не атв" />
+      <Button fx:id="noLoginButton" onAction="#clickNoLogin" layoutX="233.0" layoutY="218.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="134.0" text="не атв" />
    </children>
 </Pane>

@@ -1,6 +1,7 @@
 package com.example.project.servise;
 
 import com.example.project.mapper.EmployeeMapper;
+import com.example.project.model.Children;
 import com.example.project.model.Employee;
 import com.example.project.model.dto.EmployeeDto;
 import com.example.project.repository.EmployeeRepository;
@@ -37,6 +38,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public List<EmployeeDto> getAllEmployees() {
        return employeeMapper.convertModelsToDtos(employeeRepository.findAll());
+    }
+
+    @Override
+    public List<Employee> getAllByChildren(List<Children> childrenList) {
+        return employeeRepository.findEmployeesByChildrenList(childrenList);
     }
 
 

@@ -8,12 +8,12 @@
 
 <Pane fx:controller="com.example.project.controller.infoChildrenController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button fx:id="exitButton" onAction="#clickExitButton" layoutX="535.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="51.0" text="Назад" textFill="#da0d0d" />
-      <TableView layoutX="-1.0" layoutY="39.0" prefHeight="360.0" prefWidth="600.0">
+      <Button fx:id="loadButton" onAction="#clickLoadButton" layoutX="535.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="51.0" text="Назад" textFill="#da0d0d" />
+      <TableView fx:id="childrenTable" layoutX="-1.0" layoutY="39.0" prefHeight="360.0" prefWidth="600.0">
         <columns>
-          <TableColumn prefWidth="207.0" text="ФИО" />
-          <TableColumn minWidth="0.0" prefWidth="194.0" text="Дата рождения" />
-            <TableColumn prefWidth="198.0" text="Родители" />
+          <TableColumn fx:id="fio" prefWidth="207.0" text="ФИО" />
+          <TableColumn fx:id="data" minWidth="0.0" prefWidth="194.0" text="Дата рождения" />
+            <TableColumn fx:id="parents" prefWidth="198.0" text="Родители" />
         </columns>
       </TableView>
    </children>

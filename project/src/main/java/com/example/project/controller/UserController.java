@@ -3,10 +3,8 @@ import com.example.project.ControllersConfig;
 import com.example.project.servise.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -36,14 +34,14 @@ public class UserController extends AbstractController {
 
     @FXML
     public void clickMenuButton(ActionEvent event) throws Exception {
-        getNextStage(menuButton, viewHolder);
+        getNextNewStage(menuButton, viewHolder);
     }
 
     @FXML
     private void  clickEnterButton(ActionEvent event) throws Exception{
         boolean result = userService.signIn(loginField.getText(), passwordField.getText());
         if(result) {
-            getNextStage(enterButton, menuView);
+            getNextNewStage(enterButton, menuView);
         }
     }
 

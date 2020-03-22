@@ -35,15 +35,15 @@ public class EmployeeController extends AbstractController {
 
     @FXML
     private void clickMenuButton(ActionEvent event) throws Exception{
-        getNextStage(menuButton, menuView);
+        getNextNewStage(menuButton, menuView);
     }
     @FXML
     private void clickInfoButton(ActionEvent event) throws Exception{
-       getNextStage(infoButton,infoView);
+       getNextNewStage(infoButton,infoView);
     }
     @FXML
     private  void clickAddEmployeeButton(ActionEvent event) throws Exception{
-        getNextStage(addEmployeeButton, addEmployeeView);
+        getNextNewStage(addEmployeeButton, addEmployeeView);
     }
 
 }

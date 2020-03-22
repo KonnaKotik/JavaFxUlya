@@ -29,8 +29,8 @@ public class AddChildrenController extends AbstractController {
     @Autowired
     private ChildrenService childrenService;
 
-    @Autowired
-    private EmployeeService employeeService;
+    /*@Autowired
+    private EmployeeService employeeService;*/
 
 
     @FXML
@@ -42,10 +42,22 @@ public class AddChildrenController extends AbstractController {
     @FXML
     private void addChildren(ActionEvent event) {
         String parentFio = parentsButton.getText();
-        Employee employee = employeeService.getEmployeeByFio(parentFio);
+        System.out.println(parentFio);
+       /* Employee employee = employeeService.getEmployeeByFio(parentFio);
+        System.out.println(employee.getFio());
         List<Employee> parents = new LinkedList<>();
-        parents.add(employee);
-        Children children = new Children(fioButton.getText(), dataButton.getText(), parents);
-        childrenService.addNewChildren(children);
+        parents.add(employee);*/
+     /*   Children children = new Children(fioButton.getText(), dataButton.getText(), parents);
+        System.out.println(children.getFio());
+        childrenService.addNewChildren(children);*/
+      //  addChildrenInEmployee(employee, children);
     }
+
+    private void addChildrenInEmployee(Employee employee, Children children){
+        List<Children> childrenList = new LinkedList<>();
+        childrenList.add(children);
+        employee.setChildrenList(childrenList);
+    //    employeeService.addNewEmployee(employee);
+    }
+
 }

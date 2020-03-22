@@ -49,6 +49,7 @@ public class AddEmpController extends AbstractController {
 
     @FXML
     private TextField educButton;
+    // почему Button??
 
     @Autowired
     private EmployeeService employeeService;
@@ -56,7 +57,7 @@ public class AddEmpController extends AbstractController {
     @FXML
     private void addNewEmployee() {
         Employee newEmployee = new Employee(tabNumButton.getText(), fioButton.getText(), passButton.getText(), birthButton.getText(), ccButton.getText(), innButton.getText(), numButton.getText(), educButton.getText(), addressButton.getText(), dateButton.getText(), addmiButton.getText());
-        employeeService.addNewEmployee(newEmployee);
+        employeeService.addNewEmployee(newEmployee); //создвем сотрудника,который включает в себя: табельный номер, фио, паспорт, день рождения,страховое свидетельство, инн, номер телефона ,образование, адрес и тд.
 
     }
 

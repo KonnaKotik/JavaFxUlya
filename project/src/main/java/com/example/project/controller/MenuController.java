@@ -3,11 +3,7 @@ package com.example.project.controller;
 import com.example.project.ControllersConfig;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -36,16 +32,16 @@ public class MenuController extends AbstractController{
     private ControllersConfig.ViewHolder documentView;
     @FXML
     private void click(ActionEvent event) throws Exception {
-        getNextStage(employeeButton,employeeView );
+        getNextNewStage(employeeButton,employeeView );
     }
     @FXML
     private void clickDocument(ActionEvent event) throws Exception{
-        getNextStage(documentButton, documentView);
+        getNextNewStage(documentButton, documentView);
     }
 
     @FXML
     private void clickChildren(ActionEvent event) throws  Exception {
-        getNextStage(childrenButton,childrenView);
+        getNextNewStage(childrenButton,childrenView);
     }
     /*
         event - событие. НАши методы реагируют на како-либо1 событие.

@@ -1,5 +1,6 @@
 package com.example.project.repository;
 
+import com.example.project.model.Children;
 import com.example.project.model.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -16,4 +17,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
     //находим сех сотрудников из бд
     List<Employee> findAll();
+
+    //
+    List<Employee> findEmployeesByChildrenList(List<Children> childrenList);
 }

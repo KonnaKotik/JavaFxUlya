@@ -21,8 +21,18 @@ public class MainMenuController extends AbstractController {
     @Autowired
     private ControllersConfig.ViewHolder loginView;
 
+    @Qualifier("noLoginView")
+    @Autowired
+    private  ControllersConfig.ViewHolder noLoginView;
+
+
     @FXML
     public void clickLogin(ActionEvent event) throws Exception {
-        getNextStage(loginButton, loginView);
+        getNextNewStage(loginButton, loginView);
+    }
+    @FXML
+    public void clickNoLogin(ActionEvent event) throws Exception{
+        getNextNewStage(noLoginButton, noLoginView);
+
     }
 }

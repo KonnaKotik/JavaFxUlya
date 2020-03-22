@@ -7,10 +7,17 @@ import javafx.stage.Stage;
 
 public abstract class AbstractController {
 
-    protected void getNextStage(Button button, ControllersConfig.ViewHolder viewName ) throws Exception {
+    protected void getNextNewStage(Button button, ControllersConfig.ViewHolder viewName ) throws Exception {
         Stage stage = (Stage) button.getScene().getWindow(); // какое окно сейчас открыто
         stage.close(); // закрывает данное окно
         stage.setScene(new Scene(viewName.getView())); // передаем новую сцену для отрисовки окна
         stage.show(); // открывает наше новое окно
+    }
+
+    protected void getNextStage(Button button, ControllersConfig.ViewHolder viewName) {
+        Stage stage = (Stage) button.getScene().getWindow(); // какое окно сейчас открыто
+        stage.close(); // закрывает данное окно
+        stage.setScene(viewName.getView().getScene());
+        stage.show();
     }
 }
