@@ -1,5 +1,6 @@
 package com.example.project.controller;
 
+import com.example.project.ControllersConfig;
 import com.example.project.model.Children;
 import com.example.project.model.Employee;
 import com.example.project.servise.ChildrenService;
@@ -10,6 +11,7 @@ import javafx.scene.control.Button;
 
 import javafx.scene.control.TextField;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 import java.util.LinkedList;
@@ -29,13 +31,17 @@ public class AddChildrenController extends AbstractController {
     @Autowired
     private ChildrenService childrenService;
 
-    /*@Autowired
-    private EmployeeService employeeService;*/
+    @Autowired
+    private EmployeeService employeeService;
+
+    @Qualifier("ChildrenView")
+    @Autowired
+    private ControllersConfig.ViewHolder childrenView;
 
 
     @FXML
     private void clickExitButton(ActionEvent event) throws Exception {
-    //    getNextStage(exitButton, "/fxml/children.fxml");
+        getNextStage(exitButton, childrenView);
     }
 
 
@@ -43,21 +49,21 @@ public class AddChildrenController extends AbstractController {
     private void addChildren(ActionEvent event) {
         String parentFio = parentsButton.getText();
         System.out.println(parentFio);
-       /* Employee employee = employeeService.getEmployeeByFio(parentFio);
+        Employee employee = employeeService.getEmployeeByFio(parentFio);
         System.out.println(employee.getFio());
         List<Employee> parents = new LinkedList<>();
-        parents.add(employee);*/
-     /*   Children children = new Children(fioButton.getText(), dataButton.getText(), parents);
+        parents.add(employee);
+        Children children = new Children(fioButton.getText(), dataButton.getText(), parents);
         System.out.println(children.getFio());
-        childrenService.addNewChildren(children);*/
-      //  addChildrenInEmployee(employee, children);
+        childrenService.addNewChildren(children);
+       addChildrenInEmployee(employee, children);
     }
 
     private void addChildrenInEmployee(Employee employee, Children children){
         List<Children> childrenList = new LinkedList<>();
         childrenList.add(children);
         employee.setChildrenList(childrenList);
-    //    employeeService.addNewEmployee(employee);
+       employeeService.addNewEmployee(employee);
     }
 
 }

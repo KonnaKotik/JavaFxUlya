@@ -11,6 +11,12 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class MenuController extends AbstractController{
 
+    private boolean isCreateEmployee = false;
+    private boolean isCreateChildren = false;
+    private boolean isCreateDocument = false;
+
+    ChildrenController childrenController;
+
     @FXML
     private Button employeeButton;
     @FXML
@@ -30,19 +36,48 @@ public class MenuController extends AbstractController{
     @Qualifier("DocumentView")
     @Autowired
     private ControllersConfig.ViewHolder documentView;
+
+    @Qualifier("MainMenuView")
+    @Autowired
+    private  ControllersConfig.ViewHolder mainMenuView;
+
+
+
     @FXML
     private void click(ActionEvent event) throws Exception {
-        getNextNewStage(employeeButton,employeeView );
+        if(!isCreateEmployee) {
+            getNextNewStage(employeeButton, employeeView);
+            isCreateEmployee = true;
+        } else{
+            getNextStage(employeeButton,employeeView );
+        }
     }
     @FXML
     private void clickDocument(ActionEvent event) throws Exception{
-        getNextNewStage(documentButton, documentView);
+        if(!isCreateDocument) {
+            getNextNewStage(documentButton, documentView);
+            isCreateDocument = true;
+        } else {
+            getNextStage(documentButton, documentView);
+        }
     }
 
     @FXML
     private void clickChildren(ActionEvent event) throws  Exception {
-        getNextNewStage(childrenButton,childrenView);
+        if(!isCreateChildren) {
+            getNextNewStage(childrenButton, childrenView);
+            isCreateChildren = true;
+        } else {
+            childrenController.setVisible(MainMenuController.isLogin);
+            getNextStage(childrenButton, childrenView);
+        }
+
     }
+    @FXML
+    private  void clickExitButton(ActionEvent event) throws Exception{
+        getNextStage(exitButton,mainMenuView);
+        }
+
     /*
         event - событие. НАши методы реагируют на како-либо1 событие.
         Например, нажатие кнопки (это событиые). Когда ты нажимаешь кнопку "расписание",

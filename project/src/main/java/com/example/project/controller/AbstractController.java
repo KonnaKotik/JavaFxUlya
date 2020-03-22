@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 
 public abstract class AbstractController {
 
+    // метод создания/перехода нового окна (сцены)
     protected void getNextNewStage(Button button, ControllersConfig.ViewHolder viewName ) throws Exception {
         Stage stage = (Stage) button.getScene().getWindow(); // какое окно сейчас открыто
         stage.close(); // закрывает данное окно
@@ -14,6 +15,7 @@ public abstract class AbstractController {
         stage.show(); // открывает наше новое окно
     }
 
+    //метод перехода для кнопки "Назад" для открытия предыдущего окна
     protected void getNextStage(Button button, ControllersConfig.ViewHolder viewName) {
         Stage stage = (Stage) button.getScene().getWindow(); // какое окно сейчас открыто
         stage.close(); // закрывает данное окно

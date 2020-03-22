@@ -1,5 +1,6 @@
 package com.example.project.controller;
 
+import com.example.project.ControllersConfig;
 import com.example.project.mapper.ChildrenMapper;
 import com.example.project.model.Children;
 import com.example.project.model.Employee;
@@ -19,13 +20,14 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 import java.util.LinkedList;
 import java.util.List;
 
 @Controller
-public class infoChildrenController extends AbstractController {
+public class InfoChildrenController extends AbstractController {
     @Autowired
     private ChildrenService childrenService;
 
@@ -56,6 +58,12 @@ public class infoChildrenController extends AbstractController {
    private List<ChildrenDto> childrenDtoList;
    private List<Employee> employeeList;
 
+   @Qualifier("ChildrenView")
+   @Autowired
+   private ControllersConfig.ViewHolder childrenView;
+
+
+
     public void initialize() {
         fio.setCellValueFactory(new PropertyValueFactory<>("fio"));
         data.setCellValueFactory(new PropertyValueFactory<>("data"));
@@ -74,18 +82,14 @@ public class infoChildrenController extends AbstractController {
             List<Children> childrens = new LinkedList<>();
             Children children = childrenMapper.convertDtoToModel(childrenDto);
             childrens.add(children);
-            employeeList = employeeService.getAllByChildren(childrens);
+        //    employeeList = employeeService.getAllByChildren(childrens);
             childrenDto.setParents(childrenService.listToString(employeeList));
         }
     }
 
 
-
-
-
-
     @FXML
     private void clickExitButton (ActionEvent event) throws  Exception{
-        //getNextStage(exitButton,"/fxml/children.fxml");
+        getNextStage(exitButton, childrenView);
     }
 }

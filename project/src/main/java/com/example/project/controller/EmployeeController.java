@@ -11,6 +11,10 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class EmployeeController extends AbstractController {
 
+    private boolean isCreateInfo = false;
+    private boolean isCreateAdd = false;
+
+
     @FXML
     private Button menuButton;
 
@@ -35,15 +39,29 @@ public class EmployeeController extends AbstractController {
 
     @FXML
     private void clickMenuButton(ActionEvent event) throws Exception{
-        getNextNewStage(menuButton, menuView);
+        getNextStage(menuButton, menuView);
     }
     @FXML
     private void clickInfoButton(ActionEvent event) throws Exception{
-       getNextNewStage(infoButton,infoView);
+        if(!isCreateInfo){
+            getNextNewStage(infoButton,infoView);
+            isCreateInfo = true;
+        } else {
+
+            getNextStage(infoButton,infoView);
+        }
+
     }
     @FXML
     private  void clickAddEmployeeButton(ActionEvent event) throws Exception{
-        getNextNewStage(addEmployeeButton, addEmployeeView);
+        if(!isCreateAdd) {
+            getNextNewStage(addEmployeeButton, addEmployeeView);
+            isCreateAdd = true;
+
+        } else {
+
+            getNextStage(addEmployeeButton, addEmployeeView);
+        }
     }
 
 }

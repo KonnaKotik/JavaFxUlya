@@ -12,6 +12,9 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class UserController extends AbstractController {
+
+    private boolean isCreateEnter = false;
+
     @FXML
     private Button menuButton;
     @FXML
@@ -34,14 +37,20 @@ public class UserController extends AbstractController {
 
     @FXML
     public void clickMenuButton(ActionEvent event) throws Exception {
-        getNextNewStage(menuButton, viewHolder);
+        getNextStage(menuButton, viewHolder);
     }
 
     @FXML
     private void  clickEnterButton(ActionEvent event) throws Exception{
         boolean result = userService.signIn(loginField.getText(), passwordField.getText());
         if(result) {
-            getNextNewStage(enterButton, menuView);
+            MainMenuController.isLogin = true;
+            if(!isCreateEnter) {
+                getNextNewStage(enterButton, menuView);
+                isCreateEnter = true;
+            } else {
+                getNextStage(enterButton, menuView);
+            }
         }
     }
 

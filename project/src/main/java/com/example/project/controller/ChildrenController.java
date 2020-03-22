@@ -11,6 +11,11 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class ChildrenController extends AbstractController {
 
+    private boolean isCreateInfo = false;
+
+    private boolean isCreateAdd = false;
+
+
     @FXML
     private Button menuButton;
     @FXML
@@ -18,14 +23,6 @@ public class ChildrenController extends AbstractController {
     @FXML
     private Button addChildrenButton;
 
-    /*private void getNextStage(Button button, String nameFile ) throws Exception {
-        Stage stage = (Stage) button.getScene().getWindow(); // какое окно сейчас открыто
-        stage.close(); // закрывает данное окно
-        Parent root = FXMLLoader.load(getClass().getResource(nameFile)); // загружаем файл для отрислвки интерфейса приложения
-        stage.setScene(new Scene(root)); // передаем новую сцену для отрисовки окна
-        stage.show(); // открывает наше новое окно
-
-     */
     @Qualifier("InfoChildrenView")
     @Autowired
     private ControllersConfig.ViewHolder infoChildrenView;
@@ -34,17 +31,37 @@ public class ChildrenController extends AbstractController {
     @Autowired
     private ControllersConfig.ViewHolder addChildrenView;
 
+    @Qualifier("MenuMenuView")
+    @Autowired
+    private ControllersConfig.ViewHolder menuView;
+
+
+    @FXML
+    public void setVisible(boolean b) {
+        addChildrenButton.setVisible(b);
+    }
+
     @FXML
     private void clickMenuButton (ActionEvent event) throws Exception {
-       // getNextStage(menuButton, "/fxml/menu.fxml");
+        getNextStage(menuButton, menuView);
     }
     @FXML
     private void clickInfoChildrenButton (ActionEvent event) throws  Exception {
-        getNextNewStage(infoChildrenButton,infoChildrenView);
+        if(!isCreateInfo) {
+            getNextNewStage(infoChildrenButton, infoChildrenView);
+            isCreateInfo = true;
+        } else {
+            getNextStage(infoChildrenButton,infoChildrenView);
+        }
     }
     @FXML
     private void clickAddChildrenButton (ActionEvent event) throws Exception{
-       getNextNewStage(addChildrenButton, addChildrenView);
+        if(!isCreateAdd){
+            getNextNewStage(addChildrenButton,addChildrenView);
+            isCreateAdd=true;
+        } else {
+            getNextStage(addChildrenButton, addChildrenView);
+        }
     }
 
 }

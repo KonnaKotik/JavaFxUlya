@@ -79,12 +79,12 @@ public class ControllersConfig {
     }
 
    @Bean
-   public  infoChildrenController getInfoChildrenController() throws IOException{
-       return (infoChildrenController) getInfoChildrenView().getController();
+   public InfoChildrenController getInfoChildrenController() throws IOException{
+       return (InfoChildrenController) getInfoChildrenView().getController();
    }
    @Bean
-   public infoController getInfoController() throws IOException{
-       return(infoController) getInfoView().getController();
+   public InfoEmployeeController getInfoController() throws IOException{
+       return(InfoEmployeeController) getInfoView().getController();
    }
 
   @Bean

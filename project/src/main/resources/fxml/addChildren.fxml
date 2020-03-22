@@ -5,8 +5,8 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane fx:controller="com.example.project.controller.AddChildrenController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
+<Pane   fx:controller="com.example.project.controller.AddChildrenController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children >
       <Button fx:id="exitButton" onAction="#clickExitButton" layoutX="534.0" layoutY="14.0" mnemonicParsing="false" text="Назад" textFill="#dd0d0d" />
       <Label layoutX="272.0" layoutY="55.0" prefHeight="25.0" prefWidth="57.0" text="    ФИО" />
       <TextField fx:id="fioButton" layoutX="189.0" layoutY="94.0" prefHeight="25.0" prefWidth="223.0" />

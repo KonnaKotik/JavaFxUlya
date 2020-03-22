@@ -1,5 +1,6 @@
 package com.example.project.controller;
 
+import com.example.project.ControllersConfig;
 import com.example.project.model.Employee;
 import com.example.project.model.dto.EmployeeDto;
 import com.example.project.servise.EmployeeService;
@@ -18,6 +19,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 import java.net.URL;
@@ -26,7 +28,7 @@ import java.util.PropertyPermission;
 import java.util.ResourceBundle;
 
 @Controller
-public class infoController extends AbstractController{
+public class InfoEmployeeController extends AbstractController{
 
 
 
@@ -75,6 +77,10 @@ public class infoController extends AbstractController{
     @Autowired
     private EmployeeService employeeService;
 
+    @Qualifier("EmployeeView")
+    @Autowired
+    private ControllersConfig.ViewHolder employeeView;
+
 
      @FXML
      private TableView<EmployeeDto> table;
@@ -107,14 +113,9 @@ public class infoController extends AbstractController{
 
     @FXML
     private void clickExitButton (ActionEvent event) throws Exception {
-
+    getNextStage(exitButton,employeeView);
     }
 
-   /* @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        List<Employee> employees = employeeService.getAllEmployees();
-        employeeList.setAll(FXCollections.observableList(employees));
-    }*/
 
 
 }

@@ -11,6 +11,12 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class MainMenuController extends AbstractController {
 
+    public static boolean isLogin;
+
+    private boolean isCreateLogin = false;
+    private  boolean isCreateNoLogin = false;
+
+
     @FXML
     private Button loginButton;
 
@@ -26,13 +32,26 @@ public class MainMenuController extends AbstractController {
     private  ControllersConfig.ViewHolder noLoginView;
 
 
+
     @FXML
     public void clickLogin(ActionEvent event) throws Exception {
-        getNextNewStage(loginButton, loginView);
+        if(!isCreateLogin){
+            getNextNewStage(loginButton, loginView);
+            isCreateLogin = true;
+        }else{
+            getNextStage(loginButton, loginView);
+        }
+
     }
     @FXML
     public void clickNoLogin(ActionEvent event) throws Exception{
-        getNextNewStage(noLoginButton, noLoginView);
+        isLogin = false;
+        if (!isCreateNoLogin) {
+            getNextNewStage(noLoginButton, noLoginView);
+            isCreateNoLogin = true;
+        }else {
+            getNextStage(noLoginButton, noLoginView);
+        }
 
     }
 }

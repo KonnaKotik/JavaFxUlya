@@ -15,11 +15,14 @@ import java.util.Optional;
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
-    @Autowired
-    private EmployeeRepository employeeRepository;
+    private final EmployeeRepository employeeRepository;
 
-    @Autowired
-    private EmployeeMapper employeeMapper;
+    private final EmployeeMapper employeeMapper;
+
+    public EmployeeServiceImpl(EmployeeRepository employeeRepository, EmployeeMapper employeeMapper) {
+        this.employeeRepository = employeeRepository;
+        this.employeeMapper = employeeMapper;
+    }
 
     @Override
     public void addNewEmployee(Employee newEmployee) {
@@ -42,7 +45,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public List<Employee> getAllByChildren(List<Children> childrenList) {
-        return employeeRepository.findEmployeesByChildrenList(childrenList);
+        return null;
+               // employeeRepository.findEmployeesByChildrenList(childrenList);
     }
 
 
