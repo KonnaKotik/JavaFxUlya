@@ -1,12 +1,14 @@
 package com.example.project;
 
 import com.example.project.controller.*;
+import com.sun.org.apache.bcel.internal.generic.ARETURN;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import lombok.Data;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import javax.swing.text.View;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -56,10 +58,6 @@ public class ControllersConfig {
     public ViewHolder getLoginView() throws IOException {
         return loadView("fxml/login.fxml");//загружаем
     }
-    @Bean(name="noLoginView")
-    public ViewHolder getNoLoginView() throws IOException{
-        return  loadView("fxml/menu.fxml");
-    }
 
 
     @Bean(name = "MainMenuView")
@@ -72,9 +70,62 @@ public class ControllersConfig {
         return loadView("fxml/menu.fxml");
     }
 
+    // бины для незарегистрированного пользователя
+
+    @Bean(name = "noLoginChildrenView")
+    public ViewHolder getNoLoginChildrenView() throws IOException {
+        return loadView("fxml/noLoginChildren.fxml");
+    }
+
+    @Bean(name = "noLoginDocumentView")
+    public ViewHolder getNoLoginDocumentView() throws IOException {
+        return loadView("fxml/noLoginDocument.fxml");
+    }
+
+    @Bean(name = "noLoginEmployeeView")
+    public ViewHolder getNoLoginEmployeeView() throws IOException {
+        return loadView("fxml/noLoginEmployee.fxml");
+    }
+
+    @Bean(name="noLoginInfoChildrenView")
+    public  ViewHolder getNoLoginInfoChildrenView() throws IOException {
+        return loadView("fxml/noLoginInfoChildren.fxml");
+    }
+
+    @Bean(name = "noLoginMenuMenuView")
+    public ViewHolder getNoLoginMenuView() throws IOException {
+        return loadView("fxml/noLoginMenuMenu.fxml");
+    }
+
+    @Bean
+    public MenuController getNoMenuController() throws IOException {
+        return (MenuController) getNoLoginMenuView().getController();
+    }
+
+    @Bean
+    public ChildrenController getNoLoginChildrenController() throws IOException {
+        return (ChildrenController) getNoLoginChildrenView().getController();
+    }
+
+    @Bean
+    public DocumentController getNoLoginDocumentController() throws IOException {
+        return (DocumentController) getNoLoginDocumentView().getController();
+    }
+
+    @Bean
+    public EmployeeController getNoLoginEmployeeController() throws IOException {
+        return (EmployeeController) getNoLoginEmployeeView().getController();
+    }
+
+    @Bean
+    public InfoChildrenController getNoLoginInfoChildren() throws IOException {
+        return (InfoChildrenController) getNoLoginInfoChildrenView().getController();
+    }
 
 
-    @Bean ChildrenController getChildrenController() throws IOException{
+
+    @Bean
+    public ChildrenController getChildrenController() throws IOException{
         return (ChildrenController) getChildrenView().getController();
     }
 
@@ -123,11 +174,6 @@ public class ControllersConfig {
         return (MainMenuController) getMainMenuView().getController();
     }
 
-    @Bean
-    public MenuController getNoLoginController() throws  IOException{
-        return  (MenuController) getNoLoginView().getController();
-
-    }
 
 
 

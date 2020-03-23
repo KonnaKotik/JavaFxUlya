@@ -22,4 +22,15 @@ public abstract class AbstractController {
         stage.setScene(viewName.getView().getScene());
         stage.show();
     }
+
+
+    protected boolean isCreateStage(ControllersConfig.ViewHolder nameView, boolean isCreate, Button button ) throws Exception {
+      if(!isCreate) {
+          getNextNewStage(button, nameView);
+          isCreate = true;
+      } else {
+          getNextStage(button, nameView);
+      }
+      return  isCreate;
+    }
 }

@@ -27,7 +27,7 @@ public class MainMenuController extends AbstractController {
     @Autowired
     private ControllersConfig.ViewHolder loginView;
 
-    @Qualifier("noLoginView")
+    @Qualifier("MenuMenuView")
     @Autowired
     private  ControllersConfig.ViewHolder noLoginView;
 

@@ -37,17 +37,13 @@ public class EmployeeController extends AbstractController {
     private ControllersConfig.ViewHolder menuView;
 
 
-    @FXML
-    private void clickMenuButton(ActionEvent event) throws Exception{
-        getNextStage(menuButton, menuView);
-    }
+
     @FXML
     private void clickInfoButton(ActionEvent event) throws Exception{
         if(!isCreateInfo){
             getNextNewStage(infoButton,infoView);
             isCreateInfo = true;
         } else {
-
             getNextStage(infoButton,infoView);
         }
 
@@ -62,6 +58,11 @@ public class EmployeeController extends AbstractController {
 
             getNextStage(addEmployeeButton, addEmployeeView);
         }
+    }
+
+    @FXML
+    private void clickMenuButton(ActionEvent event) throws Exception{
+        getNextStage(menuButton, menuView);
     }
 
 }

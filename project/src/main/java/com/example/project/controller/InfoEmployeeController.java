@@ -81,6 +81,10 @@ public class InfoEmployeeController extends AbstractController{
     @Autowired
     private ControllersConfig.ViewHolder employeeView;
 
+    @Qualifier("noLoginEmployeeView")
+    @Autowired
+    private ControllersConfig.ViewHolder noLoginEmployeeView;
+
 
      @FXML
      private TableView<EmployeeDto> table;
@@ -113,7 +117,11 @@ public class InfoEmployeeController extends AbstractController{
 
     @FXML
     private void clickExitButton (ActionEvent event) throws Exception {
-    getNextStage(exitButton,employeeView);
+         if(MainMenuController.isLogin) {
+             getNextStage(exitButton, employeeView);
+         } else {
+             getNextStage(exitButton, noLoginEmployeeView);
+         }
     }
 
 

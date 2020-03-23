@@ -12,10 +12,12 @@ import org.springframework.stereotype.Controller;
 public class MenuController extends AbstractController{
 
     private boolean isCreateEmployee = false;
+    private boolean isCreateNoEmployee = false;
     private boolean isCreateChildren = false;
+    private boolean isCreateNoChildren = false;
     private boolean isCreateDocument = false;
+    private boolean isCreateNoDocument = false;
 
-    ChildrenController childrenController;
 
     @FXML
     private Button employeeButton;
@@ -29,6 +31,7 @@ public class MenuController extends AbstractController{
     @Qualifier("ChildrenView")
     @Autowired
     private ControllersConfig.ViewHolder childrenView;
+
     @Qualifier("EmployeeView")
     @Autowired
     private ControllersConfig.ViewHolder employeeView;
@@ -41,35 +44,44 @@ public class MenuController extends AbstractController{
     @Autowired
     private  ControllersConfig.ViewHolder mainMenuView;
 
+    @Qualifier("noLoginChildrenView")
+    @Autowired
+    private ControllersConfig.ViewHolder noLoginChildrenView;
+
+    @Qualifier("noLoginDocumentView")
+    @Autowired
+    private ControllersConfig.ViewHolder noLoginDocumentView;
+
+    @Qualifier("noLoginEmployeeView")
+    @Autowired
+    private ControllersConfig.ViewHolder noLoginEmployeeView;
+
 
 
     @FXML
     private void click(ActionEvent event) throws Exception {
-        if(!isCreateEmployee) {
-            getNextNewStage(employeeButton, employeeView);
-            isCreateEmployee = true;
-        } else{
-            getNextStage(employeeButton,employeeView );
+        if(MainMenuController.isLogin) {
+            isCreateEmployee = isCreateStage(employeeView, isCreateEmployee, employeeButton);
+        } else {
+            isCreateNoEmployee = isCreateStage(noLoginEmployeeView, isCreateNoEmployee, employeeButton);
         }
+
     }
     @FXML
     private void clickDocument(ActionEvent event) throws Exception{
-        if(!isCreateDocument) {
-            getNextNewStage(documentButton, documentView);
-            isCreateDocument = true;
+        if(MainMenuController.isLogin) {
+           isCreateDocument =  isCreateStage(documentView, isCreateDocument, documentButton);
         } else {
-            getNextStage(documentButton, documentView);
+           isCreateNoDocument = isCreateStage(noLoginDocumentView, isCreateNoDocument, documentButton);
         }
     }
 
     @FXML
     private void clickChildren(ActionEvent event) throws  Exception {
-        if(!isCreateChildren) {
-            getNextNewStage(childrenButton, childrenView);
-            isCreateChildren = true;
+        if(MainMenuController.isLogin) {
+            isCreateChildren = isCreateStage(childrenView, isCreateChildren, childrenButton);
         } else {
-            childrenController.setVisible(MainMenuController.isLogin);
-            getNextStage(childrenButton, childrenView);
+            isCreateNoChildren = isCreateStage(noLoginChildrenView, isCreateNoChildren, childrenButton);
         }
 
     }
@@ -86,9 +98,5 @@ public class MenuController extends AbstractController{
         В нашем файле .fxml  в параметрах кнопки написано onAction, в нем мы указывает название метод,
         которое должно выполниться при каком-то действии с этим элементом.
     */
-
-    @FXML
-    private void clickExit (ActionEvent event) throws Exception{
-    }
 
 }
