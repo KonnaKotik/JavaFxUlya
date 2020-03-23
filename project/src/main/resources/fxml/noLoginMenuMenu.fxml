@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button fx:id="noLoginExit" layoutX="530.0" layoutY="22.0" mnemonicParsing="false" text="Назад" />
+      <Button fx:id="noLoginChildrenButton" layoutX="203.0" layoutY="247.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="193.0" text="Дети сотрудников" />
+      <Button fx:id="noLoginDocumentButton" layoutX="203.0" layoutY="171.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="193.0" text="Документы" />
+      <Button fx:id="noLoginEmployeeButton" layoutX="204.0" layoutY="91.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="193.0" text="Сотрудники" />
+   </children>
+</Pane>
