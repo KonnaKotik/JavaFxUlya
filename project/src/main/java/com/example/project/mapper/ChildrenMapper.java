@@ -17,8 +17,20 @@ public class ChildrenMapper {
         return ChildrenDto.builder()
                 .fio(children.getFio())
                 .data(children.getData())
+                .nameParents(toStringParentName(children.getParents().stream().map(Employee::getFio).collect(Collectors.toList())))
                 .build();
 
+    }
+
+    private String toStringParentName(List<String> patentsName){
+        StringBuilder stringBuilder = new StringBuilder();
+        for(int i = 0; i < patentsName.size(); i++) {
+            stringBuilder.append(patentsName.get(i));
+            if (i != patentsName.size() - 1) {
+                stringBuilder.append(", ");
+            }
+        }
+        return stringBuilder.toString();
     }
 
     public Children convertDtoToModel(ChildrenDto childrenDto) {

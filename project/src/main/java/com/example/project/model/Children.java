@@ -1,15 +1,16 @@
 package com.example.project.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Builder
-@Data
+@Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -22,8 +23,8 @@ public class Children {
     private String fio;
     private String data;
 
-    @ManyToMany(mappedBy = "childrenList")
-    private List<Employee> parents;
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "childrenList")
+    private List<Employee> parents = new LinkedList<>();
 
 
     public Children(String fio, String data, List<Employee> parents) {
@@ -31,4 +32,15 @@ public class Children {
         this.data = data;
         this.parents = parents;
     }
+
+    @Override
+    public String toString(){
+        return "Children(" +
+                "id=" + id +
+                ", fio=" + fio +
+                ", data=" + data +
+                ", parents=" + parents.stream().map(Employee::getFio).collect(Collectors.toList()) +
+                ")";
+    }
+
 }

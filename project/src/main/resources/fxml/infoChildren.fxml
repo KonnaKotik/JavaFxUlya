@@ -13,7 +13,7 @@
         <columns>
           <TableColumn fx:id="fio" prefWidth="207.0" text="ФИО" />
           <TableColumn fx:id="data" minWidth="0.0" prefWidth="194.0" text="Дата рождения" />
-            <TableColumn fx:id="parents" prefWidth="198.0" text="Родители" />
+            <TableColumn fx:id="nameParents" prefWidth="198.0" text="Родители" />
         </columns>
       </TableView>
    </children>

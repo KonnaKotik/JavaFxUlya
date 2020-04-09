@@ -12,10 +12,10 @@
         <columns>
           <TableColumn fx:id="fio" prefWidth="189.0" text="ФИО" />
           <TableColumn fx:id="data" minWidth="0.0" prefWidth="180.0" text="Дата рождения" />
-            <TableColumn fx:id="parents" minWidth="1.0" prefWidth="229.0" text="Родители" />
+            <TableColumn fx:id="nameParents" minWidth="1.0" prefWidth="229.0" text="Родители" />
         </columns>
       </TableView>
-      <Button fx:id="noLoginLoadButton" layoutX="14.0" layoutY="21.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Загрузить" />
-      <Button fx:id="exitButton" layoutX="534.0" layoutY="21.0" mnemonicParsing="false" text="Назад" />
+      <Button fx:id="loadButton" onAction="#clickLoadButton" layoutX="14.0" layoutY="21.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Загрузить" />
+      <Button fx:id="exitButton" onAction="#clickExitButton" layoutX="534.0" layoutY="21.0" mnemonicParsing="false" text="Назад" />
    </children>
 </Pane>

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 public class EmployeeController extends AbstractController {
 
     private boolean isCreateInfo = false;
+    private boolean isNoCreateInfo = false;
     private boolean isCreateAdd = false;
 
 
@@ -32,19 +33,18 @@ public class EmployeeController extends AbstractController {
     @Autowired
     private ControllersConfig.ViewHolder addEmployeeView;
 
-    @Qualifier("MenuMenuView")
+    @Qualifier("noLoginInfoEmployeeView")
     @Autowired
-    private ControllersConfig.ViewHolder menuView;
+    private ControllersConfig.ViewHolder noLoginInfoView;
 
 
 
     @FXML
     private void clickInfoButton(ActionEvent event) throws Exception{
-        if(!isCreateInfo){
-            getNextNewStage(infoButton,infoView);
-            isCreateInfo = true;
+        if(!MainMenuController.isLogin){
+            isNoCreateInfo = isCreateStage(noLoginInfoView, isNoCreateInfo, infoButton);
         } else {
-            getNextStage(infoButton,infoView);
+            isCreateInfo = isCreateStage(infoView, isCreateInfo, infoButton);
         }
 
     }
@@ -62,7 +62,7 @@ public class EmployeeController extends AbstractController {
 
     @FXML
     private void clickMenuButton(ActionEvent event) throws Exception{
-        getNextStage(menuButton, menuView);
+        getMenuStage(menuButton);
     }
 
 }

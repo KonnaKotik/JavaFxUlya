@@ -32,15 +32,13 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Employee getEmployeeByFio(String fio) {
         Optional<Employee> employeeCandidate = employeeRepository.findByFio(fio);
-        if(employeeCandidate.isPresent()) {
-            return employeeCandidate.get();
-        }
-        return null;
+        return employeeCandidate.orElse(null);
     }
 
     @Override
     public List<EmployeeDto> getAllEmployees() {
-       return employeeMapper.convertModelsToDtos(employeeRepository.findAll());
+        List<Employee> employees = employeeRepository.findAll();
+       return employeeMapper.convertModelsToDtos(employees);
     }
 
     @Override

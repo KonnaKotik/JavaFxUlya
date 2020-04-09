@@ -87,6 +87,7 @@ public class MenuController extends AbstractController{
     }
     @FXML
     private  void clickExitButton(ActionEvent event) throws Exception{
+        MainMenuController.isLogin = false;
         getNextStage(exitButton,mainMenuView);
         }
 

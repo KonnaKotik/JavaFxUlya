@@ -27,7 +27,9 @@ public class ChildrenServiceImpl implements ChildrenService {
 
     @Override
     public List<ChildrenDto> getAllChildren() {
-        return childrenMapper.convertModelsToDtos(childrenRepository.findAll());
+        List<Children> childrenList = childrenRepository.findAll();
+        List<ChildrenDto> childrenDtos = childrenMapper.convertModelsToDtos(childrenList);
+        return childrenDtos;
     }
 
     @Override

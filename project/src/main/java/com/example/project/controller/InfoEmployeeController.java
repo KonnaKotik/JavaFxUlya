@@ -108,7 +108,7 @@ public class InfoEmployeeController extends AbstractController{
     private void clickLoadButton(ActionEvent event) {
         List<EmployeeDto> employees = employeeService.getAllEmployees();
         table.setItems(FXCollections.observableArrayList(employees));
-        loadButton.setDisable(true);
+        
 
     }
 

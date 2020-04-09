@@ -27,7 +27,7 @@ public class MainMenuController extends AbstractController {
     @Autowired
     private ControllersConfig.ViewHolder loginView;
 
-    @Qualifier("MenuMenuView")
+    @Qualifier("noLoginMenuMenuView")
     @Autowired
     private  ControllersConfig.ViewHolder noLoginView;
 
@@ -35,23 +35,13 @@ public class MainMenuController extends AbstractController {
 
     @FXML
     public void clickLogin(ActionEvent event) throws Exception {
-        if(!isCreateLogin){
-            getNextNewStage(loginButton, loginView);
-            isCreateLogin = true;
-        }else{
-            getNextStage(loginButton, loginView);
-        }
+        isCreateLogin = isCreateStage(loginView, isCreateLogin, loginButton);
 
     }
     @FXML
     public void clickNoLogin(ActionEvent event) throws Exception{
         isLogin = false;
-        if (!isCreateNoLogin) {
-            getNextNewStage(noLoginButton, noLoginView);
-            isCreateNoLogin = true;
-        }else {
-            getNextStage(noLoginButton, noLoginView);
-        }
+        isCreateNoLogin = isCreateStage(noLoginView, isCreateNoLogin, noLoginButton);
 
     }
 }

@@ -1,12 +1,11 @@
 package com.example.project.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Builder
@@ -34,10 +33,10 @@ public class Employee {
 
     private String status;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "parent_children", joinColumns = @JoinColumn(name = "employee_id"),
     inverseJoinColumns = @JoinColumn(name = "child_id"))
-    private List<Children> childrenList;
+    private List<Children> childrenList = new LinkedList<>();
 
 
     public Employee(String tubNum, String fio, String passport, String birthday, String cc, String inn, String phone, String education, String address, String addmission, String post) {
@@ -53,6 +52,29 @@ public class Employee {
         this.addmission = addmission;
         this.post = post;
         status = "Нанят";
+    }
+
+    @Override
+    public String toString() {
+        return "Employee(" +
+                "id=" + id +
+                ", tabNum=" + tabNum +
+                ",  fio=" + fio +
+                ", passport=" + passport +
+                ", birthday=" + birthday +
+                ", cc=" + cc +
+                ", inn=" + inn +
+                ", phone=" + phone +
+                ", education=" + education +
+                ", address=" + address +
+                ", addmission=" + addmission +
+                ", post=" + post +
+                ", status=" + status +
+                ", childrenList=" + childrenList.stream().map(Children::getFio).collect(Collectors.toList()) +
+                ")";
+
+
+
     }
 
 

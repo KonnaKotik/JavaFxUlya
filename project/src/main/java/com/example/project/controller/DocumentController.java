@@ -17,13 +17,10 @@ public class DocumentController extends AbstractController {
 
     @FXML
     private Button menuButton;
-    @Qualifier("MenuMenuView")
-    @Autowired
-    private ControllersConfig.ViewHolder menuView;
 
     @FXML
     private void clickMenuButton(ActionEvent event) throws Exception{
-        getNextStage(menuButton, menuView);
+       getMenuStage(menuButton);
     }
 
 }

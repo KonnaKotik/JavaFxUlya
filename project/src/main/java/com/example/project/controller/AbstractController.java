@@ -4,8 +4,18 @@ import com.example.project.ControllersConfig;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public abstract class AbstractController {
+
+    @Qualifier("MenuMenuView")
+    @Autowired
+    private ControllersConfig.ViewHolder menuView;
+
+    @Qualifier("noLoginMenuMenuView")
+    @Autowired
+    private  ControllersConfig.ViewHolder noLoginView;
 
     // метод создания/перехода нового окна (сцены)
     protected void getNextNewStage(Button button, ControllersConfig.ViewHolder viewName ) throws Exception {
@@ -32,5 +42,13 @@ public abstract class AbstractController {
           getNextStage(button, nameView);
       }
       return  isCreate;
+    }
+
+    protected void getMenuStage(Button button) {
+        if(!MainMenuController.isLogin) {
+            getNextStage(button, noLoginView);
+        } else {
+            getNextStage(button, menuView);
+        }
     }
 }

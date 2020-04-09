@@ -11,6 +11,6 @@ public class ChildrenDto {
 
     private String fio;
     private String data;
-    private String parents;
+    private String nameParents;
 
 }

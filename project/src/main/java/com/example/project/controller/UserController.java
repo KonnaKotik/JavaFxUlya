@@ -44,13 +44,11 @@ public class UserController extends AbstractController {
     private void  clickEnterButton(ActionEvent event) throws Exception{
         boolean result = userService.signIn(loginField.getText(), passwordField.getText());
         if(result) {
+            passwordField.setText(null);
+            loginField.setText(null);
             MainMenuController.isLogin = true;
-            if(!isCreateEnter) {
-                getNextNewStage(enterButton, menuView);
-                isCreateEnter = true;
-            } else {
-                getNextStage(enterButton, menuView);
-            }
+            isCreateEnter = isCreateStage(menuView, isCreateEnter, enterButton);
+
         }
     }
 
