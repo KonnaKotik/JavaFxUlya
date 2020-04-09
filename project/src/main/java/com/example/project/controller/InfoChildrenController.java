@@ -62,6 +62,10 @@ public class InfoChildrenController extends AbstractController {
    @Autowired
    private ControllersConfig.ViewHolder childrenView;
 
+   @Qualifier("noLoginChildrenView")
+   @Autowired
+   private ControllersConfig.ViewHolder noLoginChildrenView;
+
 
 
     public void initialize() {
@@ -90,6 +94,10 @@ public class InfoChildrenController extends AbstractController {
 
     @FXML
     private void clickExitButton (ActionEvent event) throws  Exception{
-        getNextStage(exitButton, childrenView);
+        if(MainMenuController.isLogin){
+            getNextNewStage(exitButton,childrenView);
+        }else{
+            getNextStage(exitButton,noLoginChildrenView);
+        }
     }
 }
