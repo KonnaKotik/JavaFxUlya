@@ -33,6 +33,10 @@ public class EmployeeController extends AbstractController {
     @Autowired
     private ControllersConfig.ViewHolder addEmployeeView;
 
+    @Qualifier("DeleteEmployeeView")
+    @Autowired
+    private ControllersConfig.ViewHolder deleteEmployeeView;
+
     @Qualifier("noLoginInfoEmployeeView")
     @Autowired
     private ControllersConfig.ViewHolder noLoginInfoView;
@@ -57,6 +61,17 @@ public class EmployeeController extends AbstractController {
         } else {
 
             getNextStage(addEmployeeButton, addEmployeeView);
+        }
+    }
+
+    @FXML
+    private void clickDeleteEmployeeButton(ActionEvent event) throws Exception{
+        if(!isCreateDelete){
+            getNextStage(deleteEmployeeButton, deleteEmployeeView);
+            isCreateDelete = true;
+        } else {
+
+            getNextStage(deleteEmployeeButton,deleteEmployeeView);
         }
     }
 

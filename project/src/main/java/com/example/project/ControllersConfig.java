@@ -15,6 +15,12 @@ import java.io.InputStream;
 @Configuration
 public class ControllersConfig {
 
+    @Bean(name="DeleteEmployeeView")
+    public ViewHolder getDeleteEmployeeView() throws IOException{
+        return loadView("fxml/deleteEmployee.fxml");
+    }
+
+
     @Bean(name="AddChildrenView")
     public ViewHolder getAddChildrenView() throws IOException{
         return  loadView("fxml/addChildren.fxml");
@@ -99,6 +105,11 @@ public class ControllersConfig {
     @Bean(name = "noLoginMenuMenuView")
     public ViewHolder getNoLoginMenuView() throws IOException {
         return loadView("fxml/noLoginMenuMenu.fxml");
+    }
+
+    @Bean
+    public DeleteEmployeeController getDeleteEmployeeController() throws IOException{
+        return (DeleteEmployeeController) getDeleteEmployeeView().getController();
     }
 
     @Bean
