@@ -27,6 +27,16 @@ public class UserController extends AbstractController {
     @Autowired
     private UserService userService;
 
+    //"Авторизация прошла успешно"
+    @Qualifier("EnterView")
+    @Autowired
+    private ControllersConfig.ViewHolder enterView;
+
+    //"Пароль введен не правильно"
+    @Qualifier("errorView")
+    @Autowired
+    private ControllersConfig.ViewHolder errorView;
+
     @Qualifier("MenuMenuView")
     @Autowired
     private ControllersConfig.ViewHolder menuView;

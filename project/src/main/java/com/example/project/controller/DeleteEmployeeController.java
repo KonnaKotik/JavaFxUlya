@@ -18,6 +18,7 @@ import javax.xml.soap.Text;
 @Controller
 public class DeleteEmployeeController extends AbstractController {
 
+
     private boolean isCreateDeleteWindow2 = false;
     private boolean isCreateDeleteMessage = false;
 
@@ -33,9 +34,13 @@ public class DeleteEmployeeController extends AbstractController {
     @FXML
     private Button yesButton;
 
+    @FXML
+    private Button noButton;
+
 
     @FXML
     private TextField fioField;
+
 
     @Qualifier("EmployeeView")
     @Autowired
@@ -79,6 +84,8 @@ public class DeleteEmployeeController extends AbstractController {
 
     @FXML
     private void clickNoButton(ActionEvent event) {
+        getNextStage(noButton,employeeView);
+
 
     }
 

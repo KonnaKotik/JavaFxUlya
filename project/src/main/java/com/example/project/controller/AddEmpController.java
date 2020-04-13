@@ -4,6 +4,7 @@ package com.example.project.controller;
 import com.example.project.ControllersConfig;
 import com.example.project.model.Employee;
 import com.example.project.servise.EmployeeService;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -15,6 +16,8 @@ import javax.xml.soap.Text;
 
 @Controller
 public class AddEmpController extends AbstractController {
+
+    private boolean isCreateAddEmployeeMassage = false;
 
     @FXML
     private Button addChildrenButton;
@@ -56,12 +59,23 @@ public class AddEmpController extends AbstractController {
     @FXML
     private Button exitButton;
 
+
+    @Qualifier("AddEmployeeMassageView")
+    @Autowired
+    private ControllersConfig.ViewHolder addEmployeeMassageView;
+
     @Qualifier("EmployeeView")
     @Autowired
     private ControllersConfig.ViewHolder employeeView;
 
     @Autowired
     private EmployeeService employeeService;
+
+    // переход на страницу "сотрудник добавлен"
+    @FXML
+    private void clickDeleteButton(ActionEvent event) throws Exception {
+
+
 
     @FXML
     private void addNewEmployee() {
