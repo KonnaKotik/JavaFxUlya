@@ -7,7 +7,7 @@
 
 <Pane fx:controller="com.example.project.controller.AddEmpController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
-      <Button fx:id="exitButton" onAction="#ckickExitButton" layoutX="534.0" layoutY="14.0" mnemonicParsing="false" text="Назад" textFill="#dd0d0d" />
+      <Button fx:id="exitButton" onAction="#clickExitButton" layoutX="534.0" layoutY="14.0" mnemonicParsing="false" text="Назад" textFill="#dd0d0d" />
       <TextField fx:id="tabNumButton" layoutX="70.0" layoutY="50.0" prefHeight="17.0" prefWidth="105.0" />
       <Button fx:id="addChildrenButton" layoutX="241.0" layoutY="351.0" mnemonicParsing="false" onAction="#addNewEmployee" text="Добавить сотрудника" />
       <TextField fx:id="passButton" layoutX="70.0" layoutY="175.0" prefHeight="17.0" prefWidth="105.0" />

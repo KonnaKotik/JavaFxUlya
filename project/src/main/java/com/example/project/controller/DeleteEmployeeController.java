@@ -8,6 +8,7 @@ import com.example.project.servise.EmployeeService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -17,6 +18,8 @@ import javax.xml.soap.Text;
 
 @Controller
 public class DeleteEmployeeController extends AbstractController {
+
+    private static String fio;
 
 
     private boolean isCreateDeleteWindow2 = false;
@@ -36,6 +39,9 @@ public class DeleteEmployeeController extends AbstractController {
 
     @FXML
     private Button noButton;
+
+    @FXML
+    private Label errorMessage;
 
 
     @FXML
@@ -57,27 +63,32 @@ public class DeleteEmployeeController extends AbstractController {
 
     @FXML
     private void clickExitButton(ActionEvent event) {
+        fioField.setText(null);
+        errorMessage.setText(null);
         getNextStage(exitButton, employeeView);
     }
 
 
     @FXML
     private void clickDeleteButton(ActionEvent event) throws Exception {
-        if(fioField.getText() == null) {
-            int i = 0;
+        fio = fioField.getText();
+        if( fio== null) {
+           errorMessage.setText("Вы не ввели ФИО сотрудника");
         } else {
-            Employee employee = employeeService.getEmployeeByFio(fioField.getText());
+            Employee employee = employeeService.getEmployeeByFio(fio);
             if(employee != null) {
                 isCreateDeleteWindow2 = isCreateStage(deleteEmployee2View, isCreateDeleteWindow2, deleteButton);
+                fioField.setText(null);
+                errorMessage.setText(null);
             } else {
-                int i = 0;
+                errorMessage.setText("Сотрудник " + fio + " не найден" );
             }
         }
     }
 
     @FXML
     private void clickYesButton(ActionEvent event) throws Exception {
-        employeeService.deleteEmployee(fioField.getText());
+        employeeService.deleteEmployee(fio);
         fioField.setText(null);
         isCreateDeleteMessage = isCreateStage(deleteEmployeeMessageView, isCreateDeleteMessage, yesButton);
     }

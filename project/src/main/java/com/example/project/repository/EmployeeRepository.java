@@ -21,6 +21,8 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
     void deleteByFio(String fio);
 
+    void removeByFio(String fio);
+
     //
   //  List<Employee> findEmployeesByChildrenList(List<Children> childrenList);
 }

@@ -146,13 +146,13 @@ public class ControllersConfig {
     //"Авторизация прошла успешно"
     @Bean
     public UserController getEnterController() throws IOException{
-        return (UserController) getEnterView().getController()
+        return (UserController) getEnterView().getController();
     }
 
     //"Пароль введен не правильно"
     @Bean
     public UserController getErrorController() throws IOException{
-        return (UserController) getErrorView().getController()
+        return (UserController) getErrorView().getController();
     }
 
 

@@ -4,6 +4,7 @@ import com.example.project.mapper.EmployeeMapper;
 import com.example.project.model.Children;
 import com.example.project.model.Employee;
 import com.example.project.model.dto.EmployeeDto;
+import com.example.project.repository.ChildrenRepository;
 import com.example.project.repository.EmployeeRepository;
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     private final EmployeeRepository employeeRepository;
 
     private final EmployeeMapper employeeMapper;
+
+    @Autowired
+    private ChildrenRepository childrenRepository;
 
     public EmployeeServiceImpl(EmployeeRepository employeeRepository, EmployeeMapper employeeMapper) {
         this.employeeRepository = employeeRepository;
@@ -49,6 +53,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public void deleteEmployee(String fio) {
+        Employee employee = getEmployeeByFio(fio);
+        List<Children> children = employee.getChildrenList();
+        childrenRepository.deleteAll(children);
         employeeRepository.deleteByFio(fio);
     }
 
