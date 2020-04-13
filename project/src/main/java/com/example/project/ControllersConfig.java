@@ -107,6 +107,26 @@ public class ControllersConfig {
         return loadView("fxml/noLoginMenuMenu.fxml");
     }
 
+    @Bean(name = "deleteEmployee2View")
+    public ViewHolder getDeleteEmployee2View() throws IOException {
+        return loadView("fxml/deleteEmployee2.fxml");
+    }
+
+    @Bean(name = "deleteEmployeeMessageView")
+    public ViewHolder getDeleteEmployeeMessageView() throws IOException {
+        return loadView("fxml/deleteEmployee3.fxml");
+    }
+
+    @Bean
+    public DeleteEmployeeController getDeleteEmployeeMessageController() throws IOException {
+        return (DeleteEmployeeController) getDeleteEmployeeMessageView().getController();
+    }
+
+    @Bean
+    public DeleteEmployeeController getDeleteEmployee2Controller() throws IOException {
+        return (DeleteEmployeeController) getDeleteEmployee2View().getController();
+    }
+
     @Bean
     public DeleteEmployeeController getDeleteEmployeeController() throws IOException{
         return (DeleteEmployeeController) getDeleteEmployeeView().getController();

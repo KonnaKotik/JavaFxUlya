@@ -44,6 +44,7 @@ public abstract class AbstractController {
       return  isCreate;
     }
 
+
     protected void getMenuStage(Button button) {
         if(!MainMenuController.isLogin) {
             getNextStage(button, noLoginView);

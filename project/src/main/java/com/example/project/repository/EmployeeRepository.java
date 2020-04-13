@@ -19,6 +19,8 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     //находим сех сотрудников из бд
     List<Employee> findAll();
 
+    void deleteByFio(String fio);
+
     //
   //  List<Employee> findEmployeesByChildrenList(List<Children> childrenList);
 }

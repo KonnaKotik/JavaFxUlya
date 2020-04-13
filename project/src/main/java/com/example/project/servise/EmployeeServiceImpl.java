@@ -47,5 +47,10 @@ public class EmployeeServiceImpl implements EmployeeService {
                // employeeRepository.findEmployeesByChildrenList(childrenList);
     }
 
+    @Override
+    public void deleteEmployee(String fio) {
+        employeeRepository.deleteByFio(fio);
+    }
+
 
 }

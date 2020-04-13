@@ -16,4 +16,7 @@ public interface EmployeeService {
 
     List<Employee> getAllByChildren(List<Children> childrenList);
 
+
+    void deleteEmployee(String fio);
+
 }

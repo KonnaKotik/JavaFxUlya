@@ -14,6 +14,7 @@ public class EmployeeController extends AbstractController {
     private boolean isCreateInfo = false;
     private boolean isNoCreateInfo = false;
     private boolean isCreateAdd = false;
+    private boolean isCreateDelete = false;
 
 
     @FXML
@@ -24,6 +25,9 @@ public class EmployeeController extends AbstractController {
 
     @FXML
     private Button addEmployeeButton;
+
+    @FXML
+    private Button deleteEmployeeButton;
 
     @Qualifier("InfoView")
     @Autowired
@@ -66,13 +70,9 @@ public class EmployeeController extends AbstractController {
 
     @FXML
     private void clickDeleteEmployeeButton(ActionEvent event) throws Exception{
-        if(!isCreateDelete){
-            getNextStage(deleteEmployeeButton, deleteEmployeeView);
-            isCreateDelete = true;
-        } else {
-
-            getNextStage(deleteEmployeeButton,deleteEmployeeView);
-        }
+       if(MainMenuController.isLogin) {
+           isCreateDelete = isCreateStage(deleteEmployeeView, isCreateDelete, deleteEmployeeButton );
+       }
     }
 
     @FXML
