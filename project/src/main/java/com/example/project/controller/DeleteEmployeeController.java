@@ -23,11 +23,13 @@ public class DeleteEmployeeController extends AbstractController {
     @FXML
     private Button exitButton;
 
-    @FXML
-    private TextField tubNumField;
 
     @FXML
     private TextField fioField;
+
+    @Qualifier("EmployeeView")
+    @Autowired
+    private ControllersConfig.ViewHolder employeeView;
 
 
     @FXML
