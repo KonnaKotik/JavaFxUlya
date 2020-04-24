@@ -18,6 +18,8 @@ public class DocumentController extends AbstractController {
     @FXML
     private Button menuButton;
 
+
+
     @FXML
     private void clickMenuButton(ActionEvent event) throws Exception{
        getMenuStage(menuButton);
