@@ -3,10 +3,9 @@ package com.example.project.servise;
 import com.example.project.mapper.EmployeeMapper;
 import com.example.project.model.Children;
 import com.example.project.model.Employee;
-import com.example.project.model.dto.EmployeeDto;
+import com.example.project.dto.EmployeeDto;
 import com.example.project.repository.ChildrenRepository;
 import com.example.project.repository.EmployeeRepository;
-import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -54,9 +53,25 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public void deleteEmployee(String fio) {
         Employee employee = getEmployeeByFio(fio);
-        List<Children> children = employee.getChildrenList();
-        childrenRepository.deleteAll(children);
-        employeeRepository.deleteByFio(fio);
+        List<Children> children =  customParentsChildrenEmployee(employee.getChildrenList());
+        employee.setChildrenList(null);
+        employeeRepository.save(employee);
+        deleteChuldrenEmpl(children);
+        employeeRepository.delete(employee);
+    }
+
+    private List<Children> customParentsChildrenEmployee(List<Children> children) {
+        for (Children child: children) {
+            child.setParents(null);
+            childrenRepository.save(child);
+        }
+        return children;
+    }
+
+    private void deleteChuldrenEmpl(List<Children> children) {
+        for (Children child: children) {
+            childrenRepository.delete(child);
+        }
     }
 
 

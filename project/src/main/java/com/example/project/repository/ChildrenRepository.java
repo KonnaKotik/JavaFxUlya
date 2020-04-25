@@ -13,6 +13,9 @@ public interface ChildrenRepository extends JpaRepository<Children, Long> {
 
     List<Children> findAll();
 
+    void removeByFio(String fio);
+
+
 
 
 

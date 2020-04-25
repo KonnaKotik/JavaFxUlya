@@ -14,6 +14,6 @@
       <Label layoutX="248.0" layoutY="146.0" prefHeight="25.0" prefWidth="105.0" text="   Дата рождения" />
       <Label layoutX="274.0" layoutY="246.0" text="Родители" />
       <Button fx:id="addChildrenButton" layoutX="242.0" layoutY="351.0" mnemonicParsing="false" onAction="#addChildren" text="Добавить ребенка" />
-      <TextField fx:id="fioButton1" layoutX="189.0" layoutY="286.0" prefHeight="25.0" prefWidth="223.0" />
+      <TextField fx:id="parentsButton" layoutX="189.0" layoutY="286.0" prefHeight="25.0" prefWidth="223.0" />
    </children>
 </Pane>

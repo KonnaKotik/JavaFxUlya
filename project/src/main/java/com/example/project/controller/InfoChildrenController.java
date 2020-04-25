@@ -2,9 +2,8 @@ package com.example.project.controller;
 
 import com.example.project.ControllersConfig;
 import com.example.project.mapper.ChildrenMapper;
-import com.example.project.model.Children;
 import com.example.project.model.Employee;
-import com.example.project.model.dto.ChildrenDto;
+import com.example.project.dto.ChildrenDto;
 import com.example.project.servise.ChildrenService;
 import com.example.project.servise.EmployeeService;
 import javafx.collections.FXCollections;
@@ -18,7 +17,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
-import java.util.LinkedList;
 import java.util.List;
 
 @Controller

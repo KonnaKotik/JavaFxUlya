@@ -1,6 +1,8 @@
 package com.example.project;
 
 import com.example.project.controller.*;
+import com.example.project.controller.document.PrikazController;
+import com.example.project.controller.document.RecenzentController;
 import com.sun.org.apache.bcel.internal.generic.ARETURN;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -134,6 +136,26 @@ public class ControllersConfig {
     public ViewHolder getDeleteEmployeeMessageView() throws IOException {
         return loadView("fxml/deleteEmployee3.fxml");
 
+    }
+
+    @Bean(name = "prikazView")
+    public ViewHolder getPrikazView() throws IOException {
+        return loadView("fxml/prikaz.fxml");
+    }
+
+    @Bean(name = "recenzentView")
+    public ViewHolder getRecenzentView() throws IOException {
+        return loadView("fxml/recenzent.fxml");
+    }
+
+    @Bean
+    public RecenzentController getRecenzentController() throws IOException {
+        return (RecenzentController) getRecenzentView().getController();
+    }
+
+    @Bean
+    public PrikazController getPrikazController() throws IOException {
+        return (PrikazController) getPrikazView().getController();
     }
 
 

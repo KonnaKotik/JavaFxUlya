@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.controller.MenuController">
+<VBox prefHeight="600.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.controller.MenuController">
   <children>
     <MenuBar layoutX="4.0" layoutY="7.0" VBox.vgrow="NEVER">
       <menus>
@@ -55,10 +55,10 @@
     </MenuBar>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-             <Button fx:id="exitButton" onAction="#clickExitButton" layoutX="534.0" layoutY="14.0" mnemonicParsing="false" text="Выйти" textFill="#dd0d0d" />
-            <Button fx:id="employeeButton" layoutX="278.0" layoutY="110.0" mnemonicParsing="false" onAction="#click" prefHeight="33.0" prefWidth="116.0" text="Сотрудники" />
+             <Button alignment="TOP_RIGHT" fx:id="exitButton" onAction="#clickExitButton" layoutX="534.0" layoutY="14.0" mnemonicParsing="false" text="Выйти" textFill="#dd0d0d" />
+            <Button alignment="CENTER" fx:id="employeeButton" layoutX="278.0" layoutY="110.0" mnemonicParsing="false" onAction="#click" prefHeight="33.0" prefWidth="116.0" text="Сотрудники" />
             <Button fx:id="childrenButton" alignment="CENTER" layoutX="278.0" layoutY="210.0" mnemonicParsing="false" onAction="#clickChildren" text="Дети сотрудников" />
-            <Button fx:id="documentButton" layoutX="278.0" layoutY="160.0" mnemonicParsing="false" onAction="#clickDocument" prefHeight="25.0" prefWidth="116.0" text="Документы" />
+            <Button alignment="CENTER" contentDisplay="CENTER" fx:id="documentButton" layoutX="278.0" layoutY="160.0" mnemonicParsing="false" onAction="#clickDocument" prefHeight="25.0" prefWidth="116.0" text="Документы" />
       </children>
     </AnchorPane>
   </children>

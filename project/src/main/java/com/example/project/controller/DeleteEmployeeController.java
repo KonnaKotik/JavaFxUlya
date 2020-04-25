@@ -47,6 +47,9 @@ public class DeleteEmployeeController extends AbstractController {
     @FXML
     private TextField fioField;
 
+    @FXML
+    private Button okButton;
+
 
     @Qualifier("EmployeeView")
     @Autowired
@@ -59,6 +62,10 @@ public class DeleteEmployeeController extends AbstractController {
     @Qualifier("deleteEmployeeMessageView")
     @Autowired
     private ControllersConfig.ViewHolder deleteEmployeeMessageView;
+
+    @Qualifier("DeleteEmployeeView")
+    @Autowired
+    private ControllersConfig.ViewHolder deleteEmployeeView;
 
 
     @FXML
@@ -89,7 +96,7 @@ public class DeleteEmployeeController extends AbstractController {
     @FXML
     private void clickYesButton(ActionEvent event) throws Exception {
         employeeService.deleteEmployee(fio);
-        fioField.setText(null);
+       // fioField.setText(null);
         isCreateDeleteMessage = isCreateStage(deleteEmployeeMessageView, isCreateDeleteMessage, yesButton);
     }
 
@@ -97,7 +104,11 @@ public class DeleteEmployeeController extends AbstractController {
     private void clickNoButton(ActionEvent event) {
         getNextStage(noButton,employeeView);
 
+    }
 
+    @FXML
+    private void clickOkButton(ActionEvent event) {
+        getNextStage(okButton, deleteEmployeeView);
     }
 
 }

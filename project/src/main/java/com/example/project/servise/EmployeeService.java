@@ -2,7 +2,7 @@ package com.example.project.servise;
 
 import com.example.project.model.Children;
 import com.example.project.model.Employee;
-import com.example.project.model.dto.EmployeeDto;
+import com.example.project.dto.EmployeeDto;
 
 import java.util.List;
 

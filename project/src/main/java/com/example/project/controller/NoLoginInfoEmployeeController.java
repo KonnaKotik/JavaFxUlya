@@ -1,8 +1,7 @@
 package com.example.project.controller;
 
 import com.example.project.ControllersConfig;
-import com.example.project.mapper.EmployeeMapper;
-import com.example.project.model.dto.EmployeeDto;
+import com.example.project.dto.EmployeeDto;
 import com.example.project.servise.EmployeeService;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;

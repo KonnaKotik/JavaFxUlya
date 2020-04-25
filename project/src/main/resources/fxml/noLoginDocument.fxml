@@ -6,7 +6,7 @@
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.controller.DocumentController">
    <children>
       <Button fx:id="menuButton" layoutX="534.0" layoutY="22.0" mnemonicParsing="false" onAction="#clickMenuButton" text="Назад" />
-      <Button fx:id="recenzButton1" layoutX="53.0" layoutY="79.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" text="Рецензенты ВКР" />
+      <Button fx:id="recenzButton" onAction="#clickRecenzentButton" layoutX="53.0" layoutY="79.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" text="Рецензенты ВКР" />
       <Button fx:id="sostavButton" layoutX="53.0" layoutY="200.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" text="Состав ГЭК" />
       <Button fx:id="vkrButton" layoutX="384.0" layoutY="79.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" text="Темы ВКР" />
       <Button fx:id="srokiButton" layoutX="384.0" layoutY="200.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" text="Сроки защиты ВКР" />

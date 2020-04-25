@@ -6,16 +6,17 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:controller="com.example.project.controller.document.PrikazController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Button fx:id="exitButton" layoutX="777.0" layoutY="14.0" mnemonicParsing="false" text="Назад" />
-      <TableView layoutX="1.0" layoutY="50.0" prefHeight="600.0" prefWidth="840.0">
+       <Button fx:id="loadButton" onAction="#clickLoadButton" layoutX="777.0" layoutY="64.0" mnemonicParsing="false" text="Загрузить" />
+      <TableView fx:id="table" layoutX="1.0" layoutY="50.0" prefHeight="600.0" prefWidth="840.0">
         <columns>
           <TableColumn fx:id="number" prefWidth="55.0" text="№" />
           <TableColumn fx:id="data" prefWidth="119.0" text="Дата регистрации" />
             <TableColumn fx:id="fio" prefWidth="186.0" text="ФИО работника" />
             <TableColumn fx:id="post" prefWidth="168.0" text="Должность" />
-            <TableColumn fx:id="prikaz" minWidth="0.0" prefWidth="180.0" text="Содержание приказа" />
+            <TableColumn fx:id="description" minWidth="0.0" prefWidth="180.0" text="Содержание приказа" />
         </columns>
       </TableView>
       <Label layoutX="331.0" layoutY="14.0" prefHeight="25.0" prefWidth="178.0" text="Журнал регистрации приказов" />

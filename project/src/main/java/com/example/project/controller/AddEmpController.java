@@ -7,6 +7,7 @@ import com.example.project.servise.EmployeeService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -18,6 +19,9 @@ import javax.xml.soap.Text;
 public class AddEmpController extends AbstractController {
 
     private boolean isCreateAddEmployeeMassage = false;
+
+    @FXML
+    private Label message;
 
     @FXML
     private Button addChildrenButton;
@@ -81,11 +85,13 @@ public class AddEmpController extends AbstractController {
     private void addNewEmployee(ActionEvent event) {
         Employee newEmployee = new Employee(tabNumButton.getText(), fioButton.getText(), passButton.getText(), birthButton.getText(), ccButton.getText(), innButton.getText(), numButton.getText(), educButton.getText(), addressButton.getText(), dateButton.getText(), addmiButton.getText());
         employeeService.addNewEmployee(newEmployee); //создвем сотрудника,который включает в себя: табельный номер, фио, паспорт, день рождения,страховое свидетельство, инн, номер телефона ,образование, адрес и тд.
+        message.setText("Сотрудник добавлен");
 
     }
 
     @FXML
     private void clickExitButton(ActionEvent event) {
+        message.setText(null);
         getNextStage(exitButton, employeeView);
     }
 

@@ -1,7 +1,7 @@
 package com.example.project.mapper;
 
 import com.example.project.model.Employee;
-import com.example.project.model.dto.EmployeeDto;
+import com.example.project.dto.EmployeeDto;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

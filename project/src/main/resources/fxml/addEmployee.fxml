@@ -7,6 +7,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.controller.AddEmpController">
    <children>
+      <Label fx:id="message" layoutX="226.0" layoutY="80.0" textFill="#66ff00" />
       <Button fx:id="exitButton" layoutX="534.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickExitButton" text="Назад" textFill="#dd0d0d" />
       <TextField fx:id="tabNumButton" layoutX="48.0" layoutY="38.0" prefHeight="25.0" prefWidth="149.0" />
       <Button fx:id="addChildrenButton" layoutX="423.0" layoutY="364.0" mnemonicParsing="false" onAction="#addNewEmployee" text="Добавить сотрудника" />

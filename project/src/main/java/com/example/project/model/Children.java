@@ -23,7 +23,7 @@ public class Children {
     private String fio;
     private String data;
 
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "childrenList")
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "childrenList")
     private List<Employee> parents = new LinkedList<>();
 
 
