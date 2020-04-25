@@ -11,5 +11,6 @@
       <Button fx:id="sostavButton" layoutX="63.0" layoutY="130.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" text="Состав ГЭК" />
       <Button fx:id="recenzButton1" layoutX="63.0" layoutY="57.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" text="Рецензенты ВКР" />
       <Button fx:id="srokiButton" layoutX="63.0" layoutY="273.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" text="Сроки защиты ВКР" />
+      <Button fx:id="prikazButton" layoutX="273.0" layoutY="130.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="261.0" text="Журнал регистрации приказов" textAlignment="CENTER" />
    </children>
 </Pane>

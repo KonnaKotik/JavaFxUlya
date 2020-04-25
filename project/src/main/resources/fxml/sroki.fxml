@@ -6,23 +6,22 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.Pane?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button fx:id="exitButton" layoutX="541.0" layoutY="14.0" mnemonicParsing="false" text="Назад" />
-      <TableView layoutY="51.0" prefHeight="388.0" prefWidth="640.0">
+      <Button fx:id="exitButton" layoutX="777.0" layoutY="14.0" mnemonicParsing="false" text="Назад" />
+      <TableView layoutY="51.0" prefHeight="600.0" prefWidth="840.0">
         <columns>
-          <TableColumn prefWidth="121.0" text="Институт(факультет)" />
-          <TableColumn prefWidth="91.0" text="№ группы" />
+          <TableColumn fx:id="institute" prefWidth="112.0" text="Институт" />
+          <TableColumn fx:id="numberGroup" prefWidth="100.0" text="№ группы" />
             <TableColumn minWidth="0.0" prefWidth="0.0" text="Column X" />
-            <TableColumn prefWidth="54.0" text="Направление" />
-            <TableColumn prefWidth="78.0" text="Дата защиты" />
-            <TableColumn prefWidth="78.0" text="Начало защиты" />
-            <TableColumn prefWidth="76.0" text="№ аудитории" />
-            <TableColumn prefWidth="109.0" text="Форма обучения" />
-            <TableColumn prefWidth="75.0" />
+            <TableColumn fx:id="napravlenie" prefWidth="115.0" text="Направление" />
+            <TableColumn fx:id="data" prefWidth="96.0" text="Дата защиты" />
+            <TableColumn fx:id="start" prefWidth="116.0" text="Начало защиты" />
+            <TableColumn fx:id="numberAudit" prefWidth="105.0" text="№ аудитории" />
+            <TableColumn fx:id="formaOb" prefWidth="110.0" text="Форма обучения" />
+            <TableColumn prefWidth="85.0" />
         </columns>
       </TableView>
-      <Label layoutX="214.0" layoutY="18.0" prefHeight="17.0" prefWidth="173.0" text="Сроки защиты ВКР магистров" />
+      <Label layoutX="320.0" layoutY="18.0" prefHeight="17.0" prefWidth="173.0" text="Сроки защиты ВКР магистров" />
    </children>
 </Pane>

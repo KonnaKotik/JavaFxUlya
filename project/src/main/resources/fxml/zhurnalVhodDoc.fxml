@@ -6,21 +6,20 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.Pane?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TableView layoutX="-2.0" layoutY="39.0" prefHeight="362.0" prefWidth="606.0">
+      <TableView layoutX="-2.0" layoutY="39.0" prefHeight="600.0" prefWidth="850.0">
         <columns>
-          <TableColumn prefWidth="37.0" text="№" />
-          <TableColumn prefWidth="74.0" text="Дата" />
-            <TableColumn prefWidth="114.0" text="Тип документа" />
-            <TableColumn prefWidth="99.0" text="Содержание" />
-            <TableColumn prefWidth="114.0" text="Код направления" />
-            <TableColumn prefWidth="94.0" text="Исполнитель" />
-            <TableColumn prefWidth="75.0" />
+          <TableColumn fx:id="number" prefWidth="37.0" text="№" />
+          <TableColumn fx:id="data" prefWidth="74.0" text="Дата" />
+            <TableColumn fx:id="tipDoc" prefWidth="127.0" text="Тип документа" />
+            <TableColumn fx:id="soderzhanie" prefWidth="153.0" text="Содержание" />
+            <TableColumn fx:id="kod" prefWidth="165.0" text="Код направления" />
+            <TableColumn fx:id="post" prefWidth="137.0" text="Исполнитель" />
+            <TableColumn minWidth="0.0" prefWidth="143.0" />
         </columns>
       </TableView>
-      <Button fx:id="exitButton" layoutX="548.0" layoutY="2.0" mnemonicParsing="false" text="Назад" />
-      <Label layoutX="176.0" layoutY="-3.0" prefHeight="35.0" prefWidth="248.0" text="Журнал регистрации входящих документов" />
+      <Button fx:id="exitButton" layoutX="791.0" layoutY="7.0" mnemonicParsing="false" text="Назад" />
+      <Label layoutX="282.0" layoutY="2.0" prefHeight="35.0" prefWidth="248.0" text="Журнал регистрации входящих документов" />
    </children>
 </Pane>

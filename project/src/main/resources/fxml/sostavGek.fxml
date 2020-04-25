@@ -6,23 +6,22 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.Pane?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TableView layoutY="47.0" prefHeight="353.0" prefWidth="600.0">
+      <TableView layoutY="47.0" prefHeight="600.0" prefWidth="840.0">
         <columns>
-          <TableColumn prefWidth="31.0" text="Год" />
-          <TableColumn prefWidth="72.0" text="Направление" />
-            <TableColumn prefWidth="63.0" text="Профиль" />
-            <TableColumn prefWidth="52.0" text=" Председатель ГЭК" />
-            <TableColumn prefWidth="57.0" text="Зам. председателя " />
-            <TableColumn prefWidth="138.0" text="Члены комиссии" />
-            <TableColumn prefWidth="75.0" text="Форма обучения" />
-            <TableColumn prefWidth="75.0" text="Секретарь ГЭК" />
-            <TableColumn prefWidth="75.0" />
+          <TableColumn fx:id="year" prefWidth="31.0" text="Год" />
+          <TableColumn fx:id="napravlenie" prefWidth="107.0" text="Направление" />
+            <TableColumn fx:id="profil" text="Профиль" />
+            <TableColumn fx:id="pred" prefWidth="119.0" text=" Председатель ГЭК" />
+            <TableColumn fx:id="zam" prefWidth="118.0" text="Зам. председателя " />
+            <TableColumn fx:id="komissia" prefWidth="117.0" text="Члены комиссии" />
+            <TableColumn fx:id="forma" prefWidth="109.0" text="Форма обучения" />
+            <TableColumn fx:id="sekretar" prefWidth="91.0" text="Секретарь ГЭК" />
+            <TableColumn prefWidth="65.0" />
         </columns>
       </TableView>
-      <Button fx:id="exitButton" layoutX="548.0" layoutY="14.0" mnemonicParsing="false" text="Назад" />
-      <Label layoutX="223.0" layoutY="6.0" prefHeight="41.0" prefWidth="154.0" text="Состав ГЭК для магистров" />
+      <Button fx:id="exitButton" layoutX="777.0" layoutY="14.0" mnemonicParsing="false" text="Назад" />
+      <Label layoutX="343.0" layoutY="6.0" prefHeight="41.0" prefWidth="154.0" text="Состав ГЭК для магистров" />
    </children>
 </Pane>
