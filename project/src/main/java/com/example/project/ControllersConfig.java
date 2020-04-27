@@ -1,8 +1,7 @@
 package com.example.project;
 
 import com.example.project.controller.*;
-import com.example.project.controller.document.PrikazController;
-import com.example.project.controller.document.RecenzentController;
+import com.example.project.controller.document.*;
 import com.sun.org.apache.bcel.internal.generic.ARETURN;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -146,6 +145,47 @@ public class ControllersConfig {
     @Bean(name = "recenzentView")
     public ViewHolder getRecenzentView() throws IOException {
         return loadView("fxml/recenzent.fxml");
+    }
+
+    @Bean(name = "sostavGekView")
+    public  ViewHolder getSostavGekView() throws IOException{
+        return  loadView("fxml/sostavGek.fxml");
+    }
+
+    @Bean(name = "srokiView")
+    public ViewHolder getSrokiView() throws IOException{
+        return  loadView("fxml/sroki.fxml");
+    }
+
+    @Bean(name = "vkrView")
+    public ViewHolder getVkrView() throws IOException{
+        return loadView("fxml/vkr.fxml");
+    }
+
+    @Bean(name = "zhurnalVhodDocView")
+    public ViewHolder getZhurnalVhodDocView() throws IOException{
+        return loadView("fxml/zhurnalVhodDoc.fxml");
+    }
+
+
+    @Bean
+    public SostavGekController getSostavGekController() throws IOException{
+        return (SostavGekController) getSostavGekView().getController();
+    }
+
+    @Bean
+    public SrokiController getSrokiController() throws IOException{
+        return (SrokiController) getSrokiView().getController();
+    }
+
+    @Bean
+    public VkrController getVkrController() throws IOException{
+        return (VkrController) getVkrView().getController();
+    }
+
+    @Bean
+    public ZhurnalVhodDocController getZhurnalVhodDocController() throws IOException{
+        return (ZhurnalVhodDocController) getZhurnalVhodDocView().getController();
     }
 
     @Bean

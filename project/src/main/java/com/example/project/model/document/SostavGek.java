@@ -1,5 +1,6 @@
 package com.example.project.model.document;
 
+import com.example.project.model.Children;
 import com.example.project.model.Employee;
 import lombok.*;
 
@@ -14,19 +15,27 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "finish_recenzent")
-public class Recenzent {
+@Table(name = "finish_sostavGek")
 
+public class SostavGek {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String number;
-
-    private String post;
-
     private String year;
 
-    private String fio;
+    private String napravlenie;
 
+    private String profil;
+
+    private String pred;
+
+    private String zam;
+
+    private String komissia;
+
+    private String forma;
+
+    private String sekretar;
 }
+

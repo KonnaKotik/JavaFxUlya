@@ -6,9 +6,9 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:controller="com.example.project.controller.document.SrokiController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button fx:id="exitButton" layoutX="777.0" layoutY="14.0" mnemonicParsing="false" text="Назад" />
+      <Button fx:id="exitButton" onAction="#clickMenuButton" layoutX="777.0" layoutY="14.0" mnemonicParsing="false" text="Назад" />
       <TableView layoutY="51.0" prefHeight="600.0" prefWidth="840.0">
         <columns>
           <TableColumn fx:id="institute" prefWidth="112.0" text="Институт" />
@@ -23,5 +23,6 @@
         </columns>
       </TableView>
       <Label layoutX="320.0" layoutY="18.0" prefHeight="17.0" prefWidth="173.0" text="Сроки защиты ВКР магистров" />
+      <Button fx:id="loadButton" onAction="#clickLoadButton" layoutX="662.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="87.0" text="Загрузить" />
    </children>
 </Pane>

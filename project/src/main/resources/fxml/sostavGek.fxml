@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:controller="com.example.project.controller.document.SostavGekController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <TableView layoutY="47.0" prefHeight="600.0" prefWidth="840.0">
         <columns>
@@ -21,7 +21,8 @@
             <TableColumn prefWidth="65.0" />
         </columns>
       </TableView>
-      <Button fx:id="exitButton" layoutX="777.0" layoutY="14.0" mnemonicParsing="false" text="Назад" />
+      <Button fx:id="exitButton" onAction="#clickMenuButton" layoutX="777.0" layoutY="14.0" mnemonicParsing="false" text="Назад" />
       <Label layoutX="343.0" layoutY="6.0" prefHeight="41.0" prefWidth="154.0" text="Состав ГЭК для магистров" />
+      <Button fx:id="loadButton" onAction="#clickLoadButton" layoutX="672.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" text="Загрузить" />
    </children>
 </Pane>

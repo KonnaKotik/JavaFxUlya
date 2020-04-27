@@ -6,10 +6,10 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane fx:controller="com.example.project.controller.document.PrikazController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.controller.document.PrikazController">
    <children>
-      <Button fx:id="exitButton" layoutX="777.0" layoutY="14.0" mnemonicParsing="false" text="Назад" />
-       <Button fx:id="loadButton" onAction="#clickLoadButton" layoutX="777.0" layoutY="64.0" mnemonicParsing="false" text="Загрузить" />
+      <Button fx:id="exitButton" layoutX="777.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickExitButton" text="Назад" />
+       <Button fx:id="loadButton" layoutX="679.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickLoadButton" text="Загрузить" />
       <TableView fx:id="table" layoutX="1.0" layoutY="50.0" prefHeight="600.0" prefWidth="840.0">
         <columns>
           <TableColumn fx:id="number" prefWidth="55.0" text="№" />

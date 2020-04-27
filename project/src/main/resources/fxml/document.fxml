@@ -6,11 +6,11 @@
 <Pane fx:id="obr" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.controller.DocumentController">
    <children>
       <Button fx:id="menuButton" layoutX="534.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickMenuButton" text="Назад" />
-      <Button fx:id="vhodDocButton" layoutX="273.0" layoutY="57.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="261.0" text="Журнал регистрации входящих документов" textAlignment="CENTER" />
-      <Button fx:id="vkrButton" layoutX="63.0" layoutY="200.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" text="Темы ВКР" />
-      <Button fx:id="sostavButton" layoutX="63.0" layoutY="130.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" text="Состав ГЭК" />
+      <Button fx:id="vhodDocButton" onAction="#clickZhurnalVhodDocButton" layoutX="273.0" layoutY="57.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="261.0" text="Журнал регистрации входящих документов" textAlignment="CENTER" />
+      <Button fx:id="vkrButton" onAction="#clickVkrButton" layoutX="63.0" layoutY="200.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" text="Темы ВКР" />
+      <Button fx:id="sostavButton" onAction="#clickSostavGekButton" layoutX="63.0" layoutY="130.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" text="Состав ГЭК" />
       <Button fx:id="recenzButton" onAction="#clickRecenzentButton" layoutX="63.0" layoutY="57.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" text="Рецензенты ВКР" />
-      <Button fx:id="srokiButton" layoutX="63.0" layoutY="273.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" text="Сроки защиты ВКР" />
+      <Button fx:id="srokiButton" onAction = "#clickSrokiButton"layoutX="63.0" layoutY="273.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" text="Сроки защиты ВКР" />
       <Button fx:id="prikazButton" onAction="#clickPrikazButton" layoutX="273.0" layoutY="130.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="261.0" text="Журнал регистрации приказов" textAlignment="CENTER" />
    </children>
 </Pane>
