@@ -30,16 +30,16 @@ public class PrikazController extends AbstractController {
     private TableColumn<String, PrikazDto> fio;
 
     @FXML
-    private TableColumn<String,PrikazDto> data;
+    private TableColumn<String, PrikazDto> data;
 
     @FXML
-    private TableColumn<String, PrikazDto>  number;
+    private TableColumn<String, PrikazDto> number;
 
     @FXML
-    private TableColumn<String,PrikazDto> description;
+    private TableColumn<String, PrikazDto> description;
 
     @FXML
-    private TableColumn<String, PrikazDto>  post;
+    private TableColumn<String, PrikazDto> post;
 
     @FXML
     private TableView<PrikazDto> table;
@@ -70,18 +70,18 @@ public class PrikazController extends AbstractController {
 
     @FXML
     private void clickLoadButton(ActionEvent event) {
-       prikazDtoList = prikazService.getAllPrikaz();
+        prikazDtoList = prikazService.getAllPrikaz();
         table.setItems(FXCollections.observableArrayList(prikazDtoList));
     }
+
     @FXML
-    private void clickExitButton (ActionEvent event) throws Exception {
-        if(MainMenuController.isLogin) {
+    private void clickExitButton(ActionEvent event) throws Exception {
+        if (MainMenuController.isLogin) {
             getNextStage(exitButton, documenView);
         } else {
             getNextStage(exitButton, noLoginDocumentView);
         }
 
 
-
-
+    }
 }

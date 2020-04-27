@@ -19,7 +19,7 @@ public class RecenzentMapper {
     public RecenzentDto convertModelToDto(Recenzent recenzent) {
         return RecenzentDto.builder()
                 .number(recenzent.getNumber())
-                .fio(toStringFioEmpl(recenzent.getEmployees().stream().map(Employee::getFio).collect(Collectors.toList())))
+                .fio(recenzent.getFio())
                 .post(recenzent.getPost())
                 .year(recenzent.getYear())
                 .build();

@@ -15,7 +15,6 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 @Entity
 @Table(name = "finish_vkr")
-
 public class Vkr {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

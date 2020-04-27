@@ -15,7 +15,8 @@ import java.util.stream.Stream;
 @Component
 
 public class SrokiMapper {
-    public PrikazDto convertModelToDto(Sroki sroki) {
+
+    public SrokiDto convertModelToDto(Sroki sroki) {
         return SrokiDto.builder()
                 .institute(sroki.getInstitute())
                 .numberGroup(sroki.getNumberGroup())

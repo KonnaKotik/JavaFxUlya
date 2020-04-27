@@ -1,26 +1,32 @@
 package com.example.project.servise;
 
+
 import com.example.project.dto.document.RecenzentDto;
 import com.example.project.dto.document.SostavGekDto;
 import com.example.project.mapper.document.RecenzentMapper;
-import com.example.project.model.document.Prikaz;
-import com.example.project.model.document.Recenzent;
+
+import com.example.project.mapper.document.SostavGekMapper;
 import com.example.project.model.document.SostavGek;
-import com.example.project.repository.RecenzentRepozitory;
+
+import com.example.project.repository.SostavGekRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+
+
+@Service
 public class SostavGekServiceImpl implements SostavGekService {
     @Autowired
-    private RecenzentRepozitory sostavGekRepository;
+    private SostavGekRepository sostavGekRepository;
 
     @Autowired
-    private RecenzentMapper sostavGekMapper;
+    private SostavGekMapper sostavGekMapper;
 
     @Override
     public List<SostavGekDto> getAllSostavGek(){
         List<SostavGek> sostavGekList = sostavGekRepository.findAll();
-        return sostavGekMapper.convertModelToDto(sostavGekList);
+        return sostavGekMapper.convertModelsToDtos(sostavGekList);
     }
 
 }

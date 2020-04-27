@@ -5,6 +5,7 @@ import com.example.project.dto.document.VkrDto;
 import com.example.project.model.Children;
 import com.example.project.model.Employee;
 import com.example.project.model.document.Prikaz;
+import com.example.project.model.document.Vkr;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public class VkrMapper {
                 .number(vkr.getNumber())
                 .group(vkr.getGroup())
                 .napravlenie(vkr.getNapravlenie())
-                .fio(toStringFioEmpl(vkr.getEmployees().stream().map(Employee::getFio).collect(Collectors.toList())))
+                .fio(vkr.getFio())
                 .tema(vkr.getTema())
                 .ruk(vkr.getRuk())
                 .year(vkr.getYear())

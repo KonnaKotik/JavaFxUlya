@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-
 public class SrokiServiceImpl implements SrokiService {
     @Autowired
     private SrokiRepository srokiRepository;

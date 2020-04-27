@@ -10,5 +10,6 @@ import java.util.List;
 @Repository
 
 public interface SostavGekRepository extends JpaRepository<SostavGek, Long> {
-    List<SostavGek> findAll();
+
+   List<SostavGek> findAll();
 }
