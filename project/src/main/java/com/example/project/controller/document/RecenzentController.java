@@ -2,6 +2,7 @@ package com.example.project.controller.document;
 
 import com.example.project.ControllersConfig;
 import com.example.project.controller.AbstractController;
+import com.example.project.controller.MainMenuController;
 import com.example.project.dto.document.RecenzentDto;
 import com.example.project.servise.RecenzentService;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -50,6 +51,10 @@ public class RecenzentController extends AbstractController {
 
     private List<RecenzentDto> recenzentDtoList;
 
+    @Qualifier("DocumentView")
+    @Autowired
+    private ControllersConfig.ViewHolder documentView;
+
 
 
 
@@ -66,10 +71,12 @@ public class RecenzentController extends AbstractController {
         table.setItems(FXCollections.observableArrayList(recenzentDtoList));
     }
 
-    @FXML
-    private void clickMenuButton (ActionEvent event) throws Exception{
-        getMenuStage(exitButton);
-    }
 
+    @FXML
+    private  void clickExitButton(ActionEvent event) throws Exception{
+        MainMenuController.isLogin = false;
+        getNextStage(exitButton, documentView);
+    }
+    
 
 }
