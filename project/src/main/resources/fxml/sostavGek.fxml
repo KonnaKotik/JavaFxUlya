@@ -21,7 +21,7 @@
             <TableColumn prefWidth="65.0" />
         </columns>
       </TableView>
-      <Button fx:id="exitButton" layoutX="777.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickMenuButton" text="Назад" />
+      <Button fx:id="exitButton" layoutX="777.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickExitButton" text="Назад" />
       <Label layoutX="343.0" layoutY="6.0" prefHeight="41.0" prefWidth="154.0" text="Состав ГЭК для магистров" />
       <Button fx:id="loadButton" layoutX="672.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickLoadButton" prefHeight="25.0" prefWidth="72.0" text="Загрузить" />
    </children>

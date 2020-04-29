@@ -53,7 +53,11 @@ public class RecenzentController extends AbstractController {
 
     @Qualifier("DocumentView")
     @Autowired
-    private ControllersConfig.ViewHolder documentView;
+    private ControllersConfig.ViewHolder documenView;
+
+    @Qualifier("noLoginDocumentView")
+    @Autowired
+    private ControllersConfig.ViewHolder noLoginDocumentView;
 
 
 
@@ -73,10 +77,15 @@ public class RecenzentController extends AbstractController {
 
 
     @FXML
-    private  void clickExitButton(ActionEvent event) throws Exception{
-        MainMenuController.isLogin = false;
-        getNextStage(exitButton, documentView);
+    private void clickExitButton(ActionEvent event) throws Exception {
+        if (MainMenuController.isLogin) {
+            getNextStage(exitButton, documenView);
+        } else {
+            getNextStage(exitButton, noLoginDocumentView);
+        }
+
+
     }
-    
+
 
 }

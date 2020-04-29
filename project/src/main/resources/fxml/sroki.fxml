@@ -8,7 +8,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.controller.document.SrokiController">
    <children>
-      <Button fx:id="exitButton" layoutX="777.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickMenuButton" text="Назад" />
+      <Button fx:id="exitButton" layoutX="777.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickExitButton" text="Назад" />
       <TableView fx:id="table" layoutY="51.0" prefHeight="600.0" prefWidth="840.0">
         <columns>
           <TableColumn fx:id="institute" prefWidth="112.0" text="Институт" />

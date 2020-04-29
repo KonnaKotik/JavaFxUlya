@@ -1,5 +1,7 @@
 package com.example.project.controller.document;
+import com.example.project.ControllersConfig;
 import com.example.project.controller.AbstractController;
+import com.example.project.controller.MainMenuController;
 import com.example.project.dto.document.PrikazDto;
 import com.example.project.dto.document.SostavGekDto;
 import com.example.project.dto.document.SrokiDto;
@@ -14,6 +16,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 import java.util.List;
@@ -59,6 +62,17 @@ public class SrokiController extends AbstractController {
     private Button loadButton;
 
     private List<SrokiDto> srokiDtoList;
+
+    @Qualifier("DocumentView")
+    @Autowired
+    private ControllersConfig.ViewHolder documenView;
+
+    @Qualifier("noLoginDocumentView")
+    @Autowired
+    private ControllersConfig.ViewHolder noLoginDocumentView;
+
+
+
     public void initialize() {
         institute.setCellValueFactory(new PropertyValueFactory<>("institute"));
         numberGroup.setCellValueFactory(new PropertyValueFactory<>("numberGroup"));
@@ -75,8 +89,17 @@ public class SrokiController extends AbstractController {
         srokiDtoList = srokiService.getAllSroki();
         table.setItems(FXCollections.observableArrayList(srokiDtoList));
     }
+
     @FXML
-    private void clickMenuButton (ActionEvent event) throws Exception{
-        getMenuStage(exitButton);
+    private void clickExitButton(ActionEvent event) throws Exception {
+        if (MainMenuController.isLogin) {
+            getNextStage(exitButton, documenView);
+        } else {
+            getNextStage(exitButton, noLoginDocumentView);
+        }
+
+
     }
+
+
 }
