@@ -12,11 +12,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
+import java.util.LinkedList;
 import java.util.List;
 
 
@@ -50,6 +52,24 @@ public class PrikazController extends AbstractController {
     @FXML
     private Button loadButton;
 
+    @FXML
+    private TextField numberField;
+
+    @FXML
+    private Button numberButton;
+
+    @FXML
+    private TextField dataField;
+
+    @FXML
+    private TextField postField;
+
+    @FXML
+    private TextField prikazField;
+
+    @FXML
+    private TextField fioField;
+
     private List<PrikazDto> prikazDtoList;
 
     @Qualifier("DocumentView")
@@ -81,7 +101,62 @@ public class PrikazController extends AbstractController {
         } else {
             getNextStage(exitButton, noLoginDocumentView);
         }
+    }
+    private void setTable(List<PrikazDto> prikazDtos) {
+        table.setItems(FXCollections.observableArrayList(prikazDtos));
+    }
 
+    @FXML
+    private void clickFindNum(ActionEvent event) {
+        String num = numberField.getText();
+        PrikazDto prikazDto = prikazService.getPrikazByNum(num);
+        if (prikazDto != null) {
+            List<PrikazDto> prikazDtos = new LinkedList<>();
+            prikazDtos.add(prikazDto);
+            setTable(prikazDtos);
+        }
+    }
+
+    @FXML
+    private void clickFindData(ActionEvent event) {
+        String data = dataField.getText();
+        List<PrikazDto> prikazDtos = prikazService.getAllByData(data);
+        if(!prikazDtos.isEmpty()) {
+            setTable(prikazDtos);
+        }
 
     }
+
+    @FXML
+    private void clickFindPost(ActionEvent event) {
+        String post = postField.getText();
+        List<PrikazDto> prikazDtos = prikazService.getAllByPost(post);
+        if(!prikazDtos.isEmpty()) {
+            setTable(prikazDtos);
+        }
+    }
+
+    @FXML
+    private void clickFindDescription(ActionEvent event) {
+        String description = prikazField.getText();
+        List<PrikazDto> prikazDtos = prikazService.getAllByDescription(description);
+        if(!prikazDtos.isEmpty()){
+            setTable(prikazDtos);
+        }
+    }
+
+    @FXML
+    private void clickFindEmployee(ActionEvent event) {
+        String employeeFio = fioField.getText();
+        List<PrikazDto> prikazDtos = prikazService.getAllByEmployee(employeeFio);
+        if(!prikazDtos.isEmpty()) {
+            setTable(prikazDtos);
+        }
+    }
+
+
+
+
+
+
 }

@@ -8,4 +8,6 @@ import java.util.List;
 public interface VkrService {
     List<VkrDto> getAllVkr();
 
+    List<VkrDto> getAllByRuk(String rukFio);
+
 }

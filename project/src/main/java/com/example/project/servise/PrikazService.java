@@ -9,4 +9,14 @@ import java.util.List;
 public interface PrikazService {
 
     List<PrikazDto> getAllPrikaz();
+
+    PrikazDto getPrikazByNum(String num);
+
+    List<PrikazDto> getAllByData(String data);
+
+    List<PrikazDto> getAllByPost(String post);
+
+    List<PrikazDto> getAllByDescription(String description);
+
+    List<PrikazDto> getAllByEmployee(String fio);
 }

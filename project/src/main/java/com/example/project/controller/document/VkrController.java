@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -62,6 +63,9 @@ public class VkrController extends AbstractController {
     @FXML
     private Button loadButton;
 
+    @FXML
+    private TextField rukField;
+
     private List<VkrDto> vkrDtoList;
 
     @Qualifier("DocumentView")
@@ -96,7 +100,18 @@ public class VkrController extends AbstractController {
         } else {
             getNextStage(exitButton, noLoginDocumentView);
         }
+    }
 
+    private void setTable(List<VkrDto> vkrDtos) {
+        table.setItems(FXCollections.observableArrayList(vkrDtos));
+    }
 
+    @FXML
+    private void clickFindRuk(ActionEvent event) {
+        String ruk = rukField.getText();
+        List<VkrDto> vkrDtos = vkrService.getAllByRuk(ruk);
+        if(!vkrDtos.isEmpty()) {
+            setTable(vkrDtos);
+        }
     }
 }

@@ -38,6 +38,19 @@ public class Vkr {
     @Column(name = "vkr_year")
     private String year;
 
+    @Override
+    public String toString(){
+        return "Vkr(" +
+                "id=" + id +
+                ", number=" + number +
+                ", napravlenie=" + napravlenie +
+                ", fio=" + fio +
+                ", tema=" + tema +
+                ", year=" + year +
+                ", ruk=" + ruk.getFio() +
+                ")";
+    }
+
 
 
 }
