@@ -1,6 +1,7 @@
 package com.example.project.model;
 
 import com.example.project.model.document.Prikaz;
+import com.example.project.model.document.Vkr;
 import lombok.*;
 
 import javax.persistence.*;
@@ -34,7 +35,7 @@ public class Employee {
 
     private String status;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "parent_children", joinColumns = @JoinColumn(name = "employee_id"),
     inverseJoinColumns = @JoinColumn(name = "child_id"))
     private List<Children> childrenList = new LinkedList<>();
@@ -43,6 +44,10 @@ public class Employee {
     @JoinTable(name = "empl_prikaz", joinColumns = @JoinColumn(name = "employee_id"),
             inverseJoinColumns = @JoinColumn(name = "prikaz_id"))
     private List<Prikaz> prikazs = new LinkedList<>();
+
+    @OneToMany(mappedBy = "ruk" )
+    private List<Vkr> vkrs = new LinkedList<>();
+
 
 
     public Employee(String tubNum, String fio, String passport, String birthday, String cc, String inn, String phone, String education, String address, String addmission, String post) {

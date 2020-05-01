@@ -22,6 +22,7 @@ public class Vkr {
 
     private String number;
 
+    @Column(name = "vkr_group")
     private String group;
 
     private String napravlenie;
@@ -30,8 +31,11 @@ public class Vkr {
 
     private String tema;
 
-    private String ruk;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "empl_id")
+    private Employee ruk;
 
+    @Column(name = "vkr_year")
     private String year;
 
 

@@ -30,7 +30,7 @@ public class Prikaz {
 
     private String description;
 
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "prikazs")
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "prikazs")
     private List<Employee> employees = new LinkedList<>();
 
     @Override

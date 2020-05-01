@@ -21,7 +21,7 @@ public class VkrMapper {
                 .napravlenie(vkr.getNapravlenie())
                 .fio(vkr.getFio())
                 .tema(vkr.getTema())
-                .ruk(vkr.getRuk())
+                .ruk(vkr.getRuk().getFio())
                 .year(vkr.getYear())
                 .build();
     }

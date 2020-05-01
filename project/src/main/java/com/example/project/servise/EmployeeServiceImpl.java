@@ -4,11 +4,14 @@ import com.example.project.mapper.EmployeeMapper;
 import com.example.project.model.Children;
 import com.example.project.model.Employee;
 import com.example.project.dto.EmployeeDto;
+import com.example.project.model.document.Prikaz;
+import com.example.project.model.document.Vkr;
 import com.example.project.repository.ChildrenRepository;
 import com.example.project.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
@@ -53,8 +56,16 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public void deleteEmployee(String fio) {
         Employee employee = getEmployeeByFio(fio);
-        List<Children> children =  customParentsChildrenEmployee(employee.getChildrenList());
+        List<Children> childrenList = employee.getChildrenList();
+        List<Children> children = new LinkedList<>();
+        if(!childrenList.isEmpty()) {
+           children =  customParentsChildrenEmployee(childrenList);
+        }
+        List<Prikaz> prikazList = employee.getPrikazs();
+        List<Vkr> vkrList = employee.getVkrs();
+        employee.setPrikazs(null);
         employee.setChildrenList(null);
+        employee.setVkrs(null);
         employeeRepository.save(employee);
         deleteChuldrenEmpl(children);
         employeeRepository.delete(employee);
