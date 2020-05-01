@@ -4,23 +4,36 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.controller.document.ZhurnalVhodDocController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.controller.document.ZhurnalVhodDocController">
    <children>
-      <TableView fx:id="table" layoutX="-2.0" layoutY="39.0" prefHeight="600.0" prefWidth="850.0">
+      <TableView fx:id="table" layoutX="-2.0" layoutY="82.0" prefHeight="557.0" prefWidth="1006.0">
         <columns>
-          <TableColumn fx:id="number" prefWidth="37.0" text="№" />
-          <TableColumn fx:id="data" prefWidth="74.0" text="Дата" />
-            <TableColumn fx:id="tipDoc" prefWidth="127.0" text="Тип документа" />
-            <TableColumn fx:id="soderzhanie" prefWidth="153.0" text="Содержание" />
-            <TableColumn fx:id="kod" prefWidth="165.0" text="Код направления" />
-            <TableColumn fx:id="post" prefWidth="137.0" text="Исполнитель" />
-            <TableColumn minWidth="0.0" prefWidth="143.0" />
+          <TableColumn fx:id="number" prefWidth="76.0" text="№" />
+          <TableColumn fx:id="data" prefWidth="100.0" text="Дата" />
+            <TableColumn fx:id="tipDoc" prefWidth="203.0" text="Тип документа" />
+            <TableColumn fx:id="soderzhanie" prefWidth="341.0" text="Содержание" />
+            <TableColumn fx:id="kod" prefWidth="132.0" text="Код направления" />
+            <TableColumn fx:id="post" prefWidth="151.0" text="Исполнитель" />
         </columns>
       </TableView>
-      <Button fx:id="exitButton" layoutX="777.0" layoutY="7.0" mnemonicParsing="false" onAction="#clickExitButton" text="Назад" />
-      <Label layoutX="282.0" layoutY="2.0" prefHeight="35.0" prefWidth="248.0" text="Журнал регистрации входящих документов" />
-      <Button fx:id="loadButton" layoutX="662.0" layoutY="7.0" mnemonicParsing="false" onAction="#clickLoadButton" prefHeight="25.0" prefWidth="88.0" text="Загрузить" />
+      <Button fx:id="exitButton" layoutX="937.0" layoutY="13.0" mnemonicParsing="false" onAction="#clickExitButton" text="Назад" />
+      <Label layoutX="376.0" layoutY="8.0" prefHeight="35.0" prefWidth="248.0" text="Журнал регистрации входящих документов" />
+      <Button fx:id="loadButton" layoutX="741.0" layoutY="13.0" mnemonicParsing="false" onAction="#clickLoadButton" prefHeight="25.0" prefWidth="122.0" text="Загрузить" />
+      <Button fx:id="addButton" layoutX="50.0" layoutY="13.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="153.0" text="Добавить данные" />
+      <Button fx:id="numberButton" layoutX="50.0" layoutY="51.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="10.0" />
+      <TextField fx:id="numberField" layoutY="51.0" prefHeight="25.0" prefWidth="49.0" />
+      <Button fx:id="dataButton" layoutX="156.0" layoutY="51.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="10.0" />
+      <TextField fx:id="dataField" layoutX="78.0" layoutY="51.0" prefHeight="25.0" prefWidth="78.0" />
+      <TextField fx:id="tipField" layoutX="182.0" layoutY="51.0" prefHeight="25.0" prefWidth="172.0" />
+      <Button fx:id="tipButton" layoutX="354.0" layoutY="51.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="10.0" />
+      <TextField fx:id="soderField" layoutX="385.0" layoutY="51.0" prefHeight="25.0" prefWidth="308.0" />
+      <Button fx:id="soderButton" layoutX="692.0" layoutY="51.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="10.0" />
+      <Button fx:id="kodButton" layoutX="829.0" layoutY="51.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="10.0" />
+      <TextField fx:id="kodField" layoutX="719.0" layoutY="51.0" prefHeight="25.0" prefWidth="110.0" />
+      <TextField fx:id="ispField" layoutX="851.0" layoutY="51.0" prefHeight="25.0" prefWidth="128.0" />
+      <Button fx:id="ispButton" layoutX="978.0" layoutY="51.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="10.0" />
    </children>
 </Pane>

@@ -4,21 +4,33 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.controller.document.PrikazController">
    <children>
       <Button fx:id="exitButton" layoutX="777.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickExitButton" text="Назад" />
        <Button fx:id="loadButton" layoutX="679.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickLoadButton" text="Загрузить" />
-      <TableView fx:id="table" layoutX="1.0" layoutY="50.0" prefHeight="600.0" prefWidth="840.0">
+      <TableView fx:id="table" layoutX="1.0" layoutY="92.0" prefHeight="558.0" prefWidth="840.0">
         <columns>
-          <TableColumn fx:id="number" prefWidth="55.0" text="№" />
-          <TableColumn fx:id="data" prefWidth="119.0" text="Дата регистрации" />
+          <TableColumn fx:id="number" prefWidth="100.0" text="№" />
+          <TableColumn fx:id="data" prefWidth="163.0" text="Дата регистрации" />
             <TableColumn fx:id="fio" prefWidth="186.0" text="ФИО работника" />
-            <TableColumn fx:id="post" prefWidth="168.0" text="Должность" />
-            <TableColumn fx:id="description" minWidth="0.0" prefWidth="180.0" text="Содержание приказа" />
+            <TableColumn fx:id="post" prefWidth="169.0" text="Должность" />
+            <TableColumn fx:id="description" minWidth="0.0" prefWidth="221.0" text="Содержание приказа" />
         </columns>
       </TableView>
       <Label layoutX="331.0" layoutY="14.0" prefHeight="25.0" prefWidth="178.0" text="Журнал регистрации приказов" />
+      <TextField fx:id="numberField" layoutX="9.0" layoutY="59.0" prefHeight="25.0" prefWidth="69.0" />
+      <Button fx:id="numberButton" layoutX="78.0" layoutY="59.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
+      <TextField fx:id="dataField" layoutX="113.0" layoutY="59.0" prefHeight="25.0" prefWidth="124.0" />
+      <Button fx:id="dataButton" layoutX="238.0" layoutY="59.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
+      <TextField fx:id="fioField" layoutX="274.0" layoutY="59.0" prefHeight="25.0" prefWidth="146.0" />
+      <TextField fx:id="postField" layoutX="455.0" layoutY="59.0" prefHeight="25.0" prefWidth="136.0" />
+      <TextField fx:id="prikazField" layoutX="624.0" layoutY="59.0" prefHeight="25.0" prefWidth="184.0" />
+      <Button fx:id="fioButton" layoutX="421.0" layoutY="59.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
+      <Button fx:id="postButton" layoutX="592.0" layoutY="59.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
+      <Button fx:id="prikazButton" layoutX="807.0" layoutY="59.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
+      <Button fx:id="addPrikazButton" layoutX="18.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickLoadButton" prefHeight="25.0" prefWidth="124.0" text="Добавить приказ" />
    </children>
 </Pane>
