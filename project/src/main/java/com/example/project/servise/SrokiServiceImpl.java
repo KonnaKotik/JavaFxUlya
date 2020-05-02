@@ -1,13 +1,7 @@
 package com.example.project.servise;
-import com.example.project.dto.document.PrikazDto;
-import com.example.project.dto.document.SostavGekDto;
 import com.example.project.dto.document.SrokiDto;
-import com.example.project.mapper.document.PrikazMapper;
 import com.example.project.mapper.document.SrokiMapper;
-import com.example.project.model.document.Prikaz;
-import com.example.project.model.document.SostavGek;
 import com.example.project.model.document.Sroki;
-import com.example.project.repository.PrikazRepository;
 import com.example.project.repository.SrokiRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,12 +30,12 @@ public class SrokiServiceImpl implements SrokiService {
 
     @Override
     public List<SrokiDto> getAllByNumber(String number) {
-        List<Sroki> srokiList = srokiRepository.findAllByNumber(number);
+        List<Sroki> srokiList = srokiRepository.findAllByNumberGroup(number);
         return srokiMapper.convertModelsToDtos(srokiList);
     }
     @Override
     public List<SrokiDto> getAllByNapr(String napr) {
-        List<Sroki> srokiList = srokiRepository.findAllByNapr(napr);
+        List<Sroki> srokiList = srokiRepository.findAllByNapravlenie(napr);
         return srokiMapper.convertModelsToDtos(srokiList);
     }
 
@@ -59,14 +53,19 @@ public class SrokiServiceImpl implements SrokiService {
 
     @Override
     public List<SrokiDto> getAllByAudit(String audit) {
-        List<Sroki> srokiList = srokiRepository.findAllByAudit(audit);
+        List<Sroki> srokiList = srokiRepository.findAllByNumberAudit(audit);
         return srokiMapper.convertModelsToDtos(srokiList);
     }
 
     @Override
     public List<SrokiDto> getAllByForma(String forma) {
-        List<Sroki> srokiList = srokiRepository.findAllByForma(forma);
+        List<Sroki> srokiList = srokiRepository.findAllByFormaOb(forma);
         return srokiMapper.convertModelsToDtos(srokiList);
+    }
+
+    @Override
+    public void addNewSroki(Sroki sroki) {
+        srokiRepository.save(sroki);
     }
 
 }

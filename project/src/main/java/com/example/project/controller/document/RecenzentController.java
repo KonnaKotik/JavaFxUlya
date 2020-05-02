@@ -4,6 +4,7 @@ import com.example.project.ControllersConfig;
 import com.example.project.controller.AbstractController;
 import com.example.project.controller.MainMenuController;
 import com.example.project.dto.document.RecenzentDto;
+import com.example.project.model.document.Recenzent;
 import com.example.project.servise.RecenzentService;
 import javafx.scene.control.*;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -149,5 +150,14 @@ public class RecenzentController extends AbstractController {
 
     }
 
+
+    @FXML
+    private void clickAddRecenzent(ActionEvent event) {
+        Recenzent recenzent = new Recenzent(numberField.getText(), postField.getText(), yearField.getText(), fioField.getText());
+        recenzentService.addNewRecenzent(recenzent);
+        recenzentDtoList = recenzentService.getAllRecenzent();
+        table.setItems(FXCollections.observableArrayList(recenzentDtoList));
+
+    }
 
 }

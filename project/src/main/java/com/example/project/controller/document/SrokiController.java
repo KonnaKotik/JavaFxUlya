@@ -5,6 +5,7 @@ import com.example.project.controller.MainMenuController;
 import com.example.project.dto.document.PrikazDto;
 import com.example.project.dto.document.SostavGekDto;
 import com.example.project.dto.document.SrokiDto;
+import com.example.project.model.document.Sroki;
 import com.example.project.servise.PrikazService;
 import com.example.project.servise.SrokiService;
 import com.example.project.servise.ZhurnalVhodDocService;
@@ -74,10 +75,6 @@ public class SrokiController extends AbstractController {
     @FXML
     private TextField formaField;
 
-
-
-
-
     @FXML
     private Label errorMessage;
 
@@ -101,6 +98,7 @@ public class SrokiController extends AbstractController {
         start.setCellValueFactory(new PropertyValueFactory<>("start"));
         numberAudit.setCellValueFactory(new PropertyValueFactory<>("numberAudit"));
         formaOb.setCellValueFactory(new PropertyValueFactory<>("formaOb"));
+        setNullField();
 
     }
 
@@ -132,6 +130,7 @@ public class SrokiController extends AbstractController {
         } else {
             errorMessage.setText("Данные не найдены");
         }
+        setNullField();
     }
 
     @FXML
@@ -143,6 +142,7 @@ public class SrokiController extends AbstractController {
         } else {
             errorMessage.setText("Данные не найдены");
         }
+        setNullField();
     }
 
     @FXML
@@ -154,6 +154,7 @@ public class SrokiController extends AbstractController {
         } else {
             errorMessage.setText("Данные не найдены");
         }
+        setNullField();
     }
 
     @FXML
@@ -165,6 +166,7 @@ public class SrokiController extends AbstractController {
         } else {
             errorMessage.setText("Данные не найдены");
         }
+        setNullField();
     }
     @FXML
     private void clickFindStart(ActionEvent event) {
@@ -175,6 +177,8 @@ public class SrokiController extends AbstractController {
         } else {
             errorMessage.setText("Данные не найдены");
         }
+        setNullField();
+
     }
     @FXML
     private void clickFindAudit(ActionEvent event) {
@@ -185,6 +189,8 @@ public class SrokiController extends AbstractController {
         } else {
             errorMessage.setText("Данные не найдены");
         }
+        setNullField();
+
     }
 
     @FXML
@@ -196,7 +202,35 @@ public class SrokiController extends AbstractController {
         } else {
             errorMessage.setText("Данные не найдены");
         }
+        setNullField();
+
     }
+
+    @FXML
+    private void clickAddSroki(ActionEvent event) {
+        if(instituteField.getText() == null || numberField.getText() == null || naprField.getText() == null || dataField.getText() == null || startField.getText() == null || auditField.getText() == null || formaField.getText() == null ) {
+            errorMessage.setText("Не все поля заполнены");
+        } else {
+            Sroki sroki = new Sroki(instituteField.getText(), numberField.getText(), naprField.getText(), dataField.getText(),startField.getText(), auditField.getText(), formaField.getText() );
+            srokiService.addNewSroki(sroki);
+            srokiDtoList = srokiService.getAllSroki();
+            table.setItems(FXCollections.observableArrayList(srokiDtoList));
+            setNullField();
+        }
+
+    }
+
+    private void setNullField(){
+        instituteField.setText(null);
+        numberField.setText(null);
+        naprField.setText(null);
+        dataField.setText(null);
+        startField.setText(null);
+        auditField.setText(null);
+        formaField.setText(null);
+    }
+
+
 
 
 }

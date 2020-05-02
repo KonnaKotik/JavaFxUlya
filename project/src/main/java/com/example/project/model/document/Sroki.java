@@ -34,4 +34,14 @@ public class Sroki {
     private String numberAudit;
 
     private String formaOb;
+
+    public Sroki(String institute, String numberGroup, String napravlenie, String data, String start, String numberAudit, String formaOb) {
+        this.institute = institute;
+        this.numberGroup = numberGroup;
+        this.napravlenie = napravlenie;
+        this.data = data;
+        this.start = start;
+        this.numberAudit = numberAudit;
+        this.formaOb = formaOb;
+    }
 }

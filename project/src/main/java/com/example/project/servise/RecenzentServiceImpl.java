@@ -31,11 +31,12 @@ public class RecenzentServiceImpl implements RecenzentService {
     @Override
     public RecenzentDto getRecenzentByNumber(String number) {
         Optional<Recenzent> recenzentOptional = recenzentRepozitory.findByNumber(number);
-        if(recenzentOptional.isPresent()) {
+        if (recenzentOptional.isPresent()) {
             RecenzentDto recenzentDto = recenzentMapper.convertModelToDto(recenzentOptional.get());
             return recenzentDto;
         }
         return null;
+    }
 
     @Override
     public List<RecenzentDto> getAllByFio(String fio) {
@@ -53,6 +54,11 @@ public class RecenzentServiceImpl implements RecenzentService {
     public List<RecenzentDto> getAllByYear(String year) {
         List<Recenzent> recenzentList = recenzentRepozitory.findAllByYear(year);
         return recenzentMapper.convertModelsToDtos(recenzentList);
+    }
+
+    @Override
+    public void addNewRecenzent(Recenzent recenzent) {
+        recenzentRepozitory.save(recenzent);
     }
 }
 

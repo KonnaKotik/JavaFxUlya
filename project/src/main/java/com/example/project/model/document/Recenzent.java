@@ -29,4 +29,11 @@ public class Recenzent {
 
     private String fio;
 
+    public Recenzent(String number, String post, String year, String fio) {
+        this.number = number;
+        this.post = post;
+        this.year = year;
+        this.fio = fio;
+    }
+
 }

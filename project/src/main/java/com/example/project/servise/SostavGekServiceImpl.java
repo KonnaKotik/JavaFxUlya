@@ -75,5 +75,10 @@ public class SostavGekServiceImpl implements SostavGekService {
         return sostavGekMapper.convertModelsToDtos(sostavGekList);
     }
 
+    @Override
+    public void addNewSostavGek(SostavGek sostavGek) {
+        sostavGekRepository.save(sostavGek);
+    }
+
 
 }

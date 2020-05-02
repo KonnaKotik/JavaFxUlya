@@ -1,11 +1,7 @@
 package com.example.project.servise;
-import com.example.project.dto.document.PrikazDto;
 import com.example.project.dto.document.ZhurnalVhodDocDto;
-import com.example.project.mapper.document.PrikazMapper;
 import com.example.project.mapper.document.ZhurnalVhodDocMapper;
-import com.example.project.model.document.Prikaz;
 import com.example.project.model.document.ZhurnalVhodDoc;
-import com.example.project.repository.PrikazRepository;
 import com.example.project.repository.ZhurnalVhodDocRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,13 +41,13 @@ public class ZhurnalVhodDocServiceImpl implements ZhurnalVhodDocService {
     }
     @Override
     public List<ZhurnalVhodDocDto> getAllByTip(String tip) {
-        List<ZhurnalVhodDoc> zhurnalVhodDocList = zhurnalVhodDocRepository.findAllByTip(tip);
+        List<ZhurnalVhodDoc> zhurnalVhodDocList = zhurnalVhodDocRepository.findAllByTipDoc(tip);
         return zhurnalVhodDocMapper.convertModelsToDtos(zhurnalVhodDocList);
     }
 
     @Override
     public List<ZhurnalVhodDocDto> getAllBySoder(String soder) {
-        List<ZhurnalVhodDoc> zhurnalVhodDocList = zhurnalVhodDocRepository.findAllBySoder(soder);
+        List<ZhurnalVhodDoc> zhurnalVhodDocList = zhurnalVhodDocRepository.findAllBySoderzhanie(soder);
         return zhurnalVhodDocMapper.convertModelsToDtos(zhurnalVhodDocList);
     }
 
@@ -63,7 +59,7 @@ public class ZhurnalVhodDocServiceImpl implements ZhurnalVhodDocService {
 
     @Override
     public List<ZhurnalVhodDocDto> getAllByIsp(String isp) {
-        List<ZhurnalVhodDoc> zhurnalVhodDocList = zhurnalVhodDocRepository.findAllByIsp(isp);
+        List<ZhurnalVhodDoc> zhurnalVhodDocList = zhurnalVhodDocRepository.findAllByPost(isp);
         return zhurnalVhodDocMapper.convertModelsToDtos(zhurnalVhodDocList);
     }
 }

@@ -18,16 +18,16 @@ public interface SrokiRepository extends JpaRepository<Sroki, Long> {
 
     List<Sroki> findAllByInstitute(String institute);
 
-    List<Sroki> findAllByNumber(String number);
+    List<Sroki> findAllByNumberGroup(String number);
 
-    List<Sroki> findAllByNapr(String napr);
+    List<Sroki> findAllByNapravlenie(String napr);
 
     List<Sroki> findAllByData(String data);
 
     List<Sroki> findAllByStart(String start);
 
-    List<Sroki> findAllByAudit(String audit);
+    List<Sroki> findAllByNumberAudit(String audit);
 
-    List<Sroki> findAllByForma(String forma);
+    List<Sroki> findAllByFormaOb(String forma);
 
 }

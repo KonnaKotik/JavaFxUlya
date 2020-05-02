@@ -5,6 +5,7 @@ import com.example.project.controller.MainMenuController;
 import com.example.project.dto.document.PrikazDto;
 import com.example.project.dto.document.RecenzentDto;
 import com.example.project.dto.document.SostavGekDto;
+import com.example.project.model.document.SostavGek;
 import com.example.project.servise.PrikazService;
 import com.example.project.servise.SostavGekService;
 import javafx.collections.FXCollections;
@@ -207,6 +208,14 @@ public class SostavGekController extends AbstractController {
         } else {
             errorMessage.setText("Данные не найдены");
         }
+    }
+
+    @FXML
+    private void clickAddSostavGek(ActionEvent event) {
+        SostavGek sostavGek = new SostavGek(yearField.getText(), naprField.getText(), profil.getText(), pred.getText(), zam.getText(), komissia.getText(), forma.getText(), sekretar.getText());
+        sostavGekService.addNewSostavGek(sostavGek);
+        sostavGekDtoList = sostavGekService.getAllSostavGek();
+        table.setItems(FXCollections.observableArrayList(sostavGekDtoList));
     }
 }
 

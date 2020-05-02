@@ -21,11 +21,11 @@ public interface ZhurnalVhodDocRepository extends JpaRepository<ZhurnalVhodDoc, 
 
     List<ZhurnalVhodDoc> findAllByData(String data);
 
-    List<ZhurnalVhodDoc> findAllByTip(String tip);
+    List<ZhurnalVhodDoc> findAllByTipDoc(String tip);
 
-    List<ZhurnalVhodDoc> findAllBySoder(String soder);
+    List<ZhurnalVhodDoc> findAllBySoderzhanie(String soder);
 
     List<ZhurnalVhodDoc> findAllByKod(String kod);
 
-    List<ZhurnalVhodDoc> findAllByIsp(String isp);
+    List<ZhurnalVhodDoc> findAllByPost(String post);
 }

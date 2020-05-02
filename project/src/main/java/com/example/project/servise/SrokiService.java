@@ -3,6 +3,7 @@ import com.example.project.dto.document.PrikazDto;
 import com.example.project.dto.document.SostavGekDto;
 import com.example.project.dto.document.SrokiDto;
 import com.example.project.model.document.Prikaz;
+import com.example.project.model.document.Sroki;
 
 import javax.xml.soap.SAAJResult;
 import java.util.List;
@@ -23,5 +24,7 @@ public interface SrokiService {
     List<SrokiDto> getAllByAudit(String audit);
 
     List<SrokiDto> getAllByForma(String forma);
+
+    void addNewSroki(Sroki sroki);
 
 }

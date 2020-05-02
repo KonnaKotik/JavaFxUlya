@@ -22,7 +22,7 @@
       <Button fx:id="exitButton" layoutX="784.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickExitButton" text="Назад" />
       <Label layoutX="300.0" layoutY="18.0" text="Данные о рецензентах магистерских ВКР" />
       <Button fx:id="loadButton" layoutX="678.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickLoadButton" text="Загрузить" />
-      <Button fx:id="addButton" layoutX="25.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Добавить данные" />
+      <Button fx:id="addButton" onAction="#clickAddRecenzent" layoutX="25.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Добавить данные" />
       <Button fx:id="numberButton" layoutX="128.0" layoutY="49.0" mnemonicParsing="false" onAction="#clickFindNumber" prefHeight="25.0" prefWidth="20.0" />
       <Button fx:id="fioButton" layoutX="364.0" layoutY="49.0" mnemonicParsing="false" onAction="#clickFindFio" prefHeight="25.0" prefWidth="20.0" />
       <Button fx:id="postButton" layoutX="693.0" layoutY="49.0" mnemonicParsing="false" onAction="#clickFindPost" prefHeight="25.0" prefWidth="20.0" />

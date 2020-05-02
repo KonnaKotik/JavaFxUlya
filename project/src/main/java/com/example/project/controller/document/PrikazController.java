@@ -172,7 +172,8 @@ public class PrikazController extends AbstractController {
     private void clickAddPrikaz(ActionEvent event) {
         Prikaz prikaz = new Prikaz(numberField.getText(), postField.getText(), dataField.getText(), prikazField.getText());
         prikazService.addNewPrikaz(prikaz, fioField.getText());
-
+        prikazDtoList = prikazService.getAllPrikaz();
+        table.setItems(FXCollections.observableArrayList(prikazDtoList));
     }
 
 

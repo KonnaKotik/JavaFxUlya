@@ -37,5 +37,16 @@ public class SostavGek {
     private String forma;
 
     private String sekretar;
+
+    public SostavGek(String year, String napravlenie, String profil, String pred, String zam, String komissia, String forma, String sekretar) {
+        this.year = year;
+        this.napravlenie = napravlenie;
+        this.profil = profil;
+        this.pred = pred;
+        this.zam = zam;
+        this.komissia = komissia;
+        this.forma = forma;
+        this.sekretar = sekretar;
+    }
 }
 
