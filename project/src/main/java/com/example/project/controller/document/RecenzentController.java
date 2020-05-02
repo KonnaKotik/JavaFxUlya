@@ -5,6 +5,7 @@ import com.example.project.controller.AbstractController;
 import com.example.project.controller.MainMenuController;
 import com.example.project.dto.document.RecenzentDto;
 import com.example.project.servise.RecenzentService;
+import javafx.scene.control.*;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import com.example.project.dto.document.PrikazDto;
@@ -12,13 +13,11 @@ import com.example.project.servise.PrikazService;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import java.util.LinkedList;
 import java.util.List;
 
 @Controller
@@ -48,6 +47,20 @@ public class RecenzentController extends AbstractController {
 
     @FXML
     private Button loadButton;
+
+    @FXML
+    private TextField numberField;
+
+    @FXML
+    private TextField fioField;
+
+    @FXML
+    private TextField postField;
+
+    @FXML
+    private TextField yearField;
+    @FXML
+    private Label errorMessage;
 
     private List<RecenzentDto> recenzentDtoList;
 
@@ -84,6 +97,55 @@ public class RecenzentController extends AbstractController {
             getNextStage(exitButton, noLoginDocumentView);
         }
 
+    }
+
+    private void setTable(List<RecenzentDto> recenzentDtos) {
+        table.setItems(FXCollections.observableArrayList(recenzentDtos));
+    }
+
+    @FXML
+    private void clickFindNum(ActionEvent event) {
+        String num = numberField.getText();
+        RecenzentDto recenzentDto = recenzentService.getRecenzentByNum(num);
+        if (recenzentDto != null) {
+            List<RecenzentDto> recenzentDtos = new LinkedList<>();
+            recenzentDtos.add(recenzentDto);
+            setTable(recenzentDtos);
+        }else {
+            errorMessage.setText("Данные не найдены");
+        }
+    }
+    @FXML
+    private void clickFindFio(ActionEvent event) {
+        String fio = fioField.getText();
+        List<RecenzentDto> recenzentDtos = recenzentService.getAllByFio(fio);
+        if(!recenzentDtos.isEmpty()) {
+            setTable(recenzentDtos);
+        }else {
+            errorMessage.setText("Данные не найдены");
+        }
+
+    }
+    @FXML
+    private void clickFindPost(ActionEvent event) {
+        String post = postField.getText();
+        List<RecenzentDto> recenzentDtos = recenzentService.getAllByPost(post);
+        if(!recenzentDtos.isEmpty()) {
+            setTable(recenzentDtos);
+        }else {
+            errorMessage.setText("Данные не найдены");
+        }
+
+    }
+    @FXML
+    private void clickFindYear(ActionEvent event) {
+        String year = yearField.getText();
+        List<RecenzentDto> recenzentDtos = recenzentService.getAllByYear(year);
+        if(!recenzentDtos.isEmpty()) {
+            setTable(recenzentDtos);
+        }else {
+            errorMessage.setText("Данные не найдены");
+        }
 
     }
 

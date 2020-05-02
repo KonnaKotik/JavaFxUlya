@@ -9,28 +9,29 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.controller.document.PrikazController">
    <children>
-      <Button fx:id="exitButton" layoutX="777.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickExitButton" text="Назад" />
-       <Button fx:id="loadButton" layoutX="679.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickLoadButton" text="Загрузить" />
-      <TableView fx:id="table" layoutX="1.0" layoutY="92.0" prefHeight="558.0" prefWidth="840.0">
+      <Button fx:id="exitButton" layoutX="1194.0" layoutY="10.0" mnemonicParsing="false" onAction="#clickExitButton" text="Назад" />
+       <Button fx:id="loadButton" layoutX="1025.0" layoutY="10.0" mnemonicParsing="false" onAction="#clickLoadButton" prefHeight="25.0" prefWidth="98.0" text="Загрузить" />
+      <TableView fx:id="table" layoutX="1.0" layoutY="92.0" prefHeight="558.0" prefWidth="1250.0">
         <columns>
           <TableColumn fx:id="number" prefWidth="100.0" text="№" />
           <TableColumn fx:id="data" prefWidth="163.0" text="Дата регистрации" />
-            <TableColumn fx:id="fio" prefWidth="186.0" text="ФИО работника" />
-            <TableColumn fx:id="post" prefWidth="169.0" text="Должность" />
-            <TableColumn fx:id="description" minWidth="0.0" prefWidth="221.0" text="Содержание приказа" />
+            <TableColumn fx:id="fio" prefWidth="295.0" text="ФИО работника" />
+            <TableColumn fx:id="post" prefWidth="263.0" text="Должность" />
+            <TableColumn fx:id="description" minWidth="0.0" prefWidth="428.0" text="Содержание приказа" />
         </columns>
       </TableView>
-      <Label layoutX="331.0" layoutY="14.0" text="Журнал регистрации приказов" />
+       <Label fx:id="errorMessage" layoutX="113.0" layoutY="17.0" textFill="#dd0d0d" />
+      <Label layoutX="540.0" layoutY="14.0" text="Журнал регистрации приказов" />
       <TextField fx:id="numberField" layoutX="9.0" layoutY="59.0" prefHeight="25.0" prefWidth="69.0" />
-      <Button fx:id="numberButton" onAction="#clickFindNum" layoutX="78.0" layoutY="59.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
+      <Button fx:id="numberButton" layoutX="78.0" layoutY="59.0" mnemonicParsing="false" onAction="#clickFindNum" prefHeight="25.0" prefWidth="19.0" />
       <TextField fx:id="dataField" layoutX="113.0" layoutY="59.0" prefHeight="25.0" prefWidth="124.0" />
-      <Button fx:id="dataButton" onAction="#clickFindData" layoutX="238.0" layoutY="59.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
-      <TextField fx:id="fioField" layoutX="274.0" layoutY="59.0" prefHeight="25.0" prefWidth="146.0" />
-      <TextField fx:id="postField" layoutX="455.0" layoutY="59.0" prefHeight="25.0" prefWidth="136.0" />
-      <TextField fx:id="prikazField"  layoutX="624.0" layoutY="59.0" prefHeight="25.0" prefWidth="184.0" />
-      <Button fx:id="fioButton" onAction="#clickFindEmployee" layoutX="421.0" layoutY="59.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
-      <Button fx:id="postButton" onAction="#clickFindPost" layoutX="592.0" layoutY="59.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
-      <Button fx:id="prikazButton"  onAction="#clickFindDescription" layoutX="807.0" layoutY="59.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
-      <Button fx:id="addPrikazButton" layoutX="18.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickLoadButton" text="Добавить приказ" />
+      <Button fx:id="dataButton" layoutX="238.0" layoutY="59.0" mnemonicParsing="false" onAction="#clickFindData" prefHeight="25.0" prefWidth="19.0" />
+      <TextField fx:id="fioField" layoutX="274.0" layoutY="59.0" prefHeight="25.0" prefWidth="261.0" />
+      <TextField fx:id="postField" layoutX="563.0" layoutY="59.0" prefHeight="25.0" prefWidth="235.0" />
+      <TextField fx:id="prikazField" layoutX="830.0" layoutY="59.0" prefHeight="25.0" prefWidth="397.0" />
+      <Button fx:id="fioButton" layoutX="535.0" layoutY="59.0" mnemonicParsing="false" onAction="#clickFindEmployee" prefHeight="25.0" prefWidth="19.0" />
+      <Button fx:id="postButton" layoutX="798.0" layoutY="59.0" mnemonicParsing="false" onAction="#clickFindPost" prefHeight="25.0" prefWidth="19.0" />
+      <Button fx:id="prikazButton" layoutX="1227.0" layoutY="59.0" mnemonicParsing="false" onAction="#clickFindDescription" prefHeight="25.0" prefWidth="19.0" />
+      <Button fx:id="addPrikazButton" layoutX="14.0" layoutY="10.0" mnemonicParsing="false" onAction="#clickLoadButton" prefHeight="25.0" prefWidth="202.0" text="Добавить приказ" />
    </children>
 </Pane>

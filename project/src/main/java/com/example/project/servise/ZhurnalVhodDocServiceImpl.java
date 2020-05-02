@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 
@@ -24,6 +25,45 @@ public class ZhurnalVhodDocServiceImpl implements ZhurnalVhodDocService {
     @Override
     public List<ZhurnalVhodDocDto> getAllZhurnalVhodDoc() {
         List<ZhurnalVhodDoc> zhurnalVhodDocList = zhurnalVhodDocRepository.findAll();
+        return zhurnalVhodDocMapper.convertModelsToDtos(zhurnalVhodDocList);
+    }
+
+    @Override
+    public ZhurnalVhodDocDto getZhurnalVhodDocByNumber(String number) {
+        Optional<ZhurnalVhodDoc> zhurnalVhodDocOptional = zhurnalVhodDocRepository.findByNumber(number);
+        if(zhurnalVhodDocOptional.isPresent()) {
+            ZhurnalVhodDocDto zhurnalVhodDocDto = zhurnalVhodDocMapper.convertModelToDto(zhurnalVhodDocOptional.get());
+            return zhurnalVhodDocDto;
+        }
+        return null;
+    }
+
+    @Override
+    public List<ZhurnalVhodDocDto> getAllByData(String data) {
+        List<ZhurnalVhodDoc> zhurnalVhodDocList = zhurnalVhodDocRepository.findAllByData(data);
+        return zhurnalVhodDocMapper.convertModelsToDtos(zhurnalVhodDocList);
+    }
+    @Override
+    public List<ZhurnalVhodDocDto> getAllByTip(String tip) {
+        List<ZhurnalVhodDoc> zhurnalVhodDocList = zhurnalVhodDocRepository.findAllByTip(tip);
+        return zhurnalVhodDocMapper.convertModelsToDtos(zhurnalVhodDocList);
+    }
+
+    @Override
+    public List<ZhurnalVhodDocDto> getAllBySoder(String soder) {
+        List<ZhurnalVhodDoc> zhurnalVhodDocList = zhurnalVhodDocRepository.findAllBySoder(soder);
+        return zhurnalVhodDocMapper.convertModelsToDtos(zhurnalVhodDocList);
+    }
+
+    @Override
+    public List<ZhurnalVhodDocDto> getAllByKod(String kod) {
+        List<ZhurnalVhodDoc> zhurnalVhodDocList = zhurnalVhodDocRepository.findAllByKod(kod);
+        return zhurnalVhodDocMapper.convertModelsToDtos(zhurnalVhodDocList);
+    }
+
+    @Override
+    public List<ZhurnalVhodDocDto> getAllByIsp(String isp) {
+        List<ZhurnalVhodDoc> zhurnalVhodDocList = zhurnalVhodDocRepository.findAllByIsp(isp);
         return zhurnalVhodDocMapper.convertModelsToDtos(zhurnalVhodDocList);
     }
 }

@@ -21,25 +21,26 @@
             <TableColumn fx:id="sekretar" prefWidth="208.0" text="Секретарь ГЭК" />
         </columns>
       </TableView>
+       <Label fx:id="errorMessage" layoutX="132" layoutY="25.0" textFill="#dd0d0d" />
       <Button fx:id="exitButton" layoutX="1187.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickExitButton" text="Назад" />
-      <Label layoutX="549.0" layoutY="6.0" prefHeight="41.0" prefWidth="154.0" text="Состав ГЭК для магистров" />
+      <Label layoutX="545.0" layoutY="-3.0" prefHeight="41.0" prefWidth="162.0" text="Состав ГЭК для магистров" />
       <Button fx:id="loadButton" layoutX="1041.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickLoadButton" prefHeight="25.0" prefWidth="100.0" text="Загрузить" />
-      <Button fx:id="addButton" layoutX="30.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickLoadButton" prefHeight="25.0" prefWidth="116.0" text="Добавить данные" />
-      <Button fx:id="yearButton" layoutX="61.0" layoutY="54.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="18.0" />
+      <Button fx:id="addButton" layoutX="5.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickLoadButton" prefHeight="25.0" prefWidth="154.0" text="Добавить данные" />
+      <Button fx:id="yearButton" layoutX="61.0" layoutY="54.0" mnemonicParsing="false" onAction="#clickFindYear" prefHeight="15.0" prefWidth="18.0" />
       <TextField fx:id="yearField" layoutY="54.0" prefHeight="25.0" prefWidth="61.0" />
       <TextField fx:id="naprField" layoutX="88.0" layoutY="54.0" prefHeight="25.0" prefWidth="141.0" />
-      <Button fx:id="naprButton" layoutX="229.0" layoutY="54.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="18.0" />
+      <Button fx:id="naprButton" layoutX="229.0" layoutY="54.0" mnemonicParsing="false" onAction="#clickFindNapr" prefHeight="15.0" prefWidth="18.0" />
       <TextField fx:id="profilField" layoutX="257.0" layoutY="54.0" prefHeight="25.0" prefWidth="126.0" />
-      <Button fx:id="predButton" layoutX="549.0" layoutY="54.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="18.0" />
+      <Button fx:id="predButton" layoutX="549.0" layoutY="54.0" mnemonicParsing="false" onAction="#clickFindPred" prefHeight="25.0" prefWidth="18.0" />
       <TextField fx:id="predField" layoutX="417.0" layoutY="54.0" prefHeight="25.0" prefWidth="132.0" />
       <TextField fx:id="zamField" layoutX="577.0" layoutY="54.0" prefHeight="25.0" prefWidth="132.0" />
-      <Button fx:id="zamButton" layoutX="709.0" layoutY="54.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="18.0" />
-      <Button fx:id="profilButton" layoutX="383.0" layoutY="54.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="18.0" />
+      <Button fx:id="zamButton" layoutX="709.0" layoutY="54.0" mnemonicParsing="false" onAction="#clickFindZam" prefHeight="15.0" prefWidth="18.0" />
+      <Button fx:id="profilButton" layoutX="383.0" layoutY="54.0" mnemonicParsing="false" onAction="#clickFindProfil" prefHeight="15.0" prefWidth="18.0" />
       <TextField fx:id="komField" layoutX="737.0" layoutY="54.0" prefHeight="25.0" prefWidth="184.0" />
-      <Button fx:id="komButton" layoutX="921.0" layoutY="54.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="18.0" />
+      <Button fx:id="komButton" layoutX="921.0" layoutY="54.0" mnemonicParsing="false" onAction="#clickFindKom" prefHeight="15.0" prefWidth="18.0" />
       <TextField fx:id="formaField" layoutX="949.0" layoutY="54.0" prefHeight="25.0" prefWidth="100.0" />
-      <Button fx:id="formaButton" layoutX="1049.0" layoutY="54.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="18.0" />
+      <Button fx:id="formaButton" layoutX="1049.0" layoutY="54.0" mnemonicParsing="false" onAction="#clickFindForma" prefHeight="15.0" prefWidth="18.0" />
       <TextField fx:id="sekField" layoutX="1080.0" layoutY="54.0" prefHeight="25.0" prefWidth="141.0" />
-      <Button fx:id="sekButton" layoutX="1221.0" layoutY="54.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="18.0" />
+      <Button fx:id="sekButton" layoutX="1221.0" layoutY="54.0" mnemonicParsing="false" onAction="#clickFindSek" prefHeight="15.0" prefWidth="18.0" />
    </children>
 </Pane>

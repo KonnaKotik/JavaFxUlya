@@ -48,16 +48,16 @@ public class InfoChildrenController extends AbstractController {
     @FXML
     private TableView<ChildrenDto> childrenTable;
 
-   private List<ChildrenDto> childrenDtoList;
-   private List<Employee> employeeList;
+    private List<ChildrenDto> childrenDtoList;
+    private List<Employee> employeeList;
 
-   @Qualifier("ChildrenView")
-   @Autowired
-   private ControllersConfig.ViewHolder childrenView;
+    @Qualifier("ChildrenView")
+    @Autowired
+    private ControllersConfig.ViewHolder childrenView;
 
-   @Qualifier("noLoginChildrenView")
-   @Autowired
-   private ControllersConfig.ViewHolder noLoginChildrenView;
+    @Qualifier("noLoginChildrenView")
+    @Autowired
+    private ControllersConfig.ViewHolder noLoginChildrenView;
 
 
 

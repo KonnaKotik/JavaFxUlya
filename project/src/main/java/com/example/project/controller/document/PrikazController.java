@@ -9,10 +9,7 @@ import com.example.project.servise.PrikazService;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -72,6 +69,9 @@ public class PrikazController extends AbstractController {
 
     private List<PrikazDto> prikazDtoList;
 
+    @FXML
+    private Label errorMessage;
+
     @Qualifier("DocumentView")
     @Autowired
     private ControllersConfig.ViewHolder documenView;
@@ -114,6 +114,8 @@ public class PrikazController extends AbstractController {
             List<PrikazDto> prikazDtos = new LinkedList<>();
             prikazDtos.add(prikazDto);
             setTable(prikazDtos);
+        }else {
+            errorMessage.setText("Данные не найдены");
         }
     }
 
@@ -123,6 +125,8 @@ public class PrikazController extends AbstractController {
         List<PrikazDto> prikazDtos = prikazService.getAllByData(data);
         if(!prikazDtos.isEmpty()) {
             setTable(prikazDtos);
+        }else {
+            errorMessage.setText("Данные не найдены");
         }
 
     }
@@ -133,7 +137,10 @@ public class PrikazController extends AbstractController {
         List<PrikazDto> prikazDtos = prikazService.getAllByPost(post);
         if(!prikazDtos.isEmpty()) {
             setTable(prikazDtos);
+        }else {
+            errorMessage.setText("Данные не найдены");
         }
+
     }
 
     @FXML
@@ -142,7 +149,10 @@ public class PrikazController extends AbstractController {
         List<PrikazDto> prikazDtos = prikazService.getAllByDescription(description);
         if(!prikazDtos.isEmpty()){
             setTable(prikazDtos);
+        }else {
+            errorMessage.setText("Данные не найдены");
         }
+
     }
 
     @FXML
@@ -151,7 +161,10 @@ public class PrikazController extends AbstractController {
         List<PrikazDto> prikazDtos = prikazService.getAllByEmployee(employeeFio);
         if(!prikazDtos.isEmpty()) {
             setTable(prikazDtos);
+        }else {
+            errorMessage.setText("Данные не найдены");
         }
+
     }
 
 

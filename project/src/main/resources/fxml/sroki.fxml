@@ -9,7 +9,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.controller.document.SrokiController">
    <children>
-      <Button fx:id="exitButton" layoutX="1187.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickExitButton" text="Назад" />
+      <Button fx:id="exitButton" layoutX="1162.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickExitButton" prefHeight="25.0" prefWidth="74.0" text="Назад" />
       <TableView fx:id="table" layoutY="84.0" prefHeight="567.0" prefWidth="1250.0">
         <columns>
           <TableColumn fx:id="institute" prefWidth="161.0" text="Институт" />
@@ -21,22 +21,23 @@
             <TableColumn fx:id="formaOb" prefWidth="179.0" text="Форма обучения" />
         </columns>
       </TableView>
-      <Label layoutX="539.0" layoutY="18.0" prefHeight="17.0" prefWidth="173.0" text="Сроки защиты ВКР магистров" />
+       <Label fx:id="errorMessage" layoutX="132" layoutY="25.0" textFill="#dd0d0d" />
+      <Label layoutX="539.0" layoutY="6.0"  text="Сроки защиты ВКР магистров" />
       <Button fx:id="loadButton" layoutX="992.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickLoadButton" prefHeight="25.0" prefWidth="123.0" text="Загрузить" />
       <Button fx:id="addButton" layoutX="44.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="123.0" text="Добавить данные" />
-      <Button fx:id="instituteButton" layoutX="131.0" layoutY="53.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
+      <Button fx:id="instituteButton" layoutX="131.0" layoutY="53.0" mnemonicParsing="false" onAction="#clickFindInstitute" prefHeight="25.0" prefWidth="19.0" />
       <TextField fx:id="instituteField" layoutX="1.0" layoutY="53.0" prefHeight="25.0" prefWidth="129.0" />
       <TextField fx:id="numberField" layoutX="161.0" layoutY="53.0" prefHeight="25.0" prefWidth="117.0" />
-      <Button fx:id="numberButton" layoutX="278.0" layoutY="53.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
+      <Button fx:id="numberButton" layoutX="278.0" layoutY="53.0" mnemonicParsing="false" onAction="#clickFindNumber" prefHeight="25.0" prefWidth="19.0" />
       <TextField fx:id="naprField" layoutX="304.0" layoutY="53.0" prefHeight="25.0" prefWidth="203.0" />
-      <Button fx:id="naprButton" layoutX="507.0" layoutY="53.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
+      <Button fx:id="naprButton" layoutX="507.0" layoutY="53.0" mnemonicParsing="false" onAction="#clickFindNapr" prefHeight="25.0" prefWidth="19.0" />
       <TextField fx:id="dataField" layoutX="533.0" layoutY="53.0" prefHeight="25.0" prefWidth="151.0" />
-      <Button fx:id="dataButton" layoutX="685.0" layoutY="53.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
+      <Button fx:id="dataButton" layoutX="685.0" layoutY="53.0" mnemonicParsing="false" onAction="#clickFindData" prefHeight="25.0" prefWidth="19.0" />
       <TextField fx:id="startField" layoutX="712.0" layoutY="53.0" prefHeight="25.0" prefWidth="145.0" />
-      <Button fx:id="startButton" layoutX="857.0" layoutY="53.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
+      <Button fx:id="startButton" layoutX="857.0" layoutY="53.0" mnemonicParsing="false" onAction="#clickFindStart" prefHeight="25.0" prefWidth="19.0" />
       <TextField fx:id="auditField" layoutX="884.0" layoutY="53.0" prefHeight="25.0" prefWidth="159.0" />
-      <Button fx:id="auditButton" layoutX="1044.0" layoutY="53.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
+      <Button fx:id="auditButton" layoutX="1044.0" layoutY="53.0" mnemonicParsing="false" onAction="#clickFindAudit" prefHeight="25.0" prefWidth="19.0" />
       <TextField fx:id="formaField" layoutX="1070.0" layoutY="53.0" prefHeight="25.0" prefWidth="151.0" />
-      <Button fx:id="formaButton" layoutX="1221.0" layoutY="53.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
+      <Button fx:id="formaButton" layoutX="1221.0" layoutY="53.0" mnemonicParsing="false" onAction="#clickFindForma" prefHeight="25.0" prefWidth="19.0" />
    </children>
 </Pane>

@@ -8,4 +8,16 @@ import java.util.List;
 
 public interface ZhurnalVhodDocService {
     List<ZhurnalVhodDocDto> getAllZhurnalVhodDoc();
+
+    ZhurnalVhodDocDto getZhurnalVhodDocByNumber(String number);
+
+    List<ZhurnalVhodDocDto> getAllByData(String data);
+
+    List<ZhurnalVhodDocDto> getAllByTip(String tip);
+
+    List<ZhurnalVhodDocDto> getAllBySoder(String soder);
+
+    List<ZhurnalVhodDocDto> getAllByKod(String kod);
+
+    List<ZhurnalVhodDocDto> getAllByIsp(String isp);
 }
