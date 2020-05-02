@@ -32,6 +32,6 @@
       <Button fx:id="fioButton" layoutX="535.0" layoutY="59.0" mnemonicParsing="false" onAction="#clickFindEmployee" prefHeight="25.0" prefWidth="19.0" />
       <Button fx:id="postButton" layoutX="798.0" layoutY="59.0" mnemonicParsing="false" onAction="#clickFindPost" prefHeight="25.0" prefWidth="19.0" />
       <Button fx:id="prikazButton" layoutX="1227.0" layoutY="59.0" mnemonicParsing="false" onAction="#clickFindDescription" prefHeight="25.0" prefWidth="19.0" />
-      <Button fx:id="addPrikazButton" layoutX="14.0" layoutY="10.0" mnemonicParsing="false" onAction="#clickLoadButton" prefHeight="25.0" prefWidth="202.0" text="Добавить приказ" />
+      <Button fx:id="addPrikazButton"  layoutX="14.0" layoutY="10.0" mnemonicParsing="false" onAction="#clickAddPrikaz" prefHeight="25.0" prefWidth="202.0" text="Добавить приказ" />
    </children>
 </Pane>

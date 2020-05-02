@@ -19,4 +19,6 @@ public interface PrikazService {
     List<PrikazDto> getAllByDescription(String description);
 
     List<PrikazDto> getAllByEmployee(String fio);
+
+    void addNewPrikaz(Prikaz prikaz, String fio);
 }

@@ -65,4 +65,27 @@ public class PrikazServiceImpl implements PrikazService {
        List<Prikaz> prikazList = prikazRepository.findAllByEmployees(employee);
        return prikazMapper.convertModelsToDtos(prikazList);
     }
+
+    @Override
+    public void addNewPrikaz(Prikaz prikaz, String fio) {
+        prikaz = prikazRepository.save(prikaz);
+        List<Employee> employees = getEmployeesFio(fio, prikaz);
+        prikaz.setEmployees(employees);
+      //  prikazRepository.save(prikaz);
+
+    }
+
+    private List<Employee> getEmployeesFio(String fio, Prikaz prikaz) {
+        List<Employee> employeeList = new LinkedList<>();
+        for (String name: fio.split(",")) {
+            name = name.trim();
+            Employee employee = employeeService.getEmployeeByFio(name);
+            List<Prikaz> prikazList =employee.getPrikazs();
+            prikazList.add(prikaz);
+            employee.setPrikazs(prikazList);
+            employeeService.updateEmployee(employee);
+            employeeList.add(employeeService.getEmployeeByFio(name));
+        }
+        return employeeList;
+    }
 }

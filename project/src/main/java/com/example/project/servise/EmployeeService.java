@@ -16,6 +16,7 @@ public interface EmployeeService {
 
     List<Employee> getAllByChildren(List<Children> childrenList);
 
+    void updateEmployee(Employee employee);
 
     void deleteEmployee(String fio);
 

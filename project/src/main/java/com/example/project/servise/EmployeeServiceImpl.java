@@ -54,6 +54,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    public void updateEmployee(Employee employee) {
+        employeeRepository.save(employee);
+    }
+
+    @Override
     public void deleteEmployee(String fio) {
         Employee employee = getEmployeeByFio(fio);
         List<Children> childrenList = employee.getChildrenList();

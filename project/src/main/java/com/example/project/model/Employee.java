@@ -3,6 +3,8 @@ package com.example.project.model;
 import com.example.project.model.document.Prikaz;
 import com.example.project.model.document.Vkr;
 import lombok.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.util.LinkedList;
@@ -40,7 +42,8 @@ public class Employee {
     inverseJoinColumns = @JoinColumn(name = "child_id"))
     private List<Children> childrenList = new LinkedList<>();
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @Fetch(value = FetchMode.SUBSELECT)
     @JoinTable(name = "empl_prikaz", joinColumns = @JoinColumn(name = "employee_id"),
             inverseJoinColumns = @JoinColumn(name = "prikaz_id"))
     private List<Prikaz> prikazs = new LinkedList<>();
@@ -85,9 +88,7 @@ public class Employee {
                 ", status=" + status +
                 ", childrenList=" + childrenList.stream().map(Children::getFio).collect(Collectors.toList()) +
                 ", prikazs=" + prikazs.stream().map(Prikaz::getNumber).collect(Collectors.toList()) +
+                ", vkrs=" + vkrs.stream().map(Vkr::getNumber).collect(Collectors.toList()) +
                 ")";
-
-
-
     }
 }

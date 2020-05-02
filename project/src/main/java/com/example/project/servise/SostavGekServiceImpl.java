@@ -1,12 +1,9 @@
 package com.example.project.servise;
 
 
-import com.example.project.dto.document.RecenzentDto;
 import com.example.project.dto.document.SostavGekDto;
-import com.example.project.mapper.document.RecenzentMapper;
 
 import com.example.project.mapper.document.SostavGekMapper;
-import com.example.project.model.document.Recenzent;
 import com.example.project.model.document.SostavGek;
 
 import com.example.project.repository.SostavGekRepository;
@@ -38,7 +35,7 @@ public class SostavGekServiceImpl implements SostavGekService {
 
     @Override
     public List<SostavGekDto> getAllByNapr(String napr) {
-        List<SostavGek> sostavGekList = sostavGekRepository.findAllByNapr(napr);
+        List<SostavGek> sostavGekList = sostavGekRepository.findAllByNapravlenie(napr);
         return sostavGekMapper.convertModelsToDtos(sostavGekList);
     }
 
@@ -62,7 +59,7 @@ public class SostavGekServiceImpl implements SostavGekService {
 
     @Override
     public List<SostavGekDto> getAllByKom(String kom) {
-        List<SostavGek> sostavGekList = sostavGekRepository.findAllByKom(kom);
+        List<SostavGek> sostavGekList = sostavGekRepository.findAllByKomissia(kom);
         return sostavGekMapper.convertModelsToDtos(sostavGekList);
     }
 
@@ -74,7 +71,7 @@ public class SostavGekServiceImpl implements SostavGekService {
 
     @Override
     public List<SostavGekDto> getAllBySek(String sek) {
-        List<SostavGek> sostavGekList = sostavGekRepository.findAllBySek(sek);
+        List<SostavGek> sostavGekList = sostavGekRepository.findAllBySekretar(sek);
         return sostavGekMapper.convertModelsToDtos(sostavGekList);
     }
 

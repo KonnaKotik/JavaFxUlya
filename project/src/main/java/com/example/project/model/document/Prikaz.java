@@ -43,4 +43,12 @@ public class Prikaz {
                 ", employees=" + employees.stream().map(Employee::getFio).collect(Collectors.toList()) +
                 ")";
     }
+
+    public Prikaz(String number, String post, String data, String description) {
+        this.number = number;
+        this.post = post;
+        this.data = data;
+        this.description = description;
+      //  this.employees = employees;
+    }
 }

@@ -5,6 +5,7 @@ import com.example.project.ControllersConfig;
 import com.example.project.controller.AbstractController;
 import com.example.project.controller.MainMenuController;
 import com.example.project.dto.document.PrikazDto;
+import com.example.project.model.document.Prikaz;
 import com.example.project.servise.PrikazService;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -164,6 +165,13 @@ public class PrikazController extends AbstractController {
         }else {
             errorMessage.setText("Данные не найдены");
         }
+
+    }
+
+    @FXML
+    private void clickAddPrikaz(ActionEvent event) {
+        Prikaz prikaz = new Prikaz(numberField.getText(), postField.getText(), dataField.getText(), prikazField.getText());
+        prikazService.addNewPrikaz(prikaz, fioField.getText());
 
     }
 

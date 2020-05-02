@@ -31,7 +31,7 @@ public class Vkr {
 
     private String tema;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "empl_id")
     private Employee ruk;
 

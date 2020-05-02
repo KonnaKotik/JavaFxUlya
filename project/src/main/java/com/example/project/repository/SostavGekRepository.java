@@ -9,14 +9,13 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-
 public interface SostavGekRepository extends JpaRepository<SostavGek, Long> {
 
    List<SostavGek> findAll();
 
    List<SostavGek> findAllByYear(String year);
 
-   List<SostavGek> findAllByNapr(String napr);
+   List<SostavGek> findAllByNapravlenie(String napr);
 
    List<SostavGek> findAllByProfil(String profil);
 
@@ -24,10 +23,10 @@ public interface SostavGekRepository extends JpaRepository<SostavGek, Long> {
 
    List<SostavGek> findAllByZam(String zam);
 
-   List<SostavGek> findAllByKom(String kom);
+   List<SostavGek> findAllByKomissia(String kom);
 
    List<SostavGek> findAllByForma(String forma);
 
-   List<SostavGek> findAllBySek(String sek);
+   List<SostavGek> findAllBySekretar(String sek);
 
 }
