@@ -104,9 +104,9 @@ public class RecenzentController extends AbstractController {
     }
 
     @FXML
-    private void clickFindNum(ActionEvent event) {
-        String num = numberField.getText();
-        RecenzentDto recenzentDto = recenzentService.getRecenzentByNum(num);
+    private void clickFindNumber(ActionEvent event) {
+        String number = numberField.getText();
+        RecenzentDto recenzentDto = recenzentService.getRecenzentByNumber(number);
         if (recenzentDto != null) {
             List<RecenzentDto> recenzentDtos = new LinkedList<>();
             recenzentDtos.add(recenzentDto);

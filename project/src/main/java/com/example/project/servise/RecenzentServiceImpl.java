@@ -29,14 +29,13 @@ public class RecenzentServiceImpl implements RecenzentService {
     }
 
     @Override
-    public RecenzentDto getRecenzentByNum(String num) {
-        Optional<Recenzent> recenzentOptional = recenzentRepozitory.findByNumber(num);
-        if (recenzentOptional.isPresent()) {
+    public RecenzentDto getRecenzentByNumber(String number) {
+        Optional<Recenzent> recenzentOptional = recenzentRepozitory.findByNumber(number);
+        if(recenzentOptional.isPresent()) {
             RecenzentDto recenzentDto = recenzentMapper.convertModelToDto(recenzentOptional.get());
             return recenzentDto;
         }
         return null;
-    }
 
     @Override
     public List<RecenzentDto> getAllByFio(String fio) {

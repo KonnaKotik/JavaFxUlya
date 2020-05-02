@@ -10,7 +10,7 @@ public interface RecenzentService {
 
     List<RecenzentDto> getAllRecenzent();
 
-    RecenzentDto getRecenzentByNum(String num);
+    RecenzentDto getRecenzentByNumber(String number);
 
     List<RecenzentDto> getAllByFio(String fio);
 
