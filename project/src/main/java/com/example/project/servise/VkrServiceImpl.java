@@ -37,4 +37,40 @@ public class VkrServiceImpl implements VkrService {
         List<Vkr> vkrList = vkrRepository.findAllByRuk(employee);
         return vkrMapper.convertModelsToDtos(vkrList);
     }
+
+    @Override
+    public VkrDto getVkrByNumber(String number) {
+        Vkr vkr = vkrRepository.findByNumber(number);
+        return vkrMapper.convertModelToDto(vkr);
+    }
+
+    @Override
+    public List<VkrDto> getAllByGroup(String group) {
+        List<Vkr> vkrList = vkrRepository.findAllByGroup(group);
+        return vkrMapper.convertModelsToDtos(vkrList);
+    }
+
+    @Override
+    public List<VkrDto> getAllByFio(String fio) {
+        List<Vkr> vkrList = vkrRepository.findAllByFio(fio);
+        return vkrMapper.convertModelsToDtos(vkrList);
+    }
+
+    @Override
+    public List<VkrDto> getAllByTema(String tema) {
+        List<Vkr> vkrList = vkrRepository.findAllByTema(tema);
+        return vkrMapper.convertModelsToDtos(vkrList);
+    }
+
+    @Override
+    public List<VkrDto> getAllByYear(String year) {
+        List<Vkr> vkrList = vkrRepository.findAllByYear(year);
+        return vkrMapper.convertModelsToDtos(vkrList);
+    }
+
+    @Override
+    public List<VkrDto> getAllByNapr(String napr) {
+        List<Vkr> vkrList = vkrRepository.findAllByNapravlenie(napr);
+        return vkrMapper.convertModelsToDtos(vkrList);
+    }
 }

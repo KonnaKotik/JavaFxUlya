@@ -19,5 +19,17 @@ public interface VkrRepository extends JpaRepository<Vkr, Long> {
     List<Vkr> findAll();
 
     List<Vkr> findAllByRuk(Employee employee);
+
+    Vkr findByNumber(String number);
+
+    List<Vkr> findAllByGroup(String group);
+
+    List<Vkr> findAllByFio(String fio);
+
+    List<Vkr> findAllByTema(String tema);
+
+    List<Vkr> findAllByYear(String year);
+
+    List<Vkr> findAllByNapravlenie(String napr);
 }
 

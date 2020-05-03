@@ -10,4 +10,16 @@ public interface VkrService {
 
     List<VkrDto> getAllByRuk(String rukFio);
 
+    VkrDto getVkrByNumber(String number);
+
+    List<VkrDto> getAllByGroup(String group);
+
+    List<VkrDto> getAllByFio(String fio);
+
+    List<VkrDto> getAllByTema(String tema);
+
+    List<VkrDto> getAllByYear(String year);
+
+    List<VkrDto> getAllByNapr(String napr);
+
 }
