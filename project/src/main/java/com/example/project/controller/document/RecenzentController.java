@@ -5,6 +5,7 @@ import com.example.project.controller.AbstractController;
 import com.example.project.controller.MainMenuController;
 import com.example.project.dto.document.RecenzentDto;
 import com.example.project.model.document.Recenzent;
+import com.example.project.model.document.SostavGek;
 import com.example.project.servise.RecenzentService;
 import javafx.scene.control.*;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -81,6 +82,7 @@ public class RecenzentController extends AbstractController {
         fio.setCellValueFactory(new PropertyValueFactory<>("fio"));
         post.setCellValueFactory(new PropertyValueFactory<>("post"));
         year.setCellValueFactory(new PropertyValueFactory<>("year"));
+        setNullField();
     }
 
     @FXML
@@ -115,6 +117,7 @@ public class RecenzentController extends AbstractController {
         }else {
             errorMessage.setText("Данные не найдены");
         }
+        setNullField();
     }
     @FXML
     private void clickFindFio(ActionEvent event) {
@@ -125,6 +128,7 @@ public class RecenzentController extends AbstractController {
         }else {
             errorMessage.setText("Данные не найдены");
         }
+        setNullField();
 
     }
     @FXML
@@ -136,6 +140,7 @@ public class RecenzentController extends AbstractController {
         }else {
             errorMessage.setText("Данные не найдены");
         }
+        setNullField();
 
     }
     @FXML
@@ -147,17 +152,31 @@ public class RecenzentController extends AbstractController {
         }else {
             errorMessage.setText("Данные не найдены");
         }
+        setNullField();
 
     }
 
 
     @FXML
     private void clickAddRecenzent(ActionEvent event) {
-        Recenzent recenzent = new Recenzent(numberField.getText(), postField.getText(), yearField.getText(), fioField.getText());
-        recenzentService.addNewRecenzent(recenzent);
-        recenzentDtoList = recenzentService.getAllRecenzent();
-        table.setItems(FXCollections.observableArrayList(recenzentDtoList));
+        if (numberField.getText() == null || fioField.getText() == null || postField.getText() == null || yearField.getText() == null) {
+            errorMessage.setText("Не все поля заполнены");
+        } else {
+            Recenzent recenzent = new Recenzent(numberField.getText(), fioField.getText(), postField.getText(), yearField.getText());
+            recenzentService.addNewRecenzent(recenzent);
+            recenzentDtoList = recenzentService.getAllRecenzent();
+            table.setItems(FXCollections.observableArrayList(recenzentDtoList));
+            setNullField();
+        }
+        setNullField();
 
     }
 
+    private void setNullField() {
+        numberField.setText(null);
+        fioField.setText(null);
+        postField.setText(null);
+        yearField.setText(null);
+    }
 }
+

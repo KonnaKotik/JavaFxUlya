@@ -3,6 +3,7 @@ package com.example.project.servise;
 
 import com.example.project.dto.document.PrikazDto;
 import com.example.project.model.document.Prikaz;
+import com.example.project.model.document.Sroki;
 
 import java.util.List;
 
@@ -20,5 +21,6 @@ public interface PrikazService {
 
     List<PrikazDto> getAllByEmployee(String fio);
 
-    void addNewPrikaz(Prikaz prikaz, String fio);
+   void addNewPrikaz(Prikaz prikaz, String fio);
+
 }

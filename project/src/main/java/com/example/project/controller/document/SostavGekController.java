@@ -6,6 +6,7 @@ import com.example.project.dto.document.PrikazDto;
 import com.example.project.dto.document.RecenzentDto;
 import com.example.project.dto.document.SostavGekDto;
 import com.example.project.model.document.SostavGek;
+import com.example.project.model.document.Sroki;
 import com.example.project.servise.PrikazService;
 import com.example.project.servise.SostavGekService;
 import javafx.collections.FXCollections;
@@ -99,6 +100,7 @@ public class SostavGekController extends AbstractController {
         komissia.setCellValueFactory(new PropertyValueFactory<>("komissia"));
         forma.setCellValueFactory(new PropertyValueFactory<>("forma"));
         sekretar.setCellValueFactory(new PropertyValueFactory<>("sekretar"));
+        setNullField();
     }
 
     @FXML
@@ -142,6 +144,7 @@ public class SostavGekController extends AbstractController {
         } else {
             errorMessage.setText("Данные не найдены");
         }
+        setNullField();
     }
 
     @FXML
@@ -153,6 +156,7 @@ public class SostavGekController extends AbstractController {
         } else {
             errorMessage.setText("Данные не найдены");
         }
+        setNullField();
     }
 
     @FXML
@@ -175,6 +179,7 @@ public class SostavGekController extends AbstractController {
         } else {
             errorMessage.setText("Данные не найдены");
         }
+        setNullField();
     }
 
     @FXML
@@ -186,6 +191,7 @@ public class SostavGekController extends AbstractController {
         } else {
             errorMessage.setText("Данные не найдены");
         }
+        setNullField();
     }
 
     @FXML
@@ -197,6 +203,7 @@ public class SostavGekController extends AbstractController {
         } else {
             errorMessage.setText("Данные не найдены");
         }
+        setNullField();
     }
 
     @FXML
@@ -208,16 +215,35 @@ public class SostavGekController extends AbstractController {
         } else {
             errorMessage.setText("Данные не найдены");
         }
+        setNullField();
     }
 
     @FXML
     private void clickAddSostavGek(ActionEvent event) {
-        SostavGek sostavGek = new SostavGek(yearField.getText(), naprField.getText(), profil.getText(), pred.getText(), zam.getText(), komissia.getText(), forma.getText(), sekretar.getText());
-        sostavGekService.addNewSostavGek(sostavGek);
-        sostavGekDtoList = sostavGekService.getAllSostavGek();
-        table.setItems(FXCollections.observableArrayList(sostavGekDtoList));
+        if (yearField.getText() == null || naprField.getText() == null || profilField.getText() == null || predField.getText() == null || zamField.getText() == null || komField.getText() == null || formaField.getText() == null || sekField.getText() == null) {
+            errorMessage.setText("Не все поля заполнены");
+        } else {
+            SostavGek sostavGek = new SostavGek(yearField.getText(), naprField.getText(), profilField.getText(), predField.getText(), zamField.getText(), komField.getText(), formaField.getText(), sekField.getText());
+            sostavGekService.addNewSostavGek(sostavGek);
+            sostavGekDtoList = sostavGekService.getAllSostavGek();
+            table.setItems(FXCollections.observableArrayList(sostavGekDtoList));
+            setNullField();
+        }
+
+    }
+
+    private void setNullField() {
+        yearField.setText(null);
+        naprField.setText(null);
+        profilField.setText(null);
+        predField.setText(null);
+        zamField.setText(null);
+        komField.setText(null);
+        formaField.setText(null);
+        sekField.setText(null);
     }
 }
+
 
 
 

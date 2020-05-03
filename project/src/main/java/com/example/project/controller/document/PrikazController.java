@@ -6,6 +6,7 @@ import com.example.project.controller.AbstractController;
 import com.example.project.controller.MainMenuController;
 import com.example.project.dto.document.PrikazDto;
 import com.example.project.model.document.Prikaz;
+import com.example.project.model.document.Sroki;
 import com.example.project.servise.PrikazService;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -87,6 +88,7 @@ public class PrikazController extends AbstractController {
         fio.setCellValueFactory(new PropertyValueFactory<>("fio"));
         post.setCellValueFactory(new PropertyValueFactory<>("post"));
         description.setCellValueFactory(new PropertyValueFactory<>("description"));
+        setNullField();
     }
 
     @FXML
@@ -103,6 +105,7 @@ public class PrikazController extends AbstractController {
             getNextStage(exitButton, noLoginDocumentView);
         }
     }
+
     private void setTable(List<PrikazDto> prikazDtos) {
         table.setItems(FXCollections.observableArrayList(prikazDtos));
     }
@@ -115,20 +118,22 @@ public class PrikazController extends AbstractController {
             List<PrikazDto> prikazDtos = new LinkedList<>();
             prikazDtos.add(prikazDto);
             setTable(prikazDtos);
-        }else {
+        } else {
             errorMessage.setText("Данные не найдены");
         }
+        setNullField();
     }
 
     @FXML
     private void clickFindData(ActionEvent event) {
         String data = dataField.getText();
         List<PrikazDto> prikazDtos = prikazService.getAllByData(data);
-        if(!prikazDtos.isEmpty()) {
+        if (!prikazDtos.isEmpty()) {
             setTable(prikazDtos);
-        }else {
+        } else {
             errorMessage.setText("Данные не найдены");
         }
+        setNullField();
 
     }
 
@@ -136,11 +141,12 @@ public class PrikazController extends AbstractController {
     private void clickFindPost(ActionEvent event) {
         String post = postField.getText();
         List<PrikazDto> prikazDtos = prikazService.getAllByPost(post);
-        if(!prikazDtos.isEmpty()) {
+        if (!prikazDtos.isEmpty()) {
             setTable(prikazDtos);
-        }else {
+        } else {
             errorMessage.setText("Данные не найдены");
         }
+        setNullField();
 
     }
 
@@ -148,11 +154,12 @@ public class PrikazController extends AbstractController {
     private void clickFindDescription(ActionEvent event) {
         String description = prikazField.getText();
         List<PrikazDto> prikazDtos = prikazService.getAllByDescription(description);
-        if(!prikazDtos.isEmpty()){
+        if (!prikazDtos.isEmpty()) {
             setTable(prikazDtos);
-        }else {
+        } else {
             errorMessage.setText("Данные не найдены");
         }
+        setNullField();
 
     }
 
@@ -160,25 +167,40 @@ public class PrikazController extends AbstractController {
     private void clickFindEmployee(ActionEvent event) {
         String employeeFio = fioField.getText();
         List<PrikazDto> prikazDtos = prikazService.getAllByEmployee(employeeFio);
-        if(!prikazDtos.isEmpty()) {
+        if (!prikazDtos.isEmpty()) {
             setTable(prikazDtos);
-        }else {
+        } else {
             errorMessage.setText("Данные не найдены");
         }
+        setNullField();
 
     }
 
     @FXML
     private void clickAddPrikaz(ActionEvent event) {
-        Prikaz prikaz = new Prikaz(numberField.getText(), postField.getText(), dataField.getText(), prikazField.getText());
-        prikazService.addNewPrikaz(prikaz, fioField.getText());
-        prikazDtoList = prikazService.getAllPrikaz();
-        table.setItems(FXCollections.observableArrayList(prikazDtoList));
+        if (numberField.getText() == null || dataField.getText() == null || fioField.getText() == null || postField.getText() == null || prikazField.getText() == null) {
+            errorMessage.setText("Не все поля заполнены");
+        } else {
+            Prikaz prikaz = new Prikaz(numberField.getText(), dataField.getText(), fioField.getText(), postField.getText(), prikazField.getText());
+            prikazService.addNewPrikaz(prikaz);
+            prikazDtoList = prikazService.getAllPrikaz();
+            table.setItems(FXCollections.observableArrayList(prikazDtoList));
+            setNullField();
+        }
+
     }
 
-
-
-
-
-
+    private void setNullField() {
+        numberField.setText(null);
+        dataField.setText(null);
+        fioField.setText(null);
+        postField.setText(null);
+        prikazField.setText(null);
+    }
 }
+
+
+
+
+
+
