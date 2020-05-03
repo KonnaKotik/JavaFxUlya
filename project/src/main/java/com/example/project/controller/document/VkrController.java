@@ -6,6 +6,7 @@ import com.example.project.dto.document.PrikazDto;
 import com.example.project.dto.document.SostavGekDto;
 import com.example.project.dto.document.SrokiDto;
 import com.example.project.dto.document.VkrDto;
+import com.example.project.model.document.Vkr;
 import com.example.project.servise.PrikazService;
 import com.example.project.servise.VkrService;
 import javafx.collections.FXCollections;
@@ -189,5 +190,14 @@ public class VkrController extends AbstractController {
         if(!vkrDtoList.isEmpty()) {
             setTable(vkrDtoList);
         }
+    }
+
+    @FXML
+    private void clickAddVkr(ActionEvent event) {
+        Vkr vkr = new Vkr(numberField.getText(), groupField.getText(), naprField.getText(), fioField.getText(), temaField.getText(), yearField.getText());
+        String fioRuk = rukField.getText();
+        vkrService.addNewVkr(vkr, fioRuk);
+        List<VkrDto> vkrList = vkrService.getAllVkr();
+       setTable(vkrList);
     }
 }

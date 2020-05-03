@@ -2,6 +2,7 @@ package com.example.project.model.document;
 import com.example.project.model.Children;
 import com.example.project.model.Employee;
 import lombok.*;
+import org.hibernate.annotations.Fetch;
 
 import javax.persistence.*;
 import java.util.LinkedList;
@@ -43,12 +44,22 @@ public class Vkr {
         return "Vkr(" +
                 "id=" + id +
                 ", number=" + number +
+                ", group=" + group +
                 ", napravlenie=" + napravlenie +
                 ", fio=" + fio +
                 ", tema=" + tema +
                 ", year=" + year +
                 ", ruk=" + ruk.getFio() +
                 ")";
+    }
+
+    public Vkr(String number, String group, String napravlenie, String fio, String tema, String year) {
+        this.number = number;
+        this.group = group;
+        this.napravlenie = napravlenie;
+        this.fio = fio;
+        this.tema = tema;
+        this.year = year;
     }
 
 

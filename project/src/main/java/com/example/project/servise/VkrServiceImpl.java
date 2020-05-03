@@ -73,4 +73,22 @@ public class VkrServiceImpl implements VkrService {
         List<Vkr> vkrList = vkrRepository.findAllByNapravlenie(napr);
         return vkrMapper.convertModelsToDtos(vkrList);
     }
+
+    @Override
+    public void addNewVkr(Vkr vkr, String fioRuk) {
+        vkr = vkrRepository.save(vkr);
+       Employee employee = setEmpForVkr(vkr, fioRuk);
+       vkr.setRuk(employee);
+    //   vkrRepository.save(vkr);
+
+    }
+
+    private Employee setEmpForVkr(Vkr vkr, String fioRuk) {
+        Employee employee = employeeService.getEmployeeByFio(fioRuk);
+        List<Vkr> vkrList = employee.getVkrs();
+        vkrList.add(vkr);
+        employee.setVkrs(vkrList);
+        employeeService.updateEmployee(employee);
+        return employee;
+    }
 }
