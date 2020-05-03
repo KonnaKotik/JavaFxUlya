@@ -12,7 +12,7 @@
    <children>
       <Button fx:id="exitButton" onAction="#clickExitButton" layoutX="1158.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="78.0" text="Назад" />
       <Button fx:id="loadButton" onAction="#clickLoadButton" layoutX="979.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Загрузить" />
-      <Button fx:id="addButton" layoutX="7.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="157.0" text="Добавить данные" />
+      <Button fx:id="addButton" onAction="#clickAddZhurnalVhodDoc" layoutX="7.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="157.0" text="Добавить данные" />
       <Label layoutX="537.0" layoutY="18.0"  text="Журнал входящих документов" />
       <TableView fx:id="table" layoutX="-1.0" layoutY="89.0" prefHeight="554.0" prefWidth="1250.0">
         <columns>
@@ -24,7 +24,7 @@
             <TableColumn fx:id="post" prefWidth="223.0" text="Исполнитель" />
         </columns>
       </TableView>
-       <Label fx:id="errorMessage" layoutX="128" layoutY="17.0" textFill="#dd0d0d" />
+       <Label fx:id="errorMessage" layoutX="200" layoutY="17.0" textFill="#dd0d0d" />
       <Button fx:id="numberButton" onAction="#clickFindNumber" layoutX="92.0" layoutY="56.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" />
       <Button fx:id="dataButton" onAction="#clickFindData" layoutX="305.0" layoutY="56.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" />
       <Button fx:id="tipButton" onAction="#clickFindTip" layoutX="501.0" layoutY="56.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" />

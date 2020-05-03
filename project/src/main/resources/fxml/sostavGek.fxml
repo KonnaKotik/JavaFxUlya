@@ -21,7 +21,7 @@
             <TableColumn fx:id="sekretar" prefWidth="208.0" text="Секретарь ГЭК" />
         </columns>
       </TableView>
-       <Label fx:id="errorMessage" layoutX="132" layoutY="25.0" textFill="#dd0d0d" />
+       <Label fx:id="errorMessage" layoutX="200" layoutY="17.0" textFill="#dd0d0d" />
       <Button fx:id="exitButton" layoutX="1187.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickExitButton" text="Назад" />
       <Label layoutX="545.0" layoutY="-3.0" prefHeight="41.0" prefWidth="162.0" text="Состав ГЭК для магистров" />
       <Button fx:id="loadButton" layoutX="1041.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickLoadButton" prefHeight="25.0" prefWidth="100.0" text="Загрузить" />

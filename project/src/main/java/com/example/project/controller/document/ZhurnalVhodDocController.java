@@ -3,6 +3,8 @@ import com.example.project.ControllersConfig;
 import com.example.project.controller.AbstractController;
 import com.example.project.controller.MainMenuController;
 import com.example.project.dto.document.*;
+import com.example.project.model.document.Sroki;
+import com.example.project.model.document.ZhurnalVhodDoc;
 import com.example.project.servise.PrikazService;
 import com.example.project.servise.ZhurnalVhodDocService;
 import javafx.collections.FXCollections;
@@ -94,6 +96,7 @@ public class ZhurnalVhodDocController extends AbstractController {
         soderzhanie.setCellValueFactory(new PropertyValueFactory<>("soderzhanie"));
         kod.setCellValueFactory(new PropertyValueFactory<>("kod"));
         post.setCellValueFactory(new PropertyValueFactory<>("post"));
+        setNullField();
 
 
     }
@@ -128,6 +131,7 @@ public class ZhurnalVhodDocController extends AbstractController {
         }else {
             errorMessage.setText("Данные не найдены");
         }
+        setNullField();
     }
 
     @FXML
@@ -139,6 +143,7 @@ public class ZhurnalVhodDocController extends AbstractController {
         }else {
             errorMessage.setText("Данные не найдены");
         }
+        setNullField();
     }
 
     @FXML
@@ -150,6 +155,7 @@ public class ZhurnalVhodDocController extends AbstractController {
         }else {
             errorMessage.setText("Данные не найдены");
         }
+        setNullField();
     }
 
     @FXML
@@ -161,6 +167,7 @@ public class ZhurnalVhodDocController extends AbstractController {
         }else {
             errorMessage.setText("Данные не найдены");
         }
+        setNullField();
     }
 
     @FXML
@@ -172,6 +179,7 @@ public class ZhurnalVhodDocController extends AbstractController {
         }else {
             errorMessage.setText("Данные не найдены");
         }
+        setNullField();
     }
 
 
@@ -184,7 +192,30 @@ public class ZhurnalVhodDocController extends AbstractController {
         }else {
             errorMessage.setText("Данные не найдены");
         }
+        setNullField();
 
+    }
+
+    @FXML
+    private void clickAddZhurnalVhodDoc(ActionEvent event) {
+        if(numberField.getText() == null || dataField.getText() == null || tipField.getText() == null || soderField.getText() == null || kodField.getText() == null || ispField.getText() == null ) {
+            errorMessage.setText("Не все поля заполнены");
+        } else {
+            ZhurnalVhodDoc zhurnalVhodDoc = new ZhurnalVhodDoc(numberField.getText(), dataField.getText(), tipField.getText(), soderField.getText(),kodField.getText(), ispField.getText());
+            zhurnalVhodDocService.addNewZhurnalVhodDoc(zhurnalVhodDoc);
+            zhurnalVhodDocDtoList = zhurnalVhodDocService.getAllZhurnalVhodDoc();
+            table.setItems(FXCollections.observableArrayList(zhurnalVhodDocDtoList));
+            setNullField();
+        }
+
+    }
+    private void setNullField(){
+        numberField.setText(null);
+        dataField.setText(null);
+        tipField.setText(null);
+        soderField.setText(null);
+        kodField.setText(null);
+        ispField.setText(null);
     }
 
 

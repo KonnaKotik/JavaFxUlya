@@ -34,4 +34,13 @@ public class ZhurnalVhodDoc {
     private String kod;
 
     private String post;
+
+    public ZhurnalVhodDoc(String number, String data, String tipDoc, String soderzhanie, String kod, String post) {
+        this.number = number;
+        this.data = data;
+        this.tipDoc = tipDoc;
+        this.soderzhanie = soderzhanie;
+        this.kod = kod;
+        this.post = post;
+    }
 }

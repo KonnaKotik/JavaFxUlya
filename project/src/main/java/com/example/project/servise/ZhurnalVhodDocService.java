@@ -3,6 +3,8 @@ import com.example.project.dto.document.PrikazDto;
 import com.example.project.dto.document.VkrDto;
 import com.example.project.dto.document.ZhurnalVhodDocDto;
 import com.example.project.model.document.Prikaz;
+import com.example.project.model.document.Sroki;
+import com.example.project.model.document.ZhurnalVhodDoc;
 
 import java.util.List;
 
@@ -20,4 +22,6 @@ public interface ZhurnalVhodDocService {
     List<ZhurnalVhodDocDto> getAllByKod(String kod);
 
     List<ZhurnalVhodDocDto> getAllByIsp(String isp);
+
+    void addNewZhurnalVhodDoc(ZhurnalVhodDoc zhurnalVhodDoc);
 }

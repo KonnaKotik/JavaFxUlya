@@ -20,7 +20,7 @@
             <TableColumn fx:id="description" minWidth="0.0" prefWidth="428.0" text="Содержание приказа" />
         </columns>
       </TableView>
-       <Label fx:id="errorMessage" layoutX="113.0" layoutY="17.0" textFill="#dd0d0d" />
+       <Label fx:id="errorMessage" layoutX="200.0" layoutY="17.0" textFill="#dd0d0d" />
       <Label layoutX="540.0" layoutY="14.0" text="Журнал регистрации приказов" />
       <TextField fx:id="numberField" layoutX="9.0" layoutY="59.0" prefHeight="25.0" prefWidth="69.0" />
       <Button fx:id="numberButton" layoutX="78.0" layoutY="59.0" mnemonicParsing="false" onAction="#clickFindNum" prefHeight="25.0" prefWidth="19.0" />

@@ -1,6 +1,7 @@
 package com.example.project.servise;
 import com.example.project.dto.document.ZhurnalVhodDocDto;
 import com.example.project.mapper.document.ZhurnalVhodDocMapper;
+import com.example.project.model.document.Sroki;
 import com.example.project.model.document.ZhurnalVhodDoc;
 import com.example.project.repository.ZhurnalVhodDocRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,5 +62,9 @@ public class ZhurnalVhodDocServiceImpl implements ZhurnalVhodDocService {
     public List<ZhurnalVhodDocDto> getAllByIsp(String isp) {
         List<ZhurnalVhodDoc> zhurnalVhodDocList = zhurnalVhodDocRepository.findAllByPost(isp);
         return zhurnalVhodDocMapper.convertModelsToDtos(zhurnalVhodDocList);
+    }
+    @Override
+    public void addNewZhurnalVhodDoc(ZhurnalVhodDoc zhurnalVhodDoc) {
+        zhurnalVhodDocRepository.save(zhurnalVhodDoc);
     }
 }
