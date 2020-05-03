@@ -18,10 +18,10 @@
         <columns>
           <TableColumn fx:id="number" prefWidth="120.0" text="№" />
           <TableColumn fx:id="data" prefWidth="213.0" text="Дата" />
-            <TableColumn fx:id="tip" prefWidth="195.0" text="Тип документа" />
-            <TableColumn fx:id="soder" prefWidth="356.0" text="Содержание" />
+            <TableColumn fx:id="tipDoc" prefWidth="195.0" text="Тип документа" />
+            <TableColumn fx:id="soderzhanie" prefWidth="356.0" text="Содержание" />
             <TableColumn fx:id="kod" prefWidth="142.0" text="Код направления" />
-            <TableColumn fx:id="isp" prefWidth="223.0" text="Исполнитель" />
+            <TableColumn fx:id="post" prefWidth="223.0" text="Исполнитель" />
         </columns>
       </TableView>
        <Label fx:id="errorMessage" layoutX="128" layoutY="17.0" textFill="#dd0d0d" />

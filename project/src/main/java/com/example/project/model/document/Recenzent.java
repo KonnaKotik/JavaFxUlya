@@ -31,9 +31,9 @@ public class Recenzent {
 
     public Recenzent(String number, String fio, String post, String year) {
         this.number = number;
-        this.post = fio;
-        this.year = post;
-        this.fio = year;
+        this.post = post;
+        this.year = year;
+        this.fio = fio;
     }
 
 }

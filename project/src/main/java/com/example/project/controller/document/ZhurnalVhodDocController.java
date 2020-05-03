@@ -32,16 +32,16 @@ public class ZhurnalVhodDocController extends AbstractController {
     private TableColumn<String,ZhurnalVhodDocDto>  data ;
 
     @FXML
-    private TableColumn<String, ZhurnalVhodDocDto>  tip;
+    private TableColumn<String, ZhurnalVhodDocDto>  tipDoc;
 
     @FXML
-    private TableColumn<String,ZhurnalVhodDocDto> soder;
+    private TableColumn<String,ZhurnalVhodDocDto> soderzhanie;
 
     @FXML
     private TableColumn<String,ZhurnalVhodDocDto>  kod;
 
     @FXML
-    private TableColumn<String, ZhurnalVhodDocDto> isp ;
+    private TableColumn<String, ZhurnalVhodDocDto> post ;
 
 
 
@@ -90,10 +90,10 @@ public class ZhurnalVhodDocController extends AbstractController {
     public void initialize() {
         number.setCellValueFactory(new PropertyValueFactory<>("number"));
         data.setCellValueFactory(new PropertyValueFactory<>("data"));
-        tip.setCellValueFactory(new PropertyValueFactory<>("tip"));
-        soder.setCellValueFactory(new PropertyValueFactory<>("soder"));
+        tipDoc.setCellValueFactory(new PropertyValueFactory<>("tipDoc"));
+        soderzhanie.setCellValueFactory(new PropertyValueFactory<>("soderzhanie"));
         kod.setCellValueFactory(new PropertyValueFactory<>("kod"));
-        isp.setCellValueFactory(new PropertyValueFactory<>("isp"));
+        post.setCellValueFactory(new PropertyValueFactory<>("post"));
 
 
     }

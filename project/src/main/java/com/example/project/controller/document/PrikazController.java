@@ -181,8 +181,8 @@ public class PrikazController extends AbstractController {
         if (numberField.getText() == null || dataField.getText() == null || fioField.getText() == null || postField.getText() == null || prikazField.getText() == null) {
             errorMessage.setText("Не все поля заполнены");
         } else {
-            Prikaz prikaz = new Prikaz(numberField.getText(), dataField.getText(), fioField.getText(), postField.getText(), prikazField.getText());
-            prikazService.addNewPrikaz(prikaz);
+            Prikaz prikaz = new Prikaz(numberField.getText(), postField.getText(), dataField.getText(),prikazField.getText());
+            prikazService.addNewPrikaz(prikaz, fioField.getText());
             prikazDtoList = prikazService.getAllPrikaz();
             table.setItems(FXCollections.observableArrayList(prikazDtoList));
             setNullField();
