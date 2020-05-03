@@ -12,10 +12,7 @@ import com.example.project.servise.VkrService;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -83,6 +80,9 @@ public class VkrController extends AbstractController {
     @FXML
     private TextField naprField;
 
+    @FXML
+    private Label errorMessage;
+
     private List<VkrDto> vkrDtoList;
 
     @Qualifier("DocumentView")
@@ -101,6 +101,7 @@ public class VkrController extends AbstractController {
         tema.setCellValueFactory(new PropertyValueFactory<>("tema"));
         ruk.setCellValueFactory(new PropertyValueFactory<>("ruk"));
         year.setCellValueFactory(new PropertyValueFactory<>("year"));
+        setNullField();
 
     }
 
@@ -130,8 +131,10 @@ public class VkrController extends AbstractController {
         if(!vkrDtos.isEmpty()) {
             setTable(vkrDtos);
         } else {
+            errorMessage.setText("Данные не найдены");
 
         }
+        setNullField();
     }
 
     @FXML
@@ -143,8 +146,9 @@ public class VkrController extends AbstractController {
             vkrDtoList.add(vkrDto);
             setTable(vkrDtoList);
         } else {
-
+            errorMessage.setText("Данные не найдены");
         }
+        setNullField();
     }
 
     @FXML
@@ -153,7 +157,10 @@ public class VkrController extends AbstractController {
         List<VkrDto> vkrDtoList = vkrService.getAllByGroup(group);
         if(!vkrDtoList.isEmpty()) {
             setTable(vkrDtoList);
+        }else {
+            errorMessage.setText("Данные не найдены");
         }
+        setNullField();
     }
 
     @FXML
@@ -162,7 +169,10 @@ public class VkrController extends AbstractController {
         List<VkrDto> vkrDtoList = vkrService.getAllByFio(fio);
         if (!vkrDtoList.isEmpty()) {
             setTable(vkrDtoList);
+        }else {
+            errorMessage.setText("Данные не найдены");
         }
+        setNullField();
     }
 
     @FXML
@@ -171,7 +181,10 @@ public class VkrController extends AbstractController {
         List<VkrDto> vkrDtoList = vkrService.getAllByTema(tema);
         if(!vkrDtoList.isEmpty()) {
             setTable(vkrDtoList);
+        }else {
+            errorMessage.setText("Данные не найдены");
         }
+        setNullField();
     }
 
     @FXML
@@ -180,7 +193,10 @@ public class VkrController extends AbstractController {
         List<VkrDto> vkrDtoList = vkrService.getAllByYear(year);
         if(!vkrDtoList.isEmpty()) {
             setTable(vkrDtoList);
+        }else {
+            errorMessage.setText("Данные не найдены");
         }
+        setNullField();
     }
 
     @FXML
@@ -189,15 +205,39 @@ public class VkrController extends AbstractController {
         List<VkrDto> vkrDtoList = vkrService.getAllByNapr(napr);
         if(!vkrDtoList.isEmpty()) {
             setTable(vkrDtoList);
+        }else {
+            errorMessage.setText("Данные не найдены");
         }
+        setNullField();
     }
 
     @FXML
     private void clickAddVkr(ActionEvent event) {
-        Vkr vkr = new Vkr(numberField.getText(), groupField.getText(), naprField.getText(), fioField.getText(), temaField.getText(), yearField.getText());
-        String fioRuk = rukField.getText();
-        vkrService.addNewVkr(vkr, fioRuk);
-        List<VkrDto> vkrList = vkrService.getAllVkr();
-       setTable(vkrList);
+        if (numberField.getText() == null || groupField.getText() == null || naprField.getText() == null || fioField.getText() == null || temaField.getText() == null || yearField.getText() == null) {
+            errorMessage.setText("Не все поля заполнены");
+        } else {
+            Vkr vkr = new Vkr(numberField.getText(), groupField.getText(), naprField.getText(), fioField.getText(), temaField.getText(), yearField.getText());
+            String fioRuk = rukField.getText();
+            vkrService.addNewVkr(vkr, fioRuk);
+            List<VkrDto> vkrList = vkrService.getAllVkr();
+            setTable(vkrList);
+            setNullField();
+        }
     }
+
+    private void setNullField() {
+        numberField.setText(null);
+        groupField.setText(null);
+        naprField.setText(null);
+        fioField.setText(null);
+        temaField.setText(null);
+        yearField.setText(null);
+    }
+
 }
+
+
+
+
+
+
