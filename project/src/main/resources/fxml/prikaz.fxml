@@ -7,7 +7,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.controller.document.PrikazController">
+<Pane stylesheets="/css/menu.css" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.controller.document.PrikazController">
    <children>
       <Button fx:id="exitButton" layoutX="1194.0" layoutY="10.0" mnemonicParsing="false" onAction="#clickExitButton" text="Назад" />
        <Button fx:id="loadButton" layoutX="1025.0" layoutY="10.0" mnemonicParsing="false" onAction="#clickLoadButton" prefHeight="25.0" prefWidth="98.0" text="Загрузить" />
@@ -23,15 +23,15 @@
        <Label fx:id="errorMessage" layoutX="200.0" layoutY="17.0" textFill="#dd0d0d" />
       <Label layoutX="540.0" layoutY="14.0" text="Журнал регистрации приказов" />
       <TextField fx:id="numberField" layoutX="9.0" layoutY="59.0" prefHeight="25.0" prefWidth="69.0" />
-      <Button fx:id="numberButton" layoutX="78.0" layoutY="59.0" mnemonicParsing="false" onAction="#clickFindNum" prefHeight="25.0" prefWidth="19.0" />
+      <Button fx:id="numberButton" styleClass="findButton" layoutX="78.0" layoutY="59.0" mnemonicParsing="false" onAction="#clickFindNum" prefHeight="25.0" prefWidth="19.0" />
       <TextField fx:id="dataField" layoutX="113.0" layoutY="59.0" prefHeight="25.0" prefWidth="124.0" />
-      <Button fx:id="dataButton" layoutX="238.0" layoutY="59.0" mnemonicParsing="false" onAction="#clickFindData" prefHeight="25.0" prefWidth="19.0" />
+      <Button fx:id="dataButton" styleClass="findButton" layoutX="238.0" layoutY="59.0" mnemonicParsing="false" onAction="#clickFindData" prefHeight="25.0" prefWidth="19.0" />
       <TextField fx:id="fioField" layoutX="274.0" layoutY="59.0" prefHeight="25.0" prefWidth="261.0" />
       <TextField fx:id="postField" layoutX="563.0" layoutY="59.0" prefHeight="25.0" prefWidth="235.0" />
       <TextField fx:id="prikazField" layoutX="830.0" layoutY="59.0" prefHeight="25.0" prefWidth="397.0" />
-      <Button fx:id="fioButton" layoutX="535.0" layoutY="59.0" mnemonicParsing="false" onAction="#clickFindEmployee" prefHeight="25.0" prefWidth="19.0" />
-      <Button fx:id="postButton" layoutX="798.0" layoutY="59.0" mnemonicParsing="false" onAction="#clickFindPost" prefHeight="25.0" prefWidth="19.0" />
-      <Button fx:id="prikazButton" layoutX="1227.0" layoutY="59.0" mnemonicParsing="false" onAction="#clickFindDescription" prefHeight="25.0" prefWidth="19.0" />
+      <Button fx:id="fioButton" styleClass="findButton" layoutX="535.0" layoutY="59.0" mnemonicParsing="false" onAction="#clickFindEmployee" prefHeight="25.0" prefWidth="19.0" />
+      <Button fx:id="postButton" styleClass="findButton" layoutX="798.0" layoutY="59.0" mnemonicParsing="false" onAction="#clickFindPost" prefHeight="25.0" prefWidth="19.0" />
+      <Button fx:id="prikazButton" styleClass="findButton" layoutX="1227.0" layoutY="59.0" mnemonicParsing="false" onAction="#clickFindDescription" prefHeight="25.0" prefWidth="19.0" />
       <Button fx:id="addPrikazButton"  layoutX="14.0" layoutY="10.0" mnemonicParsing="false" onAction="#clickAddPrikaz" prefHeight="25.0" prefWidth="202.0" text="Добавить приказ" />
    </children>
 </Pane>

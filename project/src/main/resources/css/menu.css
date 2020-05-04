@@ -1,0 +1,52 @@
+.root{
+    -fx-background-color: #abdfff;
+
+}
+/*это для классов (наприме, кнопки(button), текст и т.д */
+.button {
+    -fx-background-color: gray;
+    -fx-text-fill: #ffffff; //rgb
+}
+/*при наведении мыши на кнопку*/
+.button:hover {
+    -fx-background-color: black;
+}
+
+.label {
+    -fx-text-fill: #666666;
+    -fx-font-weight: bold;
+}
+.table-view{
+    -fx-font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    -fx-font-size: 14px;
+    -fx-border-collapse: collapse;
+    -fx-text-alignment: center;
+    -fx-border-radius: 10px;
+    -fx-border-spacing: 0;
+    -fx-padding: 3px 1px;
+    -fx-color: white;
+}
+
+.table-column{
+    -fx-background-color: #AFCDE7;
+    -fx-color: white;
+    -fx-padding: 10px 20px;
+    -fx-border-style: solid;
+    -fx-border-width: 0 1px 1px 0;
+    -fx-border-color: white;
+}
+
+/*это для id*/
+#childrenButton{
+
+}
+
+
+/*прост ообщий класс (styleClass)*/
+.findButton{
+    -fx-background-color: #ffffff;
+    -fx-background-image: url('/image/find.png');
+    -fx-background-size: 20px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 50%;
+}

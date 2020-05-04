@@ -31,5 +31,7 @@ public interface VkrRepository extends JpaRepository<Vkr, Long> {
     List<Vkr> findAllByYear(String year);
 
     List<Vkr> findAllByNapravlenie(String napr);
+
+
 }
 

@@ -79,13 +79,13 @@ public class VkrServiceImpl implements VkrService {
         vkr = vkrRepository.save(vkr);
        Employee employee = setEmpForVkr(vkr, fioRuk);
        vkr.setRuk(employee);
-    //   vkrRepository.save(vkr);
+       vkrRepository.save(vkr);
 
     }
 
     private Employee setEmpForVkr(Vkr vkr, String fioRuk) {
         Employee employee = employeeService.getEmployeeByFio(fioRuk);
-        List<Vkr> vkrList = employee.getVkrs();
+        List<Vkr> vkrList = vkrRepository.findAllByRuk(employee);
         vkrList.add(vkr);
         employee.setVkrs(vkrList);
         employeeService.updateEmployee(employee);

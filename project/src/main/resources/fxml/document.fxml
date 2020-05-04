@@ -3,7 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane fx:id="obr" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.controller.DocumentController">
+<Pane stylesheets="/css/menu.css"  xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.controller.DocumentController">
    <children>
       <Button fx:id="menuButton" layoutX="534.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickMenuButton" text="Назад" />
       <Button fx:id="vhodDocButton" onAction="#clickZhurnalVhodDocButton" layoutX="273.0" layoutY="57.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="261.0" text="Журнал регистрации входящих документов" textAlignment="CENTER" />
