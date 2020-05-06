@@ -2,37 +2,17 @@ package com.example.project;
 
 import com.example.project.controller.*;
 import com.example.project.controller.document.*;
-import com.sun.org.apache.bcel.internal.generic.ARETURN;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import lombok.Data;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import javax.swing.text.View;
 import java.io.IOException;
 import java.io.InputStream;
 
 @Configuration
 public class ControllersConfig {
-
-   /* // сообщение "сотрудник добавлен"
-    @Bean(name="AddEmployeeMassageView")
-    public ViewHolder getAddEmployeeMassageView() throws IOException{
-        return  loadView("fxml/addEmployeeMassage.fxml");
-    }
-
-    //"Авторизация прошла успешно"
-    @Bean(name="EnterView")
-    public ViewHolder getEnterView() throws IOException{
-        return loadView("fxml/enter.fxml");
-    }
-
-    //"Пароль введен не правильно"
-    @Bean(name="ErrorView")
-    public ViewHolder getErrorView() throws IOException{
-        return  loadView("fxml/error.fxml");
-    }*/
 
     @Bean(name="DeleteEmployeeView")
     public ViewHolder getDeleteEmployeeView() throws IOException{
@@ -197,25 +177,6 @@ public class ControllersConfig {
     public PrikazController getPrikazController() throws IOException {
         return (PrikazController) getPrikazView().getController();
     }
-
-
-    /*//"Сотрудник добавлен"
-    @Bean
-    public AddEmpController getAddEmpMassageController() throws IOException{
-        return (AddEmpController) getAddEmployeeMassageView().getController();
-    }
-
-    //"Авторизация прошла успешно"
-    @Bean
-    public UserController getEnterController() throws IOException{
-        return (UserController) getEnterView().getController();
-    }
-
-    //"Пароль введен не правильно"
-    @Bean
-    public UserController getErrorController() throws IOException{
-        return (UserController) getErrorView().getController();
-    }*/
 
 
     @Bean
