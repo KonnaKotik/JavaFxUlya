@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 
 
-<Pane fx:controller="com.example.project.controller.document.ZhurnalVhodDocController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane  stylesheets="/css/menu.css" fx:controller="com.example.project.controller.document.ZhurnalVhodDocController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Button fx:id="exitButton" onAction="#clickExitButton" layoutX="1158.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="78.0" text="Назад" />
       <Button fx:id="loadButton" onAction="#clickLoadButton" layoutX="979.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Загрузить" />
@@ -25,12 +25,12 @@
         </columns>
       </TableView>
        <Label fx:id="errorMessage" layoutX="200" layoutY="17.0" textFill="#dd0d0d" />
-      <Button fx:id="numberButton" onAction="#clickFindNumber" layoutX="92.0" layoutY="56.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" />
-      <Button fx:id="dataButton" onAction="#clickFindData" layoutX="305.0" layoutY="56.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" />
-      <Button fx:id="tipButton" onAction="#clickFindTip" layoutX="501.0" layoutY="56.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" />
-      <Button fx:id="soderButton" onAction="#clickFindSoder" layoutX="850.0" layoutY="56.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" />
-      <Button fx:id="ispButton" onAction="#clickFindIsp" layoutX="1211.0" layoutY="56.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" />
-      <Button fx:id="kodButton" onAction="#clickFindKod" layoutX="1000.0" layoutY="56.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" />
+      <Button fx:id="numberButton" styleClass="findButton"  onAction="#clickFindNumber" layoutX="92.0" layoutY="56.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" />
+      <Button fx:id="dataButton" styleClass="findButton" onAction="#clickFindData" layoutX="305.0" layoutY="56.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" />
+      <Button fx:id="tipButton" styleClass="findButton"  onAction="#clickFindTip" layoutX="501.0" layoutY="56.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" />
+      <Button fx:id="soderButton" styleClass="findButton"  onAction="#clickFindSoder" layoutX="850.0" layoutY="56.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" />
+      <Button fx:id="ispButton" styleClass="findButton" onAction="#clickFindIsp" layoutX="1211.0" layoutY="56.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" />
+      <Button fx:id="kodButton" styleClass="findButton"  onAction="#clickFindKod" layoutX="1000.0" layoutY="56.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" />
       <TextField fx:id="numberField" layoutX="7.0" layoutY="56.0" prefHeight="25.0" prefWidth="85.0" />
       <TextField fx:id="dataField" layoutX="122.0" layoutY="56.0" prefHeight="25.0" prefWidth="183.0" />
       <TextField fx:id="tipField" layoutX="337.0" layoutY="56.0" prefHeight="25.0" prefWidth="164.0" />

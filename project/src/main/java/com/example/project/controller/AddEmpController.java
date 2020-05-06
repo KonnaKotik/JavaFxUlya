@@ -64,9 +64,9 @@ public class AddEmpController extends AbstractController {
     private Button exitButton;
 
 
-    @Qualifier("AddEmployeeMassageView")
+   /* @Qualifier("AddEmployeeMassageView")
     @Autowired
-    private ControllersConfig.ViewHolder addEmployeeMassageView;
+    private ControllersConfig.ViewHolder addEmployeeMassageView;*/
 
     @Qualifier("EmployeeView")
     @Autowired

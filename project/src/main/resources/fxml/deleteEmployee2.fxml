@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.Pane?>
 
 
-<Pane fx:controller="com.example.project.controller.DeleteEmployeeController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane stylesheets="/css/menu.css"  fx:controller="com.example.project.controller.DeleteEmployeeController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="170.0" layoutY="131.0" prefHeight="92.0" prefWidth="260.0" text="Вы уверены, что хотите удалить сотрудника?" textAlignment="CENTER" />
       <Button fx:id="yesButton" onAction="#clickYesButton" layoutX="250.0" layoutY="200.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="36.0" text="Да" />

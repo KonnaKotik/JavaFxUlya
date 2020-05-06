@@ -16,7 +16,7 @@ import java.io.InputStream;
 @Configuration
 public class ControllersConfig {
 
-    // сообщение "сотрудник добавлен"
+   /* // сообщение "сотрудник добавлен"
     @Bean(name="AddEmployeeMassageView")
     public ViewHolder getAddEmployeeMassageView() throws IOException{
         return  loadView("fxml/addEmployeeMassage.fxml");
@@ -32,7 +32,7 @@ public class ControllersConfig {
     @Bean(name="ErrorView")
     public ViewHolder getErrorView() throws IOException{
         return  loadView("fxml/error.fxml");
-    }
+    }*/
 
     @Bean(name="DeleteEmployeeView")
     public ViewHolder getDeleteEmployeeView() throws IOException{
@@ -199,7 +199,7 @@ public class ControllersConfig {
     }
 
 
-    //"Сотрудник добавлен"
+    /*//"Сотрудник добавлен"
     @Bean
     public AddEmpController getAddEmpMassageController() throws IOException{
         return (AddEmpController) getAddEmployeeMassageView().getController();
@@ -215,7 +215,7 @@ public class ControllersConfig {
     @Bean
     public UserController getErrorController() throws IOException{
         return (UserController) getErrorView().getController();
-    }
+    }*/
 
 
     @Bean
