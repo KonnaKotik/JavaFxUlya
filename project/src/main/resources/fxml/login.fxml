@@ -7,7 +7,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane stylesheets="/css/menu.css" layoutX="1.0" layoutY="1.0" prefHeight="600.0" prefWidth="840.0" translateX="1.0" translateY="1.0" translateZ="1.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.controller.UserController">
+<Pane layoutX="1.0" layoutY="1.0" prefHeight="400.0" prefWidth="600.0" stylesheets="/css/menu.css" translateX="1.0" translateY="1.0" translateZ="1.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.controller.UserController">
    <children>
       <Label layoutX="263.0" layoutY="112.0" prefHeight="25.0" prefWidth="74.0" text="     Логин" />
       <Label layoutX="263.0" layoutY="200.0" prefHeight="25.0" prefWidth="74.0" text="    Пароль" />

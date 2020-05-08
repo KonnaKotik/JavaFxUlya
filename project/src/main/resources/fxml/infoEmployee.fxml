@@ -3,27 +3,50 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane stylesheets="/css/menu.css"  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="901.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.controller.InfoEmployeeController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1400.0" stylesheets="/css/menu.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.controller.InfoEmployeeController">
    <children>
-       <Button fx:id="loadButton" layoutY="2.0" mnemonicParsing="false" onAction="#clickLoadButton" text="Загрузить данные" />
-       <Button fx:id="exitButton" layoutX="837.0" layoutY="2.0" mnemonicParsing="false" onAction="#clickExitButton" prefHeight="25.0" prefWidth="62.0" style="-fx-background-color: red;" text="Назад" textFill="#111111" />
-      <TableView fx:id="table" layoutY="27.0" prefHeight="430.0" prefWidth="901.0">
+       <Button fx:id="loadButton" layoutX="1226.0" layoutY="15.0" mnemonicParsing="false" onAction="#clickLoadButton" prefHeight="25.0" prefWidth="160.0" text="Загрузить данные" />
+       <Button fx:id="exitButton" layoutX="1091.0" layoutY="15.0" mnemonicParsing="false" onAction="#clickExitButton" prefHeight="25.0" prefWidth="77.0" text="Назад" textFill="#111111" />
+      <TableView fx:id="table" layoutY="81.0" prefHeight="600.0" prefWidth="1400.0">
         <columns>
-            <TableColumn fx:id="tabNum" prefWidth="75.0" text="Табельный номер" />
-          <TableColumn fx:id="fio" prefWidth="75.0" text="Фио" />
-          <TableColumn fx:id="passport" prefWidth="75.0" text="Паспортные данные" />
-            <TableColumn fx:id="birthday" prefWidth="75.0" text="Дата рождения" />
-            <TableColumn fx:id="cc" prefWidth="75.0" text="№С/С" />
-            <TableColumn fx:id="inn" prefWidth="75.0" text="ИНН" />
-            <TableColumn fx:id="phone" prefWidth="75.0" text="Телефон" />
-            <TableColumn fx:id="education" prefWidth="75.0" text="Образование" />
-            <TableColumn fx:id="address" prefWidth="75.0" text="Домашний адрес" />
-            <TableColumn fx:id="addmission" prefWidth="75.0" text="Дата поступления на работу" />
-            <TableColumn fx:id="post" prefWidth="75.0" text="Должность" />
-            <TableColumn fx:id="status" prefWidth="75.0" text="Статус" />
+            <TableColumn fx:id="tabNum" prefWidth="73.0" text="Таб. номер" />
+          <TableColumn fx:id="fio" minWidth="0.0" prefWidth="112.0" text="Фио" />
+          <TableColumn fx:id="passport" prefWidth="169.0" text="Паспортные данные" />
+            <TableColumn fx:id="birthday" prefWidth="125.0" text="Дата рождения" />
+            <TableColumn fx:id="cc" prefWidth="117.0" text="№С/С" />
+            <TableColumn fx:id="inn" prefWidth="139.0" text="ИНН" />
+            <TableColumn fx:id="phone" prefWidth="124.0" text="Телефон" />
+            <TableColumn fx:id="education" prefWidth="137.0" text="Образование" />
+            <TableColumn fx:id="address" prefWidth="101.0" text="Адрес" />
+            <TableColumn fx:id="addmission" prefWidth="117.0" text="Дата поступления " />
+            <TableColumn fx:id="post" minWidth="0.0" prefWidth="125.0" text="Должность" />
+            <TableColumn fx:id="status" minWidth="0.0" prefWidth="65.0" text="Статус" />
         </columns>
       </TableView>
+      <Button fx:id="tabNumButton" onAction="#clickFindTabNum" layoutX="55.0" layoutY="49.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="10.0" />
+      <TextField fx:id="tabNumField" layoutY="49.0" prefHeight="25.0" prefWidth="55.0" />
+      <TextField fx:id="fioField" layoutX="78.0" layoutY="49.0" prefHeight="25.0" prefWidth="89.0" />
+      <Button fx:id="fioButton" onAction="#clickFindFio" layoutX="167.0" layoutY="49.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="10.0" />
+      <Button fx:id="passportButton" onAction="#clickFindPassport" layoutX="327.0" layoutY="49.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="10.0" />
+      <TextField fx:id="passportField" layoutX="189.0" layoutY="49.0" prefHeight="25.0" prefWidth="138.0" />
+      <TextField fx:id="birthdayField" layoutX="356.0" layoutY="49.0" prefHeight="25.0" prefWidth="103.0" />
+      <Button fx:id="birthdayButton" onAction="#clickFindBirthday" layoutX="459.0" layoutY="49.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="10.0" />
+      <TextField fx:id="ccField" layoutX="482.0" layoutY="49.0" prefHeight="25.0" prefWidth="89.0" />
+      <Button fx:id="ccButton" onAction="#clickFindCc" layoutX="571.0" layoutY="49.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="10.0" />
+      <TextField fx:id="innField" layoutX="595.0" layoutY="49.0" prefHeight="25.0" prefWidth="120.0" />
+      <Button fx:id="innButton" onAction="#clickFindInn" layoutX="715.0" layoutY="49.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="10.0" />
+      <TextField fx:id="phoneField" layoutX="737.0" layoutY="49.0" prefHeight="25.0" prefWidth="103.0" />
+      <Button fx:id="phoneButton" onAction="#clickFindPhone" layoutX="839.0" layoutY="49.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="10.0" />
+      <TextField fx:id="educationField" layoutX="861.0" layoutY="49.0" prefHeight="25.0" prefWidth="112.0" />
+      <Button fx:id="educationButton" onAction="#clickFindEducation" layoutX="970.0" layoutY="49.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="10.0" />
+      <TextField fx:id="addressField" layoutX="998.0" layoutY="49.0" prefHeight="25.0" prefWidth="77.0" />
+      <Button fx:id="addressButton" onAction="#clickFindAddress" layoutX="1075.0" layoutY="49.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="10.0" />
+      <TextField fx:id="addmissionField" layoutX="1094.0" layoutY="49.0" prefHeight="25.0" prefWidth="97.0" />
+      <Button fx:id="addmissionButton" onAction="#clickFindAddmission" layoutX="1191.0" layoutY="49.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="10.0" />
+      <TextField fx:id="postField" layoutX="1216.0" layoutY="49.0" prefHeight="25.0" prefWidth="103.0" />
+      <Button fx:id="postButton" onAction="#clickFindPost" layoutX="1319.0" layoutY="49.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="10.0" />
    </children>
 </Pane>

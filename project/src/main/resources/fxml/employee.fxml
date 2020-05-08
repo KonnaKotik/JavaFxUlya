@@ -4,12 +4,12 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane stylesheets="/css/menu.css"  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.controller.EmployeeController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="/css/menu.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.controller.EmployeeController">
    <children>
       <Button fx:id="menuButton" layoutX="537.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickMenuButton" text="Назад" />
-      <Button fx:id="infoButton" layoutX="215.0" layoutY="88.0" mnemonicParsing="false" onAction="#clickInfoButton" text="Информация о сотрудниках" />
+      <Button fx:id="infoButton" layoutX="201.0" layoutY="86.0" mnemonicParsing="false" onAction="#clickInfoButton" prefHeight="49.0" prefWidth="199.0" text="Информация о сотрудниках" />
       <Label layoutX="25.0" layoutY="211.0" />
-      <Button fx:id="addEmployeeButton" layoutX="215.0" layoutY="150.0" mnemonicParsing="false" onAction="#clickAddEmployeeButton" prefHeight="25.0" prefWidth="171.0" text="Добавить сотрудника" />
-      <Button fx:id="deleteEmployeeButton" layoutX="215.0" layoutY="216.0" mnemonicParsing="false" onAction="#clickDeleteEmployeeButton" prefHeight="25.0" prefWidth="171.0" text="Удалить сотрудника" />
+      <Button fx:id="addEmployeeButton" layoutX="201.0" layoutY="151.0" mnemonicParsing="false" onAction="#clickAddEmployeeButton" prefHeight="49.0" prefWidth="199.0" text="Добавить сотрудника" />
+      <Button fx:id="deleteEmployeeButton" layoutX="200.0" layoutY="216.0" mnemonicParsing="false" onAction="#clickDeleteEmployeeButton" prefHeight="49.0" prefWidth="199.0" text="Удалить сотрудника" />
    </children>
 </Pane>

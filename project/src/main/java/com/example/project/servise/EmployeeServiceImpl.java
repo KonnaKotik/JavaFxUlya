@@ -1,5 +1,7 @@
 package com.example.project.servise;
 
+import com.example.project.dto.ChildrenDto;
+import com.example.project.dto.document.PrikazDto;
 import com.example.project.mapper.EmployeeMapper;
 import com.example.project.model.Children;
 import com.example.project.model.Employee;
@@ -45,6 +47,71 @@ public class EmployeeServiceImpl implements EmployeeService {
     public List<EmployeeDto> getAllEmployees() {
         List<Employee> employees = employeeRepository.findAll();
        return employeeMapper.convertModelsToDtos(employees);
+    }
+
+    @Override
+    public EmployeeDto getEmployeeByTabNum(String tabNum) {
+        Optional<Employee> employeeOptional = employeeRepository.findByTabNum(tabNum);
+        if(employeeOptional.isPresent()) {
+            EmployeeDto employeeDto = employeeMapper.convertModelToDto(employeeOptional.get());
+            return employeeDto;
+        }
+        return null;
+    }
+   /* @Override
+   public List<EmployeeDto> getEmployeeByFio(String fio) {
+        List<Employee> employeeList = employeeRepository.findAllByFio(fio);
+        return employeeMapper.convertModelsToDtos(employeeList);
+    }*/
+   @Override
+   public List<EmployeeDto> getAllByFio(String fio) {
+       List<Employee> employeeList = employeeRepository.findAllByPassport(fio);
+       return employeeMapper.convertModelsToDtos(employeeList);
+   }
+    @Override
+    public List<EmployeeDto> getAllByPassport(String passport) {
+        List<Employee> employeeList = employeeRepository.findAllByPassport(passport);
+        return employeeMapper.convertModelsToDtos(employeeList);
+    }
+    @Override
+    public List<EmployeeDto> getAllByBirthday(String birthday) {
+        List<Employee> employeeList = employeeRepository.findAllByBirthday(birthday);
+        return employeeMapper.convertModelsToDtos(employeeList);
+    }
+    @Override
+    public List<EmployeeDto> getAllByCc(String cc) {
+        List<Employee> employeeList = employeeRepository.findAllByCc(cc);
+        return employeeMapper.convertModelsToDtos(employeeList);
+    }
+    @Override
+    public List<EmployeeDto> getAllByInn(String inn) {
+        List<Employee> employeeList = employeeRepository.findAllByInn(inn);
+        return employeeMapper.convertModelsToDtos(employeeList);
+    }
+    @Override
+    public List<EmployeeDto> getAllByPhone(String phone) {
+        List<Employee> employeeList = employeeRepository.findAllByPhone(phone);
+        return employeeMapper.convertModelsToDtos(employeeList);
+    }
+    @Override
+    public List<EmployeeDto> getAllByEducation(String education) {
+        List<Employee> employeeList = employeeRepository.findAllByEducation(education);
+        return employeeMapper.convertModelsToDtos(employeeList);
+    }
+    @Override
+    public List<EmployeeDto> getAllByAddress(String address) {
+        List<Employee> employeeList = employeeRepository.findAllByAddress(address);
+        return employeeMapper.convertModelsToDtos(employeeList);
+    }
+    @Override
+    public List<EmployeeDto> getAllByAddmission(String addmission) {
+        List<Employee> employeeList = employeeRepository.findAllByAddmission(addmission);
+        return employeeMapper.convertModelsToDtos(employeeList);
+    }
+    @Override
+    public List<EmployeeDto> getAllByPost(String post) {
+        List<Employee> employeeList = employeeRepository.findAllByPost(post);
+        return employeeMapper.convertModelsToDtos(employeeList);
     }
 
     @Override

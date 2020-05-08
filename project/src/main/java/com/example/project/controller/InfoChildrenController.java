@@ -1,6 +1,7 @@
 package com.example.project.controller;
 
 import com.example.project.ControllersConfig;
+import com.example.project.dto.document.RecenzentDto;
 import com.example.project.mapper.ChildrenMapper;
 import com.example.project.model.Employee;
 import com.example.project.dto.ChildrenDto;
@@ -9,9 +10,7 @@ import com.example.project.servise.EmployeeService;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -23,7 +22,6 @@ import java.util.List;
 public class InfoChildrenController extends AbstractController {
     @Autowired
     private ChildrenService childrenService;
-
 
     @Autowired
     private EmployeeService employeeService;
@@ -47,6 +45,14 @@ public class InfoChildrenController extends AbstractController {
 
     @FXML
     private TableView<ChildrenDto> childrenTable;
+    @FXML
+    private TextField fioField;
+    @FXML
+    private TextField dataField;
+    @FXML
+    private TextField nameParentsField;
+    @FXML
+    private Label errorMessage;
 
     private List<ChildrenDto> childrenDtoList;
     private List<Employee> employeeList;
@@ -59,12 +65,17 @@ public class InfoChildrenController extends AbstractController {
     @Autowired
     private ControllersConfig.ViewHolder noLoginChildrenView;
 
+    private void setTable(List<ChildrenDto> childrenDtos) {
+        childrenTable.setItems(FXCollections.observableArrayList(childrenDtos));
+    }
+
 
 
     public void initialize() {
         fio.setCellValueFactory(new PropertyValueFactory<>("fio"));
         data.setCellValueFactory(new PropertyValueFactory<>("data"));
         nameParents.setCellValueFactory(new PropertyValueFactory<>("nameParents"));
+        setNullField();
     }
 
     @FXML
@@ -81,5 +92,43 @@ public class InfoChildrenController extends AbstractController {
         }else{
             getNextStage(exitButton,noLoginChildrenView);
         }
+    }
+    @FXML
+    private void clickFindFio(ActionEvent event) {
+        String fio = fioField.getText();
+        List<ChildrenDto> childrenDtos = childrenService.getAllByFio(fio);
+        if(!childrenDtos.isEmpty()) {
+            setTable(childrenDtos);
+        }else {
+            errorMessage.setText("Данные не найдены");
+        }
+        setNullField();
+    }
+    @FXML
+    private void clickFindData(ActionEvent event) {
+        String data = dataField.getText();
+        List<ChildrenDto> childrenDtos = childrenService.getAllByData(data);
+        if (!childrenDtos.isEmpty()) {
+            setTable(childrenDtos);
+        } else {
+            errorMessage.setText("Данные не найдены");
+        }
+        setNullField();
+    }
+    @FXML
+    private void clickFindNameParents(ActionEvent event) {
+        String nameParents = nameParentsField.getText();
+        List<ChildrenDto> childrenDtos = childrenService.getAllByNameParents(nameParents);
+        if (!childrenDtos.isEmpty()) {
+            setTable(childrenDtos);
+        } else {
+            errorMessage.setText("Данные не найдены");
+        }
+        setNullField();
+    }
+    private void setNullField() {
+        fioField.setText(null);
+        dataField.setText(null);
+        nameParentsField.setText(null);
     }
 }

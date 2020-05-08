@@ -2,6 +2,7 @@ package com.example.project.repository;
 
 import com.example.project.model.Children;
 import com.example.project.model.Employee;
+import com.example.project.model.document.Prikaz;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -18,6 +19,21 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
     //находим сех сотрудников из бд
     List<Employee> findAll();
+    //Optional<Employee> findAllByFio(String fio);
+    Optional<Employee> findByTabNum(String tabNum);
+    List<Employee> findAllByFio(String fio);
+    List<Employee> findAllByPassport(String passport);
+    List<Employee> findAllByBirthday(String birthday);
+    List<Employee> findAllByCc(String cc);
+    List<Employee> findAllByInn(String inn);
+    List<Employee> findAllByPhone(String phone);
+    List<Employee> findAllByEducation(String education);
+    List<Employee> findAllByAddress(String address);
+    List<Employee> findAllByAddmission(String addmission);
+    List<Employee> findAllByPost(String post);
+
+
+
 
     void deleteByFio(String fio);
 

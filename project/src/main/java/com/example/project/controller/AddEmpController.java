@@ -75,7 +75,7 @@ public class AddEmpController extends AbstractController {
     @Autowired
     private EmployeeService employeeService;
 
-    // переход на страницу "сотрудник добавлен"
+
     @FXML
     private void clickDeleteButton(ActionEvent event) throws Exception {
 
@@ -86,6 +86,7 @@ public class AddEmpController extends AbstractController {
         Employee newEmployee = new Employee(tabNumButton.getText(), fioButton.getText(), passButton.getText(), birthButton.getText(), ccButton.getText(), innButton.getText(), numButton.getText(), educButton.getText(), addressButton.getText(), dateButton.getText(), addmiButton.getText());
         employeeService.addNewEmployee(newEmployee); //создвем сотрудника,который включает в себя: табельный номер, фио, паспорт, день рождения,страховое свидетельство, инн, номер телефона ,образование, адрес и тд.
         message.setText("Сотрудник добавлен");
+        setNullField();
 
     }
 
@@ -93,6 +94,19 @@ public class AddEmpController extends AbstractController {
     private void clickExitButton(ActionEvent event) {
         message.setText(null);
         getNextStage(exitButton, employeeView);
+    }
+    private void setNullField(){
+        tabNumButton.setText(null);
+        fioButton.setText(null);
+        passButton.setText(null);
+        birthButton.setText(null);
+        ccButton.setText(null);
+        innButton.setText(null);
+        numButton.setText(null);
+        educButton.setText(null);
+        addressButton.setText(null);
+        dateButton.setText(null);
+        addmiButton.setText(null);
     }
 
 

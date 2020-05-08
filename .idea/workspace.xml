@@ -72,6 +72,11 @@
         <item name="finish: database" type="162271b6:PgImplModel$Database" />
         <item name="extensions" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="finish@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="roles" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
     </expand>
     <select />
   </component>
@@ -81,8 +86,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -188,7 +193,12 @@
       <workItem from="1588781270293" duration="163000" />
       <workItem from="1588781717959" duration="897000" />
       <workItem from="1588782909990" duration="4042000" />
-      <workItem from="1588791116685" duration="493000" />
+      <workItem from="1588791116685" duration="1040000" />
+      <workItem from="1588847745850" duration="6293000" />
+      <workItem from="1588869995961" duration="3521000" />
+      <workItem from="1588876744041" duration="398000" />
+      <workItem from="1588929523390" duration="107000" />
+      <workItem from="1588930610857" duration="24953000" />
     </task>
     <servers />
   </component>
@@ -200,14 +210,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="21" key="#Inspections/0.0.1366.728@0.0.1366.728" timestamp="1587934553710" />
-    <state x="275" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588417979092">
+    <state x="275" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588872034498">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1588417979092" />
-    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser" timestamp="1587919486689">
+    <state x="275" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1588872034498" />
+    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser" timestamp="1588961778651">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1587919486689" />
+    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1588961778651" />
     <state x="531" y="251" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1586775135172">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -216,45 +226,53 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="455" y="222" width="474" height="293" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1587979690068" />
-    <state x="413" y="109" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588784690749">
+    <state x="413" y="109" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588854835790">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="109" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1588784690749" />
+    <state x="413" y="109" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1588854835790" />
     <state width="254" height="195" key="DatabaseViewActions_Filter" timestamp="1588412999893">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="254" height="195" key="DatabaseViewActions_Filter/0.0.1366.728@0.0.1366.728" timestamp="1588412999893" />
-    <state width="1322" height="399" key="GridCell.Tab.0.bottom" timestamp="1588786379999">
+    <state width="1322" height="399" key="GridCell.Tab.0.bottom" timestamp="1588963279404">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="399" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588786379999" />
-    <state width="1322" height="399" key="GridCell.Tab.0.center" timestamp="1588786379999">
+    <state width="1322" height="399" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588963279404" />
+    <state width="1322" height="399" key="GridCell.Tab.0.center" timestamp="1588963279404">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="399" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1588786379999" />
-    <state width="1322" height="399" key="GridCell.Tab.0.left" timestamp="1588786379999">
+    <state width="1322" height="399" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1588963279404" />
+    <state width="1322" height="399" key="GridCell.Tab.0.left" timestamp="1588963279403">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="399" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1588786379999" />
-    <state width="1322" height="399" key="GridCell.Tab.0.right" timestamp="1588786379999">
+    <state width="1322" height="399" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1588963279403" />
+    <state width="1322" height="399" key="GridCell.Tab.0.right" timestamp="1588963279404">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="399" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1588786379999" />
-    <state width="1322" height="399" key="GridCell.Tab.1.bottom" timestamp="1588786379999">
+    <state width="1322" height="399" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1588963279404" />
+    <state width="1322" height="399" key="GridCell.Tab.1.bottom" timestamp="1588963279405">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="399" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588786379999" />
-    <state width="1322" height="399" key="GridCell.Tab.1.center" timestamp="1588786379999">
+    <state width="1322" height="399" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588963279405" />
+    <state width="1322" height="399" key="GridCell.Tab.1.center" timestamp="1588963279404">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="399" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1588786379999" />
-    <state width="1322" height="399" key="GridCell.Tab.1.left" timestamp="1588786379999">
+    <state width="1322" height="399" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1588963279404" />
+    <state width="1322" height="399" key="GridCell.Tab.1.left" timestamp="1588963279404">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="399" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1588786379999" />
-    <state width="1322" height="399" key="GridCell.Tab.1.right" timestamp="1588786379999">
+    <state width="1322" height="399" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1588963279404" />
+    <state width="1322" height="399" key="GridCell.Tab.1.right" timestamp="1588963279405">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="399" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1588786379999" />
+    <state width="1322" height="399" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1588963279405" />
+    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1588872088620">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1366.728@0.0.1366.728" timestamp="1588872088620" />
+    <state x="392" y="4" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1588870826822">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="392" y="4" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1366.728@0.0.1366.728" timestamp="1588870826822" />
   </component>
 </project>

@@ -18,7 +18,7 @@
 }
 .table-view{
     -fx-font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-    -fx-font-size: 14px;
+    -fx-font-size: 11px;
     -fx-border-collapse: collapse;
     -fx-text-alignment: center;
     -fx-border-radius: 10px;

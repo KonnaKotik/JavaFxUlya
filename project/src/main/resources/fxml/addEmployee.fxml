@@ -5,24 +5,24 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane stylesheets="/css/menu.css"  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.controller.AddEmpController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="/css/menu.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.controller.AddEmpController">
    <children>
       <Label fx:id="message" layoutX="433.0" layoutY="336.0" textFill="#dd0d0d" />
-      <Button fx:id="exitButton" layoutX="534.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickExitButton" text="Назад" textFill="#dd0d0d" />
+      <Button fx:id="exitButton" layoutX="534.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickExitButton" text="Назад" textFill="#4a4646" />
       <TextField fx:id="tabNumButton" layoutX="48.0" layoutY="38.0" prefHeight="25.0" prefWidth="149.0" />
-      <Button fx:id="addChildrenButton" layoutX="423.0" layoutY="364.0" mnemonicParsing="false" onAction="#addNewEmployee" text="Добавить сотрудника" />
+      <Button fx:id="addChildrenButton" layoutX="423.0" layoutY="364.0" mnemonicParsing="false" onAction="#addNewEmployee" prefHeight="25.0" prefWidth="149.0" text="Добавить сотрудника" />
       <TextField fx:id="fioButton" layoutX="48.0" layoutY="98.0" prefHeight="25.0" prefWidth="149.0" />
-      <Label layoutX="260.0" layoutY="73.0" prefHeight="25.0" prefWidth="80.0" text="Образование" />
-      <Label layoutX="280.0" layoutY="14.0" prefHeight="25.0" prefWidth="57.0" text="Телефон" />
-      <Label layoutX="190.0" layoutY="339.0" prefHeight="25.0" prefWidth="36.0" text="ИНН" />
-      <Label layoutX="76.0" layoutY="207.0" prefHeight="25.0" prefWidth="96.0" text="Дата рождения" />
-      <Label layoutX="105.0" layoutY="270.0" prefHeight="25.0" prefWidth="36.0" text="№С/С" />
-      <Label layoutX="63.0" layoutY="138.0" prefHeight="25.0" prefWidth="120.0" text="Паспортные данные " />
-      <Label layoutX="94.0" layoutY="73.0" prefHeight="25.0" prefWidth="57.0" text="    ФИО" />
-      <Label layoutX="248.0" layoutY="138.0" prefHeight="25.0" prefWidth="105.0" text="Домашний адрес" />
-      <Label layoutX="220.0" layoutY="207.0" prefHeight="25.0" prefWidth="161.0" text="Дата поступления на работу" />
-      <Label layoutX="274.0" layoutY="277.0" prefHeight="25.0" prefWidth="69.0" text="Должность" />
-      <Label layoutX="70.0" layoutY="12.0" prefHeight="25.0" prefWidth="105.0" text="Табельный номер" />
+      <Label layoutX="260.0" layoutY="73.0" text="Образование" />
+      <Label layoutX="280.0" layoutY="14.0"  text="Телефон" />
+      <Label layoutX="190.0" layoutY="339.0"  text="ИНН" />
+      <Label layoutX="76.0" layoutY="207.0" text="Дата рождения" />
+      <Label layoutX="105.0" layoutY="270.0"  text="№С/С" />
+      <Label layoutX="63.0" layoutY="138.0"  text="Паспортные данные " />
+      <Label layoutX="94.0" layoutY="73.0"  text="    ФИО" />
+      <Label layoutX="248.0" layoutY="138.0"  text="Домашний адрес" />
+      <Label layoutX="220.0" layoutY="207.0"  text="Дата поступления на работу" />
+      <Label layoutX="274.0" layoutY="277.0" text="Должность" />
+      <Label layoutX="70.0" layoutY="12.0"  text="Табельный номер" />
       <TextField fx:id="passButton" layoutX="49.0" layoutY="163.0" prefHeight="25.0" prefWidth="149.0" />
       <TextField fx:id="birthButton" layoutX="49.0" layoutY="233.0" prefHeight="25.0" prefWidth="149.0" />
       <TextField fx:id="ccButton" layoutX="48.0" layoutY="302.0" prefHeight="25.0" prefWidth="149.0" />

@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -19,6 +20,8 @@ import java.util.List;
 
 @Controller
 public class AddChildrenController extends AbstractController {
+    @FXML
+    private Label message;
     @FXML
     private Button exitButton;
     @FXML
@@ -57,6 +60,8 @@ public class AddChildrenController extends AbstractController {
         System.out.println(children.getFio());
         childrenService.addNewChildren(children);
        addChildrenInEmployee(employee, children);
+        message.setText("Ребенок добавлен");
+        setNullField();
     }
 
     private void addChildrenInEmployee(Employee employee, Children children){
@@ -64,6 +69,12 @@ public class AddChildrenController extends AbstractController {
         childrenList.add(children);
         employee.setChildrenList(childrenList);
        employeeService.addNewEmployee(employee);
+    }
+    private void setNullField(){
+        fioButton.setText(null);
+        dataButton.setText(null);
+        parentsButton.setText(null);
+
     }
 
 }
