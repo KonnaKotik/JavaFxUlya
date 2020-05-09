@@ -100,9 +100,6 @@ public class InfoEmployeeController extends AbstractController{
     @FXML
     private Button loadButton;
 
-    @Autowired
-    private EmployeeService EmployeeService;
-
     @Qualifier("EmployeeView")
     @Autowired
     private ControllersConfig.ViewHolder employeeView;
@@ -163,17 +160,6 @@ public class InfoEmployeeController extends AbstractController{
         }
         setNullField();
     }
-   /* @FXML
-    private void clickFindFio(ActionEvent event) {
-        String fio = fioField.getText();
-        List<EmployeeDto> employeeDtos = employeeService.getEmployeeByFio(fio);
-        if(!employeeDtos.isEmpty()) {
-            setTable(employeeDtos);
-        }else {
-            errorMessage.setText("Данные не найдены");
-        }
-        setNullField();
-    }*/
    @FXML
    private void clickFindFio(ActionEvent event) {
        String fio = fioField.getText();

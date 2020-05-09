@@ -51,13 +51,13 @@ public class AddChildrenController extends AbstractController {
     @FXML
     private void addChildren(ActionEvent event) {
         String parentFio = parentsButton.getText();
-        System.out.println(parentFio);
+       // System.out.println(parentFio);
         Employee employee = employeeService.getEmployeeByFio(parentFio);
-        System.out.println(employee.getFio());
+      //  System.out.println(employee.getFio());
         List<Employee> parents = new LinkedList<>();
         parents.add(employee);
         Children children = new Children(fioButton.getText(), dataButton.getText(), parents);
-        System.out.println(children.getFio());
+      //  System.out.println(children.getFio());
         childrenService.addNewChildren(children);
        addChildrenInEmployee(employee, children);
         message.setText("Ребенок добавлен");

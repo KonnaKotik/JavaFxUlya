@@ -21,7 +21,6 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     List<Employee> findAll();
     //Optional<Employee> findAllByFio(String fio);
     Optional<Employee> findByTabNum(String tabNum);
-    List<Employee> findAllByFio(String fio);
     List<Employee> findAllByPassport(String passport);
     List<Employee> findAllByBirthday(String birthday);
     List<Employee> findAllByCc(String cc);
@@ -31,6 +30,8 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     List<Employee> findAllByAddress(String address);
     List<Employee> findAllByAddmission(String addmission);
     List<Employee> findAllByPost(String post);
+
+    List<Employee> findAllByFio(String fio);
 
 
 

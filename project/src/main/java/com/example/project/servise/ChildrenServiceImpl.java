@@ -10,6 +10,7 @@ import com.example.project.repository.ChildrenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.LinkedList;
 import java.util.List;
 
 
@@ -22,12 +23,22 @@ public class ChildrenServiceImpl implements ChildrenService {
     @Autowired
     private ChildrenRepository childrenRepository;
 
+    @Autowired
+    private EmployeeService employeeService;
+
     @Override
     public void addNewChildren(Children newChildren) {
         childrenRepository.save(newChildren);
     }//добавляем нового ребенка и сохраняем его
 
-   @Override
+    @Override
+    public List<ChildrenDto> getAllByParents(String fio) {
+        Employee employee = employeeService.getEmployeeByFio(fio);
+        List<Children> children = childrenRepository.findAllByParents(employee);
+        return childrenMapper.convertModelsToDtos(children);
+    }
+
+    @Override
     public List<ChildrenDto> getAllChildren() {
         List<Children> childrenList = childrenRepository.findAll();
         List<ChildrenDto> childrenDtos = childrenMapper.convertModelsToDtos(childrenList);
@@ -37,7 +48,7 @@ public class ChildrenServiceImpl implements ChildrenService {
     @Override
     public String listToString(List<Employee> employeeList){
         StringBuilder parents = new StringBuilder();
-        System.out.println(employeeList.isEmpty() + "empty");
+      //  System.out.println(employeeList.isEmpty() + "empty");
         for (Employee employee:employeeList) {
             parents.append(employee.getFio()).append(", ");
         }
@@ -54,9 +65,5 @@ public class ChildrenServiceImpl implements ChildrenService {
         List<Children> childrenList = childrenRepository.findAllByData(data);
         return childrenMapper.convertModelsToDtos(childrenList);
     }
-    @Override
-    public List<ChildrenDto> getAllByNameParents(String nameParents) {
-        List<Children> childrenList = childrenRepository.findAllByNameParents(nameParents);
-        return childrenMapper.convertModelsToDtos(childrenList);
-    }
+
 }

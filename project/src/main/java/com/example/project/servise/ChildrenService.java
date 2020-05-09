@@ -10,14 +10,14 @@ import java.util.List;
 
 public interface ChildrenService {
     List<ChildrenDto> getAllChildren();// находим все объекты класса(чилдренов) в подклассе
-    List<ChildrenDto> getAllByFio(String fio);
-    List<ChildrenDto> getAllByData(String data);
-    List<ChildrenDto> getAllByNameParents(String nameParents);
 
+    List<ChildrenDto> getAllByFio(String fio);
+
+    List<ChildrenDto> getAllByData(String data);
 
     void addNewChildren(Children newChildren);//добавляем нового ребенка
 
-
+    List<ChildrenDto> getAllByParents(String fio);
 
     String listToString(List<Employee> employeeList);
 }

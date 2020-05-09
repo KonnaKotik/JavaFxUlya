@@ -58,14 +58,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
         return null;
     }
-   /* @Override
-   public List<EmployeeDto> getEmployeeByFio(String fio) {
-        List<Employee> employeeList = employeeRepository.findAllByFio(fio);
-        return employeeMapper.convertModelsToDtos(employeeList);
-    }*/
+
    @Override
    public List<EmployeeDto> getAllByFio(String fio) {
-       List<Employee> employeeList = employeeRepository.findAllByPassport(fio);
+       List<Employee> employeeList = employeeRepository.findAllByFio(fio);
        return employeeMapper.convertModelsToDtos(employeeList);
    }
     @Override

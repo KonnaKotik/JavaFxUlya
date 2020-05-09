@@ -26,8 +26,6 @@ public class InfoChildrenController extends AbstractController {
     @Autowired
     private EmployeeService employeeService;
 
-    @Autowired
-    private ChildrenMapper childrenMapper;
 
     @FXML
     private Button loadButton;
@@ -115,17 +113,18 @@ public class InfoChildrenController extends AbstractController {
         }
         setNullField();
     }
+
     @FXML
-    private void clickFindNameParents(ActionEvent event) {
-        String nameParents = nameParentsField.getText();
-        List<ChildrenDto> childrenDtos = childrenService.getAllByNameParents(nameParents);
-        if (!childrenDtos.isEmpty()) {
+    private void clickFindParents(ActionEvent event) {
+        String fio = nameParentsField.getText();
+        List<ChildrenDto> childrenDtos = childrenService.getAllByParents(fio);
+        if(!childrenDtos.isEmpty()) {
             setTable(childrenDtos);
         } else {
             errorMessage.setText("Данные не найдены");
         }
-        setNullField();
     }
+
     private void setNullField() {
         fioField.setText(null);
         dataField.setText(null);
