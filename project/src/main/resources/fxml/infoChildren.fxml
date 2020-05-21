@@ -6,8 +6,10 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
+<?import javafx.scene.control.Label?>
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="/css/menu.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.controller.InfoChildrenController">
    <children>
+
        <Button fx:id="exitButton" layoutX="719.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickExitButton" prefHeight="25.0" prefWidth="72.0" text="Назад" textFill="#2f2d2d" />
        <Button fx:id="loadButton" layoutX="543.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickLoadButton" prefHeight="25.0" prefWidth="130.0" text="Загрузить" textFill="#323030" />
       <TableView fx:id="childrenTable" layoutX="-1.0" layoutY="82.0" prefHeight="557.0" prefWidth="800.0">
@@ -17,11 +19,12 @@
             <TableColumn fx:id="nameParents" prefWidth="268.0" text="Родители" />
         </columns>
       </TableView>
-      <Button fx:id="nameParentsButton" onAction="#clickFindParents" layoutX="777.0" layoutY="49.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
+       <Label fx:id="errorMessage" layoutX="300.0" layoutY="17.0" textFill="#dd0d0d" />
+      <Button fx:id="nameParentsButton" styleClass="findButton" onAction="#clickFindParents" layoutX="777.0" layoutY="49.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
       <TextField fx:id="nameParentsField" layoutX="534.0" layoutY="49.0" prefHeight="25.0" prefWidth="243.0" />
       <TextField fx:id="dataField" layoutX="306.0" layoutY="49.0" prefHeight="25.0" prefWidth="195.0" />
-      <Button fx:id="dataButton" onAction="#clickFindData" layoutX="501.0" layoutY="49.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
-      <Button fx:id="fioButton" onAction="#clickFindFio" layoutX="272.0" layoutY="49.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
+      <Button fx:id="dataButton" styleClass="findButton" onAction="#clickFindData" layoutX="501.0" layoutY="49.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
+      <Button fx:id="fioButton" styleClass="findButton" onAction="#clickFindFio" layoutX="272.0" layoutY="49.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
       <TextField fx:id="fioField" layoutX="6.0" layoutY="49.0" prefHeight="25.0" prefWidth="266.0" />
    </children>
 </Pane>

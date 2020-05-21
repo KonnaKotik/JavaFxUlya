@@ -41,7 +41,7 @@ public class NoLoginInfoEmployeeController extends AbstractController {
 
     @FXML
     private TableColumn<String, EmployeeDto> addmission;
-/*
+
     @FXML
     private TextField tabNumField;
     @FXML
@@ -55,7 +55,7 @@ public class NoLoginInfoEmployeeController extends AbstractController {
     @FXML
     private TextField postField;
     @FXML
-    private TextField addmissionField;*/
+    private TextField addmissionField;
 
 
     @FXML
@@ -63,8 +63,8 @@ public class NoLoginInfoEmployeeController extends AbstractController {
 
     @FXML
     private Button loadButton;
-   /* @FXML
-    private Label errorMessage;*/
+    @FXML
+    private Label errorMessage;
 
     @Autowired
     private EmployeeService employeeService;
@@ -85,7 +85,7 @@ public class NoLoginInfoEmployeeController extends AbstractController {
         phone.setCellValueFactory(new PropertyValueFactory<>("phone"));
         post.setCellValueFactory(new PropertyValueFactory<>("post"));
         education.setCellValueFactory(new PropertyValueFactory<>("education"));
-       // setNullField();
+       setNullField();
     }
 
     @FXML
@@ -94,26 +94,94 @@ public class NoLoginInfoEmployeeController extends AbstractController {
         table.setItems(FXCollections.observableArrayList(employees));
 
     }
+    private void setTable(List<EmployeeDto> employeeDtos) {
+        table.setItems(FXCollections.observableArrayList(employeeDtos));
+    }
 
     @FXML
     private void clickExitButton(ActionEvent event) throws Exception {
         getNextStage(exitButton, noLoginEmployeeView);
-
     }
-    /*private void setTable(List<NoLoginInfoDto> noLoginInfoDtos) { table.setItems(FXCollections.observableArrayList(noLoginInfoDtos)); }
+        @FXML
+        private void clickFindTabNum(ActionEvent event) {
+            String tabNum = tabNumField.getText();
+            EmployeeDto employeeDto = employeeService.getEmployeeByTabNum(tabNum);
+            if (employeeDto != null) {
+                List<EmployeeDto> employeeDtos = new LinkedList<>();
+                employeeDtos.add(employeeDto);
+                setTable(employeeDtos);
+            } else {
+                errorMessage.setText("Данные не найдены");
+            }
+            setNullField();
+        }
     @FXML
-    private void clickFindTabNum(ActionEvent event) {
-        String tubNum = tubNumField.getText();
-        NoLoginInfoDto noLoginInfoDto = noLoginInfoService.getNoLoginInfoByTubNum(tubNum);
-        if (noLoginInfoDto != null) {
-            List<NoLoginInfoDto> noLoginInfoDtos = new LinkedList<>();
-            noLoginInfoDtos.add(noLoginInfoDto);
-            setTable(noLoginInfoDtos);
-        } else {
+    private void clickFindFio(ActionEvent event) {
+        String fio = fioField.getText();
+        List<EmployeeDto> employeeDtos = employeeService.getAllByFio(fio);
+        if(!employeeDtos.isEmpty()) {
+            setTable(employeeDtos);
+        }else {
             errorMessage.setText("Данные не найдены");
         }
         setNullField();
     }
+    @FXML
+    private void clickFindBirthday(ActionEvent event) {
+        String birthday = birthdayField.getText();
+        List<EmployeeDto> employeeDtos = employeeService.getAllByBirthday(birthday);
+        if(!employeeDtos.isEmpty()) {
+            setTable(employeeDtos);
+        }else {
+            errorMessage.setText("Данные не найдены");
+        }
+        setNullField();
+    }
+    @FXML
+    private void clickFindPhone(ActionEvent event) {
+        String phone = phoneField.getText();
+        List<EmployeeDto> employeeDtos = employeeService.getAllByPhone(phone);
+        if(!employeeDtos.isEmpty()) {
+            setTable(employeeDtos);
+        }else {
+            errorMessage.setText("Данные не найдены");
+        }
+        setNullField();
+    }
+    @FXML
+    private void clickFindEducation(ActionEvent event) {
+        String education = educationField.getText();
+        List<EmployeeDto> employeeDtos = employeeService.getAllByEducation(education);
+        if(!employeeDtos.isEmpty()) {
+            setTable(employeeDtos);
+        }else {
+            errorMessage.setText("Данные не найдены");
+        }
+        setNullField();
+    }
+    @FXML
+    private void clickFindPost(ActionEvent event) {
+        String post = postField.getText();
+        List<EmployeeDto> employeeDtos = employeeService.getAllByPost(post);
+        if(!employeeDtos.isEmpty()) {
+            setTable(employeeDtos);
+        }else {
+            errorMessage.setText("Данные не найдены");
+        }
+        setNullField();
+    }
+    @FXML
+    private void clickFindAddmission(ActionEvent event) {
+        String addmission = addmissionField.getText();
+        List<EmployeeDto> employeeDtos = employeeService.getAllByAddmission(addmission);
+        if(!employeeDtos.isEmpty()) {
+            setTable(employeeDtos);
+        }else {
+            errorMessage.setText("Данные не найдены");
+        }
+        setNullField();
+    }
+
     private void setNullField() {
         tabNumField.setText(null);
         fioField.setText(null);
@@ -123,7 +191,8 @@ public class NoLoginInfoEmployeeController extends AbstractController {
         postField.setText(null);
         addmissionField.setText(null);
 
-    }*/
-
-
+    }
 }
+
+
+

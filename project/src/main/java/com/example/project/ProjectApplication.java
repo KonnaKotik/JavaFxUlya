@@ -22,7 +22,7 @@ public class ProjectApplication extends AbstractJavaFxAppSupport {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        primaryStage.setTitle("Дипломная Ули");
+        primaryStage.setTitle("Секретарь");
         primaryStage.setScene(new Scene(viewHolder.getView()));
         primaryStage.setResizable(true);
         primaryStage.centerOnScreen();

@@ -6,6 +6,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
+<?import javafx.scene.control.Label?>
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1400.0" stylesheets="/css/menu.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.controller.NoLoginInfoEmployeeController">
    <children>
       <TableView fx:id="table" layoutX="-2.0" layoutY="80.0" prefHeight="600.0" prefWidth="1408.0">
@@ -19,21 +20,22 @@
             <TableColumn fx:id="post" prefWidth="339.0" text="Должность" />
         </columns>
       </TableView>
+       <Label fx:id="errorMessage" layoutX="300.0" layoutY="17.0" textFill="#dd0d0d" />
       <Button fx:id="loadButton" layoutX="1080.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickLoadButton" prefHeight="25.0" prefWidth="119.0" text="Загрузить" />
       <Button fx:id="exitButton" layoutX="1278.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickExitButton" prefHeight="25.0" prefWidth="108.0" text="Назад" />
-      <Button fx:id="postButton" layoutX="1370.0" layoutY="52.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
+      <Button fx:id="postButton" styleClass="findButton" onAction="#clickFindPost" layoutX="1370.0" layoutY="52.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
       <TextField fx:id="postField" layoutX="1162.0" layoutY="52.0" prefHeight="25.0" prefWidth="208.0" />
       <TextField fx:id="addmissionField" layoutX="1015.0" layoutY="52.0" prefHeight="25.0" prefWidth="119.0" />
-      <Button fx:id="addmissionButton" layoutX="1134.0" layoutY="52.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
+      <Button fx:id="addmissionButton" styleClass="findButton" onAction="#clickFindAddmission" layoutX="1134.0" layoutY="52.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
       <TextField fx:id="educationField" layoutX="735.0" layoutY="52.0" prefHeight="25.0" prefWidth="251.0" />
-      <Button fx:id="educationButton" layoutX="986.0" layoutY="52.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
+      <Button fx:id="educationButton" styleClass="findButton" onAction="#clickFindEducation" layoutX="986.0" layoutY="52.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
       <TextField fx:id="phoneField" layoutX="484.0" layoutY="52.0" prefHeight="25.0" prefWidth="225.0" />
-      <Button fx:id="phoneButton" layoutX="709.0" layoutY="52.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
+      <Button fx:id="phoneButton" styleClass="findButton" onAction="#clickFindPhone" layoutX="709.0" layoutY="52.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
       <TextField fx:id="birthdayField" layoutX="365.0" layoutY="52.0" prefHeight="25.0" prefWidth="94.0" />
-      <Button fx:id="birthdayButton" layoutX="459.0" layoutY="52.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
+      <Button fx:id="birthdayButton" styleClass="findButton" onAction="#clickFindBirthday" layoutX="459.0" layoutY="52.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
       <TextField fx:id="fioField" layoutX="128.0" layoutY="52.0" prefHeight="25.0" prefWidth="214.0" />
-      <Button fx:id="fioButton" layoutX="342.0" layoutY="52.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
+      <Button fx:id="fioButton" styleClass="findButton" onAction="#clickFindFio" layoutX="342.0" layoutY="52.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
       <TextField fx:id="tabNumField" layoutY="52.0" prefHeight="25.0" prefWidth="100.0" />
-      <Button fx:id="tabNumButton" layoutX="100.0" layoutY="52.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
+      <Button fx:id="tabNumButton" styleClass="findButton" onAction="#clickFindTabNum" layoutX="100.0" layoutY="52.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="19.0" />
    </children>
 </Pane>

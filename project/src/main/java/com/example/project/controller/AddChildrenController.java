@@ -30,6 +30,8 @@ public class AddChildrenController extends AbstractController {
     private TextField dataButton;
     @FXML
     private TextField parentsButton;
+    @FXML
+    private Label errorMessage;
 
     @Autowired
     private ChildrenService childrenService;
